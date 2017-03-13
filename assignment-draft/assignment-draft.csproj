@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\min\960_12_col.css" />
+    <Content Include="CSS\min\reset.css" />
+    <Content Include="CSS\min\text.css" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -88,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CSS\" />
     <Folder Include="JS\" />
     <Folder Include="Models\" />
   </ItemGroup>
