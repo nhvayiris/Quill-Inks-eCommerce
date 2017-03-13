@@ -1,10 +1,147 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en-gb">
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <title>Quill &amp; Inks </title>
+    <meta charset="utf-8" />
+    <!-- stylesheets 960 grid layout, MQ & CSS Reset-->
+    <link href="CSS/min/960_12_col.css" rel="stylesheet" />
+    <link href="CSS/min/reset.css" rel="stylesheet" />
+    <link href="CSS/min/text.css" rel="stylesheet" />
+    <link href="CSS/stylesheet.css" rel="stylesheet" />
+    <link href="CSS/min/mediaqueries-responsive.css"  rel="stylesheet"/> 
+    <!--external stylesheets-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <!-- jQuery library (served from Google) -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- bxSlider Javascript file -->
+    <script src="JS/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <!-- bxSlider CSS file -->
+    <link href="JS/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <script src="JS/jquery.bxslider/bxSlider.js"></script>
 </head>
 <body>
+    <!-- container : header, nav, footer -->
+    <div id="container" class="container_12">
+        <header id="nav-head" class="grid_12"></header> <!--end header -->
+        <div id="container-logo-menu" class="grid_12">
+            <div id="menulist" class="grid_11">
+                <ul id="menu" class="grid_11">
+                    <li class="admin-link">Admin</li>
+                    <li class="shoppingcart-link"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></li>
+                    <li class="register-link-bar">|</li>
+                    <li></li>
+                    <li class="Login-link">Log In</li>
+                    <li class="register-link">Register</li>
+                </ul>
+            </div> <!-- end menulist for admin/cart/login/register-->
+            <div id="main-logo" class="grid_1">
+                <a href="index.html"><img src="/Images/QuillInks-logo.png" alt="QuillInks Logo" width="80" height="30" /></a>
+            </div> <!-- end logo -->
+        </div>
 
+        <nav class="grid_12">
+            <ul>
+                <li class="innernav"><a href="index.html" ><i class="fa fa-home" aria-hidden="true"></i>   Home</a></li>
+                <li class="innernav"><a href="product.html" ><i class="fa fa-pencil" aria-hidden="true"></i>     Products</a></li>
+                <li class="innernav"><a href="about.html" ><i class="fa fa-heart" aria-hidden="true"></i>  About</a></li>
+                <li class="innernav"><a href="contacts.html" ><i class="fa fa-envelope" aria-hidden="true"></i>   Contacts</a></li>
+            </ul>
+        </nav>  <!--end main nav -->
+
+        <div id="container_home" class="grid_12">
+
+            <div id="header" class="grid_12">
+                <h1>Welcome, enjoy shopping!</h1>
+            </div>
+
+
+            <div id="side-bar" class="grid_3">
+                <div id="search-box" class="grid_3">
+
+                </div>
+
+
+                <div id="customer-view-bar" class="grid_3">
+                    <div id="customer-view-head">
+                        <span>What Customers are Reviewing</span>
+                    </div>
+                    <div id="review-box">
+                        <ul>
+                            <li>Using javascript</li>
+                            <li></li>
+                            <li>Link Photo 1</li>
+                            <li></li>
+                            <li>Link Photo 2</li>
+                            <li></li>
+                            <li>Link Photo 3</li>
+                        </ul>
+                        <p>Change to photos and javascripted</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="slider-sale-banner" class="grid_12">
+                <ul class="bxslider">
+                    <li><img src="Images/salesbanner/Sale-Banner-A.jpg" alt="Special Offer Sale Banner Starts From 15th October" width="723" height="209" /></li>
+                    <li> <img src="Images/salesbanner/Sale-Banner-B.jpg" alt="Fantastic Sale Banner Limited Time Only Enjoy up to 50% Discount on Selected Items" width="723" height="209" /></li>
+                    <li><img src="Images/salesbanner/Sale-Banner-C.jpg" alt="Limited time only Stock Clearance Sale Enjoy up to 50% discount from 2pm to 6pm" width="723" height="209" /></li>
+                </ul>
+            </div>
+            <div id="product-showcase" class="grid_6">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EF gridview from db</p>
+            </div>
+        </div>
+
+
+        <footer class="grid_12">
+            <div id="footer-logo" class="grid_3">
+                <p class="footer-logo-img"><img src="/Images/QuillInks-logo.png" alt="QuillInks Logo" width="154" height="44" /></p>
+            </div> <!-- end left footer logo-->
+
+            <div id="right-footer" class="grid_9">
+                <div class="sitemap">
+                    <ul>
+                        <li class="sitemap-head">Admin</li>
+                        <li class="sitemap-subhead"><a href="admin/manage.html" >Manage</a></li>
+                        <li class="sitemap-subhead"><a href="admin/add-new.html" >add/edit</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap">
+                    <ul>
+                        <li class="sitemap-head">Customer</li>
+                        <li class="sitemap-subhead"><a href="Login.html" >Login</a></li>
+                        <li class="sitemap-subhead"><a href="members/cart.html" >My Cart</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap">
+                    <ul>
+                        <li class="sitemap-head"><a href="About.html" >About</a></li>
+                        <li class="sitemap-head"><a href="Contacts.html" >Contacts</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap">
+                    <ul>
+                        <li class="sitemap-head"><a href="index.html" >Home</a></li>
+                        <li class="sitemap-head"><a href="product.html" >Products</a></li>
+                    </ul>
+                </div>
+
+            </div><!--end right footer - sitemap-->
+        </footer> <!-- end footer-->
+        <!-- bottom footer (validation + copyright) -->
+        <div id="lowerfooter-validator">
+
+            <p class="validate">
+                <a class="validate" href="http://validator.w3.org/check?uri=referer">Validate HTML</a>
+                <a class="validate" href="http://jigsaw.w3.org/css-validator/check/referer">| Validate CSS |</a>
+                <a class="validate" href="http://achecker.ca/checker/?uri=referer">Check WCAG</a>
+            </p>
+            <p class="info-footer">Copyright &copy; 2017 QuillInks | 1525603</p>
+        </div>
+        <!-- end bottom footer (validation + copyright) -->
+    </div> <!-- end container -->
 </body>
 </html>
