@@ -71,6 +71,9 @@
     <Content Include="CSS\min\mediaqueries-responsive.css" />
     <Content Include="CSS\min\text.css" />
     <Content Include="CSS\stylesheet.css" />
+    <Content Include="Images\products\2017 MONTHY DIARY SWEET.jpg" />
+    <Content Include="Images\products\2017 WEEKLY DIARY BONDED LEATHER CHARCOAL GREY.jpg" />
+    <Content Include="Images\products\2017 WEEKLY DIARY BONDED LEATHER COPPER.jpg" />
     <Content Include="Images\QuillInks-logo.png" />
     <Content Include="Images\salesbanner\Sale-Banner-A.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-B.jpg" />
