@@ -71,6 +71,7 @@
     <Content Include="CSS\min\mediaqueries-responsive.css" />
     <Content Include="CSS\min\text.css" />
     <Content Include="CSS\stylesheet.css" />
+    <Content Include="default.aspx" />
     <Content Include="Images\products\2017 MONTHY DIARY SWEET.jpg" />
     <Content Include="Images\products\2017 WEEKLY DIARY BONDED LEATHER CHARCOAL GREY.jpg" />
     <Content Include="Images\products\2017 WEEKLY DIARY BONDED LEATHER COPPER.jpg" />
@@ -90,6 +91,7 @@
     <Content Include="packages.config" />
     <Content Include="JS\jquery.bxslider\bower.json" />
     <Content Include="JS\jquery.bxslider\readme.md" />
+    <Content Include="site.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -103,10 +105,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="site.master.cs">
+      <DependentUpon>site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site.master.designer.cs">
+      <DependentUpon>site.master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
