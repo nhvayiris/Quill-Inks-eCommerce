@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="contact.aspx" />
     <Content Include="CSS\min\960_12_col.css" />
     <Content Include="CSS\min\reset.css" />
     <Content Include="CSS\min\mediaqueries-responsive.css" />
@@ -79,7 +82,6 @@
     <Content Include="Images\salesbanner\Sale-Banner-A.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-B.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-C.jpg" />
-    <Content Include="index.html" />
     <Content Include="JS\jquery.bxslider\bxSlider.js" />
     <Content Include="JS\jquery.bxslider\images\bx_loader.gif" />
     <Content Include="JS\jquery.bxslider\images\controls.png" />
@@ -91,6 +93,7 @@
     <Content Include="packages.config" />
     <Content Include="JS\jquery.bxslider\bower.json" />
     <Content Include="JS\jquery.bxslider\readme.md" />
+    <Content Include="product.aspx" />
     <Content Include="site.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -101,10 +104,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="product.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,6 +137,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="site.master.cs">

@@ -32,7 +32,7 @@
             <div id="container-logo-menu" class="grid_12">
                 <div id="menulist" class="grid_11">
                     <ul id="menu" class="grid_11">
-                        <li class="admin-link">Admin</li>
+                        <li class="admin-link"><a href="Admin/Default.aspx" runat="server">Admin</a></li>
                         <li class="shoppingcart-link"><em class="fa fa-shopping-cart fa-2x" aria-hidden="true"></em></li>
                         <li class="register-link-bar">|</li>
                         <li></li>
@@ -42,18 +42,17 @@
                 </div>
                 <!-- end menulist for admin/cart/login/register-->
                 <div id="main-logo" class="grid_1">
-                    <a href="index.html">
-                        <img src="/Images/QuillInks-logo.png" alt="QuillInks Logo" width="80" height="30" /></a>
+                    <a href="~/default.aspx" runat="server"><img src="/Images/QuillInks-logo.png" alt="QuillInks Logo" width="80" height="30" /></a>
                 </div>
                 <!-- end logo -->
             </div>
 
             <nav class="grid_12">
                 <ul>
-                    <li class="innernav"><a href="index.html"><em class="fa fa-home" aria-hidden="true"></em>Home</a></li>
-                    <li class="innernav"><a href="product.html"><em class="fa fa-pencil" aria-hidden="true"></em>Products</a></li>
-                    <li class="innernav"><a href="about.html"><em class="fa fa-heart" aria-hidden="true"></em>About</a></li>
-                    <li class="innernav"><a href="contacts.html"><em class="fa fa-envelope" aria-hidden="true"></em>Contacts</a></li>
+                    <li class="innernav"><a href="~/default.aspx" runat="server"><em class="fa fa-home" aria-hidden="true"></em>Home</a></li>
+                    <li class="innernav"><a href="~/product.aspx" runat="server"><em class="fa fa-pencil" aria-hidden="true"></em>Products</a></li>
+                    <li class="innernav"><a href="~/about.aspx" runat="server"><em class="fa fa-heart" aria-hidden="true"></em>About</a></li>
+                    <li class="innernav"><a href="~/contact.aspx" runat="server"><em class="fa fa-envelope" aria-hidden="true"></em>Contacts</a></li>
                 </ul>
             </nav>
             <!--end main nav -->
@@ -87,15 +86,15 @@
 
                     <div class="sitemap">
                         <ul>
-                            <li class="sitemap-head"><a href="About.html">About</a></li>
-                            <li class="sitemap-head"><a href="Contacts.html">Contacts</a></li>
+                            <li class="sitemap-head"><a href="~/about.aspx" runat="server">About</a></li>
+                            <li class="sitemap-head"><a href="~/contact.aspx" runat="server" >Contacts</a></li>
                         </ul>
                     </div>
 
                     <div class="sitemap">
                         <ul>
-                            <li class="sitemap-head"><a href="index.html">Home</a></li>
-                            <li class="sitemap-head"><a href="product.html">Products</a></li>
+                            <li class="sitemap-head"><a href="~/default.aspx" runat="server">Home</a></li>
+                            <li class="sitemap-head"><a href="~/product.aspx" runat="server">Products</a></li>
                         </ul>
                     </div>
 
