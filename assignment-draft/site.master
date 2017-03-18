@@ -21,6 +21,7 @@
     <!-- bxSlider CSS file -->
     <link href="JS/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
     <script src="JS/jquery.bxslider/bxSlider.js"></script>
+    
     <asp:ContentPlaceHolder ID="headContentPlaceholder" runat="server">
     </asp:ContentPlaceHolder>
 </head>

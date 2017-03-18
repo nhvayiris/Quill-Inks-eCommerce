@@ -82,6 +82,7 @@
     <Content Include="Images\salesbanner\Sale-Banner-A.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-B.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-C.jpg" />
+    <Content Include="Scripts\googlemaps.js" />
     <Content Include="JS\jquery.bxslider\bxSlider.js" />
     <Content Include="JS\jquery.bxslider\images\bx_loader.gif" />
     <Content Include="JS\jquery.bxslider\images\controls.png" />
@@ -94,7 +95,14 @@
     <Content Include="JS\jquery.bxslider\bower.json" />
     <Content Include="JS\jquery.bxslider\readme.md" />
     <Content Include="product.aspx" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="site.master" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
