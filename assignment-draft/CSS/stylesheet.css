@@ -7,7 +7,7 @@ body {
     background-color:#F5F5F1;
 }
 
-/* ====== Index.html styles ====== */
+/* ====== masterpage styles ====== */
 
 #container-logo-menu {
     margin-bottom: -1px;
@@ -185,4 +185,14 @@ table, th, td {
     width: 100%;
 }
 
-/* ====== product.html styles ====== */
+/* ====== default page styles ====== */
+
+/* ====== product page styles ====== */
+
+/* ====== contact page styles ====== */
+
+
+
+/* ====== login/register page styles ====== */
+
+/* ====== payment/order page styles ====== */
