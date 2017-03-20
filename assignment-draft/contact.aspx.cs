@@ -31,7 +31,6 @@ namespace assignment_draft
                 "Email: " + txtContactMail.Text + "\n" +
                 "Subject: " + ddSubject.Text + "\n" +
                 "Question: \n" + txtMessageBox.Text + "\n";
-            msg.Attachments.Add(new Attachment(FileUpload.FileContent, Path.GetFileName(FileUpload.FileName)));
             smtpClient.Send(msg);
         }
 
@@ -53,12 +52,6 @@ namespace assignment_draft
             }
         }
 
-        protected void btnReset_Click(object sender, EventArgs e)
-        {
-            txtContactName.Text = "";
-            txtContactMail.Text = "";
-            ddSubject.SelectedIndex = 0;
-            txtMessageBox.Text = "";
-        }
+        
     }
 }

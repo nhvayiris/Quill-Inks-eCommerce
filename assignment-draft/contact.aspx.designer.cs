@@ -13,15 +13,6 @@ namespace assignment_draft {
     public partial class contact {
         
         /// <summary>
-        /// Panel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
         /// lblContactName control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.TextBox txtContactName;
         
         /// <summary>
-        /// ReqFieldVal1 control.
+        /// ValidFieldName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqFieldVal1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidFieldName;
         
         /// <summary>
         /// lblContactMail control.
@@ -67,13 +58,13 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.TextBox txtContactMail;
         
         /// <summary>
-        /// RegExpValid control.
+        /// ValidEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegExpValid;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator ValidEmail;
         
         /// <summary>
         /// lblSubject control.
@@ -94,13 +85,13 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.DropDownList ddSubject;
         
         /// <summary>
-        /// ReqFieldVal3 control.
+        /// ValidDD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqFieldVal3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidDD;
         
         /// <summary>
         /// lblMessageBox control.
@@ -121,31 +112,13 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.TextBox txtMessageBox;
         
         /// <summary>
-        /// ReqFieldVal4 control.
+        /// ValidMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqFieldVal4;
-        
-        /// <summary>
-        /// lblAttachment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAttachment;
-        
-        /// <summary>
-        /// FileUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidMessage;
         
         /// <summary>
         /// btnSend control.
@@ -155,15 +128,6 @@ namespace assignment_draft {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSend;
-        
-        /// <summary>
-        /// btnReset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnReset;
         
         /// <summary>
         /// litSuccess control.

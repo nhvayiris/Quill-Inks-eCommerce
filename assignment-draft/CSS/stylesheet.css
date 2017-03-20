@@ -1,195 +1,99 @@
-﻿
-body {
-    background-color:#F5F5F1;
-}
+﻿@charset "UTF-8";
 
-#container{
-    background-color:#F5F5F1;
-}
 
-/* ====== masterpage styles ====== */
-
-#container-logo-menu {
-    margin-bottom: -1px;
-}
-
-#nav-head {
-    background-color: #ffffff;
-    max-width: 100%;
-}
-
-.shoppingcart-link, .Login-link, .register-link, .company-logo, .admin-link {
-    list-style-type:none;
-    float: right;
-    text-align: center;   
-}
-
-#menulist {
-    background-color: #ffffff;
-    width: 100%;
-    float: right;
-    padding-top: 20px;
-}
-
-#main-logo {
-    margin-top: -49px;
-    padding-bottom: 10px;
-    padding-left: 45px;    
-    
-}
-
-nav {
-    width: 100%;
-    height: 35px;
-    background-color: #ffffff;
-    padding-top: 15px;
-    text-align: center;
-    border-top:1px solid #E1E3DF;
-    box-shadow: 0 4px 2px -2px gray;
-}
-
-li {
-	float:left;
-    list-style-type:none;
-    text-align: left;
-}
-
-.register-link-bar{
-    font-size:48px;
-    float:right;
-    display: list-item;
-    list-style-type:none;
-    text-align: left;
-    color: dimgrey;
-    margin-top:-25px;
-}
-
-.Login-link a, .register-link a, .shoppingcart-link a, .admin-link a {
-    text-decoration: none;
-    color: #34A8C4; 
-}
-
-.Login-link a {
-    border: 0.5px solid #34A8C4;
-    padding: 10px;
-}
-
-.Login-link a:hover {
-    border: 0.5px solid #34A8C4;
-    color: #051114;
-    background-color: #C3E6EF;
-}
-
-.register-link a:hover, .admin-link a:hover {
-    text-decoration: underline;
-}
-
-i {
-    color: orange;
-}
-
-.shoppingcart-link i {
-    color: black;
-}
-
-.innernav a {
-    text-decoration: none;
-    color: black;
-    font-size:14px;
-}
-
-.innernav a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-#foot-empty {
-    color : #F5F5F1; /* make text invisible (blend in with background)*/
-}
-
-footer {
-    width: 100%;
-    background-color: #F5F5F1; /*#F5F5F1*/
-
-}
-
-#footer-logo {
-	background-color: #F5F5F1; 
-    padding-top: 10px;
-    padding-left: 10px;
-}
-
-#right-footer {
-    background-color:#F5F5F1;
-}
-
-/* sitemap right footer style */
-.sitemap {
-    background-color:#F5F5F1;
-    float: right;
-    text-align: right;
-    padding: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    list-style-type:none;
-}
-
-.sitemap ul li a {
-    color: #ff9933; 
-	font-size: 10pt;
-	text-transform: uppercase;
-}
-
-.sitemap ul li a:hover {
-    text-decoration: underline;
-}
-
-.sitemap ul {
-	list-style-type: none;
-}
-
-.sitemap-subhead, .sitemap-head a {
-	color: #ff9933;
-	font-weight: bold;
-	font-size: 11pt;
-	text-transform: uppercase;
-	clear: both;
-}
-
-#lowerfooter-validator {
-	clear: both;
-    text-align:center;
-    
-}
-
-p.info-footer {
-    float:right;
-    text-align: left;
-	font-size: small;
-    clear:both;
-    padding-right: 40px;
-}
-
-p.footer-logo-img {
-    padding-left: 50px;
-}
-
-.validate {
-    font-size:small;
-    color: black;
-}
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-}
 
 /* ====== default page styles ====== */
 
 /* ====== product page styles ====== */
 
 /* ====== contact page styles ====== */
+
+.section-panel, .head-title {
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+.userdetailform, .contact-details {
+  margin-left: 2%;
+  margin-right: 2%;
+  display: block;
+}
+
+.usercontactform h3, .contact-details h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.usercontactform {
+  float:left;
+  text-align: left;
+}  
+
+.userdetailform input {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  font-size: 18px;
+  width: 100%;
+  background: #eeeeee;
+}
+
+.userdetailform .contact-input {
+  height: 35px;
+}
+
+
+.contact-label {
+	font-family: sans-serif;
+	margin-bottom: 6px;
+    display:block;
+    font-size: 18px;
+}
+
+.userdetailform .message-input {
+  height: 200px;
+  font-size: 18px;
+  background: #eeeeee;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+
+
+.lit-panel {
+    display: block;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    color: #ff0000;
+}
+
+
+.contact-details {
+  float: right;
+  text-align: left;
+}
+
+.contact-details div {
+  color: black;
+  font-family: sans-serif; 
+  border-left: 2px solid #ff6600;
+  border-right: 2px solid #ff6600;
+  background-color: #ffd1b3
+  
+}
+
+.contact-details div p {
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 18px;
+  text-align: center;
+}
+
+#map {
+    float: left;
+    width: 1000px;        
+    height: 500px;
+    border: solid;
+}
 
 
 

@@ -2,18 +2,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb">
 <head runat="server">
     <title>Quill &amp; Inks </title>
     <meta charset="utf-8" />
     <!-- stylesheets 960 grid layout, MQ & CSS Reset-->
-    <link href="CSS/min/960_12_col.css" rel="stylesheet" />
-    <link href="CSS/min/reset.css" rel="stylesheet" />
-    <link href="CSS/min/text.css" rel="stylesheet" />
-    <link href="CSS/stylesheet.css" rel="stylesheet" />
-    <link href="CSS/min/mediaqueries-responsive.css" rel="stylesheet" />
+    <link href="CSS/min/960_12_col.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/min/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/min/text.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/masterpage.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/min/mediaqueries-responsive.css" rel="stylesheet" type="text/css"/>
     <!--external stylesheets-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"/>
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- bxSlider Javascript file -->
@@ -43,7 +44,7 @@
                 </div>
                 <!-- end menulist for admin/cart/login/register-->
                 <div id="main-logo" class="grid_1">
-                    <a href="~/default.aspx" runat="server"><img src="/Images/QuillInks-logo.png" alt="QuillInks Logo" width="80" height="30" /></a>
+                    <a href="~/default.aspx" runat="server"><img src="/Images/QuillInks-logo.png" alt="This is the website logo for Quill & Inks." width="80" height="30" /></a>
                 </div>
                 <!-- end logo -->
             </div>
@@ -64,7 +65,7 @@
             <footer class="grid_12">
                 <div id="footer-logo" class="grid_3">
                     <p class="footer-logo-img">
-                        <img src="/Images/QuillInks-logo.png" alt="QuillInks Logo" width="154" height="44" /></p>
+                        <img src="/Images/QuillInks-logo.png" alt="This is the website logo for Quill & Inks." width="154" height="44" /></p>
                 </div>
                 <!-- end left footer logo-->
 
