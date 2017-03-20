@@ -68,7 +68,7 @@
                     <h3> Find Us Here! </h3>
                     <div id="map">
                     </div>
-                    <!-- if JS is disabled -->
+                    <!-- if JS is disabled, fix this part!!!!-->
                     <!--<img width="1000" height="750" src="https://maps.googleapis.com/maps/api/staticmap?center=Laksamana+College+of+Business,+Bandar+Seri+Begawan&zoom=18&scale=2&size=600x300&maptype=roadmap&format=jpg&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:We+are+here%7CLaksamana+College+of+Business,+Bandar+Seri+Begawan" alt="Map of Laksamana College of Business at Plaza Abdul Razak, Jalan Laksamana Abdul Razak, Bandar Seri Begawan" />-->
                     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDVhNKCZTY5wLai8clTTqj7c97DaNnR8Sk"></script>
                     <script src="Scripts/googlemaps.js"></script>
