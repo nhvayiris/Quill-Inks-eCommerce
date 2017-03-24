@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87C1EA82-D114-4DB4-8A92-89B890EF4631}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>assignment_draft</RootNamespace>
+    <AssemblyName>assignment-draft</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\addproductcategory.aspx" />
+    <Content Include="Admin\addproducts.aspx" />
+    <Content Include="Admin\admin-defaultpage.aspx" />
+    <Content Include="Admin\uploadimage.aspx" />
+    <Content Include="contact.aspx" />
+    <Content Include="CSS\home.css" />
+    <Content Include="CSS\min\960_12_col.css" />
+    <Content Include="CSS\masterpage.css" />
+    <Content Include="CSS\min\reset.css" />
+    <Content Include="CSS\min\mediaqueries-responsive.css" />
+    <Content Include="CSS\min\text.css" />
+    <Content Include="CSS\pages-specific.css" />
+    <Content Include="CSS\stylesheet.css" />
+    <Content Include="default.aspx" />
+    <Content Include="Images\product-accessories\black-leatherbond.jpg" />
+    <Content Include="Images\product-accessories\black-leatherwallet.jpg" />
+    <Content Include="Images\product-accessories\black-memo.jpg" />
+    <Content Include="Images\product-accessories\black-mug.jpg" />
+    <Content Include="Images\product-accessories\black-pencilcase.jpg" />
+    <Content Include="Images\product-accessories\mint-clipboard.jpg" />
+    <Content Include="Images\product-accessories\mint-memo.jpg" />
+    <Content Include="Images\product-accessories\mint-note.jpg" />
+    <Content Include="Images\product-accessories\mint-notebook.jpg" />
+    <Content Include="Images\product-accessories\paper-goldkit.jpg" />
+    <Content Include="Images\product-accessories\paper-memonote.jpg" />
+    <Content Include="Images\product-accessories\paper-scrapbookkit.jpg" />
+    <Content Include="Images\product-accessories\paper-sticker-kit.jpg" />
+    <Content Include="Images\product-accessories\paper-sticker.jpg" />
+    <Content Include="Images\product-accessories\paper-stickerdecal-kit.jpg" />
+    <Content Include="Images\product-accessories\paper-washitape.jpg" />
+    <Content Include="Images\product-accessories\silver-cupholder.jpg" />
+    <Content Include="Images\product-accessories\silver-paperclips.jpg" />
+    <Content Include="Images\product-accessories\silver-puncher.jpg" />
+    <Content Include="Images\product-accessories\silver-stapler.jpg" />
+    <Content Include="Images\product-accessories\silver-tapedispenser.jpg" />
+    <Content Include="Images\product-accessories\silver-tray.jpg" />
+    <Content Include="Images\product-accessories\gold-cupholder.jpg" />
+    <Content Include="Images\product-display\black-leather.jpg" />
+    <Content Include="Images\product-display\gold-leather.jpg" />
+    <Content Include="Images\product-accessories\gold-puncher.jpg" />
+    <Content Include="Images\product-accessories\gold-stapler.jpg" />
+    <Content Include="Images\product-accessories\gold-tapedispenser.jpg" />
+    <Content Include="Images\product-display\mintpolka-leather.jpg" />
+    <Content Include="Images\product-hover\black-leather-hover.jpg" />
+    <Content Include="Images\product-hover\copper leather-hover.jpg" />
+    <Content Include="Images\product-display\copper-leather.jpg" />
+    <Content Include="Images\product-hover\gold-leather-hover.jpg" />
+    <Content Include="Images\product-hover\met-you-leather-hover.jpg" />
+    <Content Include="Images\product-display\met-you-leather.jpg" />
+    <Content Include="Images\product-accessories\copper-cleartray.jpg" />
+    <Content Include="Images\product-accessories\copper-cupholder.jpg" />
+    <Content Include="Images\product-accessories\copper-puncher.jpg" />
+    <Content Include="Images\product-accessories\copper-stapler.jpg" />
+    <Content Include="Images\product-accessories\copper-tray.jpg" />
+    <Content Include="Images\product-accessories\copper-magazine.jpg" />
+    <Content Include="Images\product-hover\black-diary-hover.jpg" />
+    <Content Include="Images\product-display\black-diary.jpg" />
+    <Content Include="Images\product-hover\fruits-diary-hover.jpg" />
+    <Content Include="Images\product-display\fruits-diary.jpg" />
+    <Content Include="Images\product-hover\mintpolka-leather-hover.jpg" />
+    <Content Include="Images\product-hover\pink-diary-hover.jpg" />
+    <Content Include="Images\product-display\pink-diary.jpg" />
+    <Content Include="Images\product-hover\17-diary-hover.jpg" />
+    <Content Include="Images\product-display\17-diary.jpg" />
+    <Content Include="Images\product-display\bronze-diary.jpg" />
+    <Content Include="Images\product-display\silver-diary.jpg" />
+    <Content Include="Images\product-hover\bronze-diary-hover.jpg" />
+    <Content Include="Images\product-hover\silver-diary-hover.jpg" />
+    <Content Include="Images\QuillInks-logo.png" />
+    <Content Include="Images\salesbanner\Sale-Banner-A.jpg" />
+    <Content Include="Images\salesbanner\Sale-Banner-B.jpg" />
+    <Content Include="Images\salesbanner\Sale-Banner-C.jpg" />
+    <Content Include="Images\product-hover\silver-leather-hover.jpg" />
+    <Content Include="Images\product-display\silver-leather.jpg" />
+    <Content Include="App_Data\qiwebModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>qiwebModel.edmx</DependentUpon>
+      <LastGenOutput>qiwebModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_Data\qiwebModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>qiwebModel.edmx</DependentUpon>
+      <LastGenOutput>qiwebModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\uploadedimages\10.jpg" />
+    <Content Include="Images\uploadedimages\11.jpg" />
+    <Content Include="Images\uploadedimages\12.jpg" />
+    <Content Include="Images\uploadedimages\13.jpg" />
+    <Content Include="Images\uploadedimages\14.jpg" />
+    <Content Include="Images\uploadedimages\15.jpg" />
+    <Content Include="Images\uploadedimages\16.jpg" />
+    <Content Include="Images\uploadedimages\17.jpg" />
+    <Content Include="Images\uploadedimages\18.jpg" />
+    <Content Include="Images\uploadedimages\19.jpg" />
+    <Content Include="Images\uploadedimages\2.jpg" />
+    <Content Include="Images\uploadedimages\20.jpg" />
+    <Content Include="Images\uploadedimages\21.jpg" />
+    <Content Include="Images\uploadedimages\22.jpg" />
+    <Content Include="Images\uploadedimages\23.jpg" />
+    <Content Include="Images\uploadedimages\24.jpg" />
+    <Content Include="Images\uploadedimages\25.jpg" />
+    <Content Include="Images\uploadedimages\26.jpg" />
+    <Content Include="Images\uploadedimages\27.jpg" />
+    <Content Include="Images\uploadedimages\28.jpg" />
+    <Content Include="Images\uploadedimages\29.jpg" />
+    <Content Include="Images\uploadedimages\3.jpg" />
+    <Content Include="Images\uploadedimages\30.jpg" />
+    <Content Include="Images\uploadedimages\31.jpg" />
+    <Content Include="Images\uploadedimages\32.jpg" />
+    <Content Include="Images\uploadedimages\33.jpg" />
+    <Content Include="Images\uploadedimages\34.jpg" />
+    <Content Include="Images\uploadedimages\35.jpg" />
+    <Content Include="Images\uploadedimages\36.jpg" />
+    <Content Include="Images\uploadedimages\37.jpg" />
+    <Content Include="Images\uploadedimages\38.jpg" />
+    <Content Include="Images\uploadedimages\39.jpg" />
+    <Content Include="Images\uploadedimages\4.jpg" />
+    <Content Include="Images\uploadedimages\40.jpg" />
+    <Content Include="Images\uploadedimages\41.jpg" />
+    <Content Include="Images\uploadedimages\42.jpg" />
+    <Content Include="Images\uploadedimages\43.jpg" />
+    <Content Include="Images\uploadedimages\44.jpg" />
+    <Content Include="Images\uploadedimages\45.jpg" />
+    <Content Include="Images\uploadedimages\5.jpg" />
+    <Content Include="Images\uploadedimages\6.jpg" />
+    <Content Include="Images\uploadedimages\7.jpg" />
+    <Content Include="Images\uploadedimages\8.jpg" />
+    <Content Include="Images\uploadedimages\9.jpg" />
+    <Content Include="product-display.aspx" />
+    <Content Include="Scripts\googlemaps.js" />
+    <Content Include="JS\jquery.bxslider\bxSlider.js" />
+    <Content Include="JS\jquery.bxslider\images\bx_loader.gif" />
+    <Content Include="JS\jquery.bxslider\images\controls.png" />
+    <Content Include="JS\jquery.bxslider\jquery.bxslider.css" />
+    <Content Include="JS\jquery.bxslider\jquery.bxslider.js" />
+    <Content Include="JS\jquery.bxslider\jquery.bxslider.min.js" />
+    <Content Include="JS\jquery.bxslider\plugins\jquery.easing.1.3.js" />
+    <Content Include="JS\jquery.bxslider\plugins\jquery.fitvids.js" />
+    <Content Include="packages.config" />
+    <Content Include="JS\jquery.bxslider\bower.json" />
+    <Content Include="JS\jquery.bxslider\readme.md" />
+    <Content Include="product.aspx" />
+    <EntityDeploy Include="App_Data\qiwebModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>qiwebModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Data\qiwebModel.edmx.diagram">
+      <DependentUpon>qiwebModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="site.master" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\addproductcategory.aspx.cs">
+      <DependentUpon>addproductcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\addproductcategory.aspx.designer.cs">
+      <DependentUpon>addproductcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\addproducts.aspx.cs">
+      <DependentUpon>addproducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\addproducts.aspx.designer.cs">
+      <DependentUpon>addproducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin-defaultpage.aspx.cs">
+      <DependentUpon>admin-defaultpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin-defaultpage.aspx.designer.cs">
+      <DependentUpon>admin-defaultpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product.cs" />
+    <Compile Include="Admin\uploadimage.aspx.cs">
+      <DependentUpon>uploadimage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\uploadimage.aspx.designer.cs">
+      <DependentUpon>uploadimage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="product-display.aspx.cs">
+      <DependentUpon>product-display.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product-display.aspx.designer.cs">
+      <DependentUpon>product-display.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Data\qiwebModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qiwebModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\qiwebModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qiwebModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\qiwebModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qiwebModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="site.master.cs">
+      <DependentUpon>site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="site.master.designer.cs">
+      <DependentUpon>site.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\tb_categories.cs">
+      <DependentUpon>qiwebModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\tb_images.cs">
+      <DependentUpon>qiwebModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\tb_products.cs">
+      <DependentUpon>qiwebModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSS\global\" />
+    <Folder Include="Images\products\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62161</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62161/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
