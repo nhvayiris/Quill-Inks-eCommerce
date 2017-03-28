@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\eyrah\OneDrive\Documents\GitHub\1525603_Nadherah-Hazwannee-Assignment\1525603_CO5027_assignment\App_Data\qiwebModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\eyrah\OneDrive\Documents\GitHub\1525603_Nadherah-Hazwannee-Assignment\1525603_CO5027_assignment\qiwebmodel-1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

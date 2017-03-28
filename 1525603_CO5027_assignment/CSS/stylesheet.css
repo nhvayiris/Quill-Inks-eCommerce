@@ -4,13 +4,96 @@
 
 /* ====== default page styles ====== */
 
+#container_home {
+    display: block;
+    margin: 0 auto;
+    font-size: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    font-family: 'Scope One', serif;
+}
+
+h2.welcome-head {
+    color: #ff8000;
+    text-align:center;
+}
+
+h2.welcome-head-section, h3.welcome-head-section {
+    color: #ff8000;
+    text-align:center;
+    text-decoration:underline;
+    font-weight: 900;
+}
+
+.contentpanel {
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+.contents-showcase {
+
+  overflow: hidden;
+  text-align: center;
+}
+
+.contents-showcase .planners {
+  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  display: inline-block;
+  position: relative;
+  border-radius: 5px;
+  width: 300px;
+  height: 300px;
+  margin: 2%;
+  -webkit-transition: -webkit-filter 1s;
+  z-index: 2;
+}
+
+.contents-showcase .filo {
+  width: 100%;
+  height: 100%;
+}
+
+.product-display {
+    list-style-type: none;
+    display: inline-block;
+  position: relative;
+  margin: 0.5%;
+}
+
+.link-prodpage {
+    background: #ccc none repeat scroll 0 0;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    height: auto;
+    left: 0px;
+    margin-top: 4px;
+    padding: 7px 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+
 /* ====== product page styles ====== */
 
 /* ====== contact page styles ====== */
 
 .section-panel, .head-title {
     margin-left: 50px;
-    margin-top: 150px;
+    margin-top: 300px;
+
 }
 
 .userdetailform, .contact-details {
@@ -54,12 +137,13 @@
   font-size: 18px;
   background: #eeeeee;
   width: 100%;
+  color: #ff6600;
   font-family: sans-serif;
 }
 
 
 
-.lit-panel {
+.lit-panel, #litSuccess, #litfailed {
     display: block;
     margin-bottom: 10px;
     font-family: sans-serif;
@@ -88,13 +172,25 @@
   text-align: center;
 }
 
-#map {
-    float: left;
-    width: 1000px;        
-    height: 500px;
-    border: solid;
+.googlemapapi {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    overflow: hidden;
 }
 
+#map {
+    float: left;
+    width: 100%;        
+    height: 500px;
+}
+
+#staticmap {
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 /* ====== login/register page styles ====== */

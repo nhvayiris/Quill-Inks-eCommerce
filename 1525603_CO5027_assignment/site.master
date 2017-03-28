@@ -7,14 +7,20 @@
     <title>Quill &amp; Inks </title>
     <meta charset="utf-8" />
     <!-- stylesheets 960 grid layout, MQ & CSS Reset-->
-    <link href="CSS/min/960_12_col.css" rel="stylesheet" type="text/css"/>
-    <link href="CSS/min/reset.css" rel="stylesheet" type="text/css"/>
-    <link href="CSS/min/text.css" rel="stylesheet" type="text/css"/>
-    <link href="CSS/stylesheet.css" rel="stylesheet" type="text/css"/>
-    <link href="CSS/masterpage.css" rel="stylesheet" type="text/css"/>
-    <link href="CSS/min/mediaqueries-responsive.css" rel="stylesheet" type="text/css"/>
+    <link href="CSS/min/960_12_col.css" rel="stylesheet" type="text/css" />
+    <!-- (Smith) -->
+    <link href="CSS/min/reset.css" rel="stylesheet" type="text/css" />
+    <!-- (Smith) -->
+    <link href="CSS/min/text.css" rel="stylesheet" type="text/css" />
+    <!-- (Smith) -->
+    <link href="CSS/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/masterpage.css" rel="stylesheet" type="text/css" />
+    <link href="CSS/min/mediaqueries-responsive.css" rel="stylesheet" type="text/css" />
+    <!-- ("Build A Responsive Design Using 960 Grid — Sitepoint") -->
     <!--external stylesheets-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" /><!-- (Gandy) -->
+    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet"/><!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
+    <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" /><!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <!-- bxSlider Javascript file -->
@@ -22,7 +28,7 @@
     <!-- bxSlider CSS file -->
     <link href="JS/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
     <script src="JS/jquery.bxslider/bxSlider.js"></script>
-    
+
     <asp:ContentPlaceHolder ID="headContentPlaceholder" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -32,28 +38,20 @@
             <header id="nav-head" class="grid_12"></header>
             <!--end header -->
             <div id="container-logo-menu" class="grid_12">
-                <div id="menulist" class="grid_11">
-                    <ul id="menu" class="grid_11">
-                        <li class="admin-link"><a href="Admin/Default.aspx" runat="server">Admin</a></li>
-                        <li class="shoppingcart-link"><em class="fa fa-shopping-cart fa-2x" aria-hidden="true"></em></li>
-                        <li class="register-link-bar">|</li>
-                        <li></li>
-                        <li class="Login-link">Log In</li>
-                        <li class="register-link">Register</li>
-                    </ul>
-                </div>
-                <!-- end menulist for admin/cart/login/register-->
-                <div id="main-logo" class="grid_1">
-                    <a href="~/default.aspx" runat="server"><img src="/Images/QuillInks-logo.png" alt="This is the website logo for Quill & Inks." width="80" height="30" /></a>
+                <div id="main-logo">
+                    <a href="~/default.aspx" runat="server">
+                        <img class="main-logo" src="/Images/500_Logo.png" alt="Clickable link to go back to home page." width="400" height="150" /></a>
                 </div>
                 <!-- end logo -->
             </div>
 
-            <nav class="grid_12">
+            <nav id="nav-stroke" class="grid_12 clearfix">
                 <ul>
-                    <li class="innernav"><a href="~/default.aspx" runat="server"><em class="fa fa-home" aria-hidden="true"></em>Home</a></li>
-                    <li class="innernav"><a href="~/product.aspx" runat="server"><em class="fa fa-pencil" aria-hidden="true"></em>Products</a></li>                   
-                    <li class="innernav"><a href="~/contact.aspx" runat="server"><em class="fa fa-envelope" aria-hidden="true"></em>Contacts</a></li>
+                    <li class="innernav"><a href="~/default.aspx" runat="server">Home</a></li>
+                    <li class="innernav"><a href="~/product.aspx" runat="server">Products</a></li>
+                    <li class="innernav"><a href="~/contact.aspx" runat="server">Contacts</a></li>
+                    <li class="innernav"><a href="~/login.aspx" runat="server">Log In</a></li>
+                    <li class="faicon"><a href="#"><em class="fa fa-shopping-cart fa-3x" aria-hidden="true"></em></a></li>
                 </ul>
             </nav>
             <!--end main nav -->
@@ -61,10 +59,12 @@
             <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
 
-            <footer class="grid_12">
+            <section class="footer-panel grid_12">
+                <footer class="grid_12">
                 <div id="footer-logo" class="grid_3">
                     <p class="footer-logo-img">
-                        <img src="/Images/QuillInks-logo.png" alt="This is the website logo for Quill & Inks." width="154" height="44" /></p>
+                        <img src="/Images/500_Logo.png" alt="This is the website logo for Quill & Inks." width="150" height="60" />
+                    </p>
                 </div>
                 <!-- end left footer logo-->
 
@@ -73,21 +73,21 @@
                         <ul>
                             <li class="sitemap-head">Admin</li>
                             <li class="sitemap-subhead"><a href="Admin/admin-defaultpage.aspx">Manage</a></li>
-                            
+
                         </ul>
                     </div>
 
                     <div class="sitemap">
                         <ul>
                             <li class="sitemap-head">Customer</li>
-                            <li class="sitemap-subhead"><a href="Login.html">Login</a></li>
-                            <li class="sitemap-subhead"><a href="members/cart.html">My Cart</a></li>
+                            <li class="sitemap-subhead"><a href="#">Login</a></li>
+                            <li class="sitemap-subhead"><a href="#">My Cart</a></li>
                         </ul>
                     </div>
 
                     <div class="sitemap">
-                        <ul>                            
-                            <li class="sitemap-head"><a href="~/contact.aspx" runat="server" >Contacts</a></li>
+                        <ul>
+                            <li class="sitemap-head"><a href="~/contact.aspx" runat="server">Contacts</a></li>
                         </ul>
                     </div>
 
@@ -113,6 +113,8 @@
                 <p class="info-footer">Copyright &copy; 2017 QuillInks | 1525603</p>
             </div>
             <!-- end bottom footer (validation + copyright) -->
+            </section>
+            
         </div>
         <!-- end container -->
 

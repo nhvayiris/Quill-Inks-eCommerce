@@ -13,6 +13,15 @@ namespace assignment_draft.Admin {
     public partial class uploadproduct {
         
         /// <summary>
+        /// imageFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload imageFileUpload;
+        
+        /// <summary>
         /// lblAltText control.
         /// </summary>
         /// <remarks>
@@ -31,31 +40,13 @@ namespace assignment_draft.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtAltText;
         
         /// <summary>
-        /// CurrentImg control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image CurrentImg;
-        
-        /// <summary>
-        /// imageFileUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload imageFileUpload;
-        
-        /// <summary>
-        /// btnUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnUpload;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// litResult control.
@@ -65,5 +56,14 @@ namespace assignment_draft.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litResult;
+        
+        /// <summary>
+        /// CurrentImg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image CurrentImg;
     }
 }

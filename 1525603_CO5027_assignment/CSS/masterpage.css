@@ -1,140 +1,125 @@
 ﻿@charset "UTF-8";
 body {
     background-color:#F5F5F1;
+    font-family: 'Scope One', serif;
 }
 
 #container{
     background-color:#F5F5F1;
 }
 
-#container-logo-menu {
-    margin-bottom: -1px;
-}
 
 #nav-head {
     background-color: #ffffff;
     max-width: 100%;
 }
 
-.shoppingcart-link, .Login-link, .register-link, .company-logo, .admin-link {
-    list-style-type:none;
-    float: right;
-    text-align: center;   
-}
 
-#menulist {
-    background-color: #ffffff;
-    width: 100%;
-    float: right;
-    padding-top: 20px;
-}
-
-#main-logo {
-    margin-top: -49px;
+#container-logo-menu #main-logo {
+    margin-top: 15px;
     padding-bottom: 10px;
-    padding-left: 45px;    
-    
-}
-
-nav {
-    width: 100%;
-    height: 35px;
-    background-color: #ffffff;
-    padding-top: 15px;
     text-align: center;
-    border-top:1px solid #E1E3DF;
-    box-shadow: 0 4px 2px -2px gray;
 }
 
-li {
-	float:left;
-    list-style-type:none;
-    text-align: left;
+/* navigation */
+nav {
+  background: #fff;
+  box-shadow: 0px 5px 0px #ff8000;
 }
 
-.register-link-bar{
-    font-size:48px;
-    float:right;
-    display: list-item;
-    list-style-type:none;
-    text-align: left;
-    color: dimgrey;
-    margin-top:-25px;
+nav ul {
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+}
+nav ul li {
+  display: inline-block;
 }
 
-.Login-link a, .register-link a, .shoppingcart-link a, .admin-link a {
-    text-decoration: none;
-    color: #34A8C4; 
+nav ul li a {
+  display: block;
+  padding: 2px;
+  text-decoration: none;
+  color: #ff8000;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 5px;
 }
 
-.Login-link a {
-    border: 0.5px solid #34A8C4;
-    padding: 10px;
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
 }
 
-.Login-link a:hover {
-    border: 0.5px solid #34A8C4;
-    color: #051114;
-    background-color: #C3E6EF;
+#nav-stroke ul li a {
+  position: relative;
+}
+#nav-stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+#nav-stroke ul li a:hover:after {
+  width: 100%;
 }
 
-.register-link a:hover, .admin-link a:hover {
-    text-decoration: underline;
-}
-
-i {
-    color: orange;
-}
-
-.shoppingcart-link i {
-    color: black;
-}
-
-.innernav a {
-    text-decoration: none;
-    color: black;
-    font-size:14px;
-}
-
-.innernav a:hover {
-    text-decoration: underline;
+em, .faicon {
+    margin-top: 10px;
 }
 
 /* Footer */
+
+.footer-panel {
+    background-color: #fff;
+    font-size: 18px;
+}
+
 #foot-empty {
-    color : #F5F5F1; /* make text invisible (blend in with background)*/
+    color : #fff; 
 }
 
 footer {
     width: 100%;
-    background-color: #F5F5F1; /*#F5F5F1*/
+    background-color: #fff; /*#F5F5F1*/
 
 }
 
 #footer-logo {
-	background-color: #F5F5F1; 
+	background-color: #fff; 
     padding-top: 10px;
     padding-left: 10px;
 }
 
 #right-footer {
-    background-color:#F5F5F1;
+    background-color:#fff;
 }
 
 /* sitemap right footer style */
 .sitemap {
-    background-color:#F5F5F1;
+    background-color:#fff;
     float: right;
     text-align: right;
     padding: 10px;
     text-transform: uppercase;
+    font-size: 18px;
     font-weight: bold;
     list-style-type:none;
 }
 
 .sitemap ul li a {
     color: #ff9933; 
-	font-size: 10pt;
+	font-size: 12pt;
 	text-transform: uppercase;
 }
 
@@ -173,7 +158,7 @@ p.footer-logo-img {
 }
 
 .validate {
-    font-size:small;
+    font-size:16px;
     color: black;
 }
 
@@ -182,3 +167,5 @@ table, th, td {
     border-collapse: collapse;
     width: 100%;
 }
+
+

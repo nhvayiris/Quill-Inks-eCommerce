@@ -14,7 +14,7 @@ namespace assignment_draft.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            db_1525603_qiwebEntities db = new db_1525603_qiwebEntities();
+            db_qiwebentity db = new db_qiwebentity();
             //located the image (normally we would find a specific image)
             var imageData = db.tb_images.FirstOrDefault();
             //build the filename          
@@ -41,7 +41,7 @@ namespace assignment_draft.Admin
                 int width = img.Width;
                 int height = img.Height;
                 //save the image data
-                db_1525603_qiwebEntities db = new db_1525603_qiwebEntities();
+                db_qiwebentity db = new db_qiwebentity();
                 tb_images imageData = new tb_images();
                 imageData.AltText = txtAltText.Text;
                 imageData.Width = width;

@@ -81,15 +81,15 @@
     <Content Include="Admin\admin-defaultpage.aspx" />
     <Content Include="Admin\uploadimage.aspx" />
     <Content Include="contact.aspx" />
-    <Content Include="CSS\home.css" />
     <Content Include="CSS\min\960_12_col.css" />
     <Content Include="CSS\masterpage.css" />
     <Content Include="CSS\min\reset.css" />
     <Content Include="CSS\min\mediaqueries-responsive.css" />
     <Content Include="CSS\min\text.css" />
-    <Content Include="CSS\pages-specific.css" />
     <Content Include="CSS\stylesheet.css" />
     <Content Include="default.aspx" />
+    <Content Include="Images\500_Logo.png" />
+    <Content Include="Images\mapmarker.png" />
     <Content Include="Images\product-accessories\black-leatherbond.jpg" />
     <Content Include="Images\product-accessories\black-leatherwallet.jpg" />
     <Content Include="Images\product-accessories\black-memo.jpg" />
@@ -119,11 +119,11 @@
     <Content Include="Images\product-accessories\gold-stapler.jpg" />
     <Content Include="Images\product-accessories\gold-tapedispenser.jpg" />
     <Content Include="Images\product-display\mintpolka-leather.jpg" />
-    <Content Include="Images\product-hover\black-leather-hover.jpg" />
-    <Content Include="Images\product-hover\copper leather-hover.jpg" />
+    <Content Include="Images\product-hover\4.jpg" />
+    <Content Include="Images\product-hover\6.jpg" />
     <Content Include="Images\product-display\copper-leather.jpg" />
-    <Content Include="Images\product-hover\gold-leather-hover.jpg" />
-    <Content Include="Images\product-hover\met-you-leather-hover.jpg" />
+    <Content Include="Images\product-hover\8.jpg" />
+    <Content Include="Images\product-hover\9.jpg" />
     <Content Include="Images\product-display\met-you-leather.jpg" />
     <Content Include="Images\product-accessories\copper-cleartray.jpg" />
     <Content Include="Images\product-accessories\copper-cupholder.jpg" />
@@ -131,24 +131,24 @@
     <Content Include="Images\product-accessories\copper-stapler.jpg" />
     <Content Include="Images\product-accessories\copper-tray.jpg" />
     <Content Include="Images\product-accessories\copper-magazine.jpg" />
-    <Content Include="Images\product-hover\black-diary-hover.jpg" />
+    <Content Include="Images\product-hover\3.jpg" />
     <Content Include="Images\product-display\black-diary.jpg" />
-    <Content Include="Images\product-hover\fruits-diary-hover.jpg" />
+    <Content Include="Images\product-hover\7.jpg" />
     <Content Include="Images\product-display\fruits-diary.jpg" />
-    <Content Include="Images\product-hover\mintpolka-leather-hover.jpg" />
-    <Content Include="Images\product-hover\pink-diary-hover.jpg" />
+    <Content Include="Images\product-hover\10.jpg" />
+    <Content Include="Images\product-hover\11.jpg" />
     <Content Include="Images\product-display\pink-diary.jpg" />
-    <Content Include="Images\product-hover\17-diary-hover.jpg" />
+    <Content Include="Images\product-hover\2.jpg" />
     <Content Include="Images\product-display\17-diary.jpg" />
     <Content Include="Images\product-display\bronze-diary.jpg" />
     <Content Include="Images\product-display\silver-diary.jpg" />
-    <Content Include="Images\product-hover\bronze-diary-hover.jpg" />
-    <Content Include="Images\product-hover\silver-diary-hover.jpg" />
+    <Content Include="Images\product-hover\5.jpg" />
+    <Content Include="Images\product-hover\12.jpg" />
     <Content Include="Images\QuillInks-logo.png" />
     <Content Include="Images\salesbanner\Sale-Banner-A.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-B.jpg" />
     <Content Include="Images\salesbanner\Sale-Banner-C.jpg" />
-    <Content Include="Images\product-hover\silver-leather-hover.jpg" />
+    <Content Include="Images\product-hover\13.jpg" />
     <Content Include="Images\product-display\silver-leather.jpg" />
     <Content Include="App_Data\qiwebModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -160,6 +160,7 @@
       <DependentUpon>qiwebModel.edmx</DependentUpon>
       <LastGenOutput>qiwebModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Images\staticmap.jpg" />
     <Content Include="Images\uploadedimages\10.jpg" />
     <Content Include="Images\uploadedimages\11.jpg" />
     <Content Include="Images\uploadedimages\12.jpg" />
@@ -204,8 +205,19 @@
     <Content Include="Images\uploadedimages\7.jpg" />
     <Content Include="Images\uploadedimages\8.jpg" />
     <Content Include="Images\uploadedimages\9.jpg" />
+    <Content Include="JS\dynamicmapload.js" />
     <Content Include="product-display.aspx" />
-    <Content Include="Scripts\googlemaps.js" />
+    <Content Include="qiwebmodel-1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>qiwebmodel-1.edmx</DependentUpon>
+      <LastGenOutput>qiwebmodel-1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="qiwebmodel-1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>qiwebmodel-1.edmx</DependentUpon>
+      <LastGenOutput>qiwebmodel-1.cs</LastGenOutput>
+    </Content>
+    <Content Include="JS\googlemaps.js" />
     <Content Include="JS\jquery.bxslider\bxSlider.js" />
     <Content Include="JS\jquery.bxslider\images\bx_loader.gif" />
     <Content Include="JS\jquery.bxslider\images\controls.png" />
@@ -224,6 +236,13 @@
     </EntityDeploy>
     <Content Include="App_Data\qiwebModel.edmx.diagram">
       <DependentUpon>qiwebModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="qiwebmodel-1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>qiwebmodel-1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="qiwebmodel-1.edmx.diagram">
+      <DependentUpon>qiwebmodel-1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -323,6 +342,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>qiwebModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="qiwebmodel-1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qiwebmodel-1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qiwebmodel-1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qiwebmodel-1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="qiwebmodel-1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qiwebmodel-1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="site.master.cs">
       <DependentUpon>site.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,6 +372,15 @@
     </Compile>
     <Compile Include="App_Data\tb_products.cs">
       <DependentUpon>qiwebModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_products.cs">
+      <DependentUpon>qiwebmodel-1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_categories.cs">
+      <DependentUpon>qiwebmodel-1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_images.cs">
+      <DependentUpon>qiwebmodel-1.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
