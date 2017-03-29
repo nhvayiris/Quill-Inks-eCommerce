@@ -13,21 +13,21 @@ namespace assignment_draft {
     public partial class product_display {
         
         /// <summary>
-        /// formview1 control.
+        /// fView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView formview1;
+        protected global::System.Web.UI.WebControls.FormView fView;
         
         /// <summary>
-        /// viewproductsds control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource viewproductsds;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

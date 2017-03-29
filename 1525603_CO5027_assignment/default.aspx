@@ -21,7 +21,7 @@
                          <li class="product-display">
                              <a href="<%# Eval("ProductId", "product-display.aspx?Id={0}") %>" class="planners">
                                  <img src="Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="300" height="300" alt="This is an image of a <%#Eval("AltText") %>" />
-                                 <img src="Images/product-hover/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="300" height="300" alt="This is the inside image of a <%#Eval("AltText") %>" />
+                                 <img src="Images/product-hover/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="hide" width="300" height="300" alt="This is the inside image of a <%#Eval("AltText") %>" />
                              </a>
                          </li>                         
                      </ItemTemplate>
@@ -34,6 +34,7 @@
                         
                      </SelectParameters>
                  </asp:SqlDataSource>
+          
                 
          </section>
   

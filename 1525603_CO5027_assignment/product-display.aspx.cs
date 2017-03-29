@@ -11,7 +11,11 @@ namespace assignment_draft
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string viewEntryIdString = Request.QueryString["Id"];
+            //int entryIden = int.Parse(viewEntryIdString);
 
+            db_qiwebentity db = new db_qiwebentity();
+            //var requestEntry = db.tbl_products.Single(p => p.ProductId == entryIden);
         }
     }
 }

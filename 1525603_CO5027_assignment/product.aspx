@@ -11,7 +11,10 @@
                      <HeaderTemplate><ul></HeaderTemplate>
                      <ItemTemplate>
                          <li class="product-display">
-                             <a href="<%# Eval("ProductId", "product-display.aspx?Id={0}") %>" class="planners"><img class="filo" src="Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>"  width="300" height="300" alt="This is an image of a <%#Eval("AltText") %>" /></a>
+                             <a href="<%# Eval("ProductId", "product-display.aspx?Id={0}") %>" class="planners">
+                                 <img src="Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="300" height="300" alt="This is an image of a <%#Eval("AltText") %>" />
+                                 <img src="Images/product-hover/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="hide" width="300" height="300" alt="This is the inside image of a <%#Eval("AltText") %>" />
+                             </a>
                          </li>
                      </ItemTemplate>
                      <FooterTemplate></ul></FooterTemplate>
