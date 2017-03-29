@@ -20,7 +20,7 @@
     <!--external stylesheets-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css" /><!-- (Gandy) -->
     <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet"/><!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
     <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" /><!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

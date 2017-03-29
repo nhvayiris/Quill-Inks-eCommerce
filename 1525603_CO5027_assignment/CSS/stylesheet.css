@@ -70,12 +70,12 @@ h2.welcome-head-section, h3.welcome-head-section {
     display: none;
 }
 
-.planners:hover img:first-child {
+a.planners:hover img:first-child {
     display:none;
     transition: 2s;
 }
 
-.planners:hover img:last-child {
+a.planners:hover img:last-child {
     display:inline-block;
     transition: 2s;
 }

@@ -58,6 +58,15 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.TextBox txtContactMail;
         
         /// <summary>
+        /// ValidEmailField control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidEmailField;
+        
+        /// <summary>
         /// ValidEmail control.
         /// </summary>
         /// <remarks>
@@ -137,14 +146,5 @@ namespace assignment_draft {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litSuccess;
-        
-        /// <summary>
-        /// litFailed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litFailed;
     }
 }

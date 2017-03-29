@@ -48,7 +48,7 @@ namespace assignment_draft
             }
             catch (Exception)
             {
-                litFailed.Text = "Your message was unsuccessfully send, please try again!";
+                
             }
         }
 

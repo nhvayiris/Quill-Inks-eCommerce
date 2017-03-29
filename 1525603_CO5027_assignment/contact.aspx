@@ -14,15 +14,16 @@
             <div class="usercontactform grid_12">
                 <div class="userdetailform grid_6">
                     <h3 class="welcome-head-section">Contact Us</h3>
-                    <asp:Label ID="lblContactName" runat="server" Text="Name: " AssociatedControlID="txtContactName" CssClass="contact-label"></asp:Label>
+                    <p class="requiredField">* indicates a required field (cannot be empty!)</p>
+                    <p class="requiredField">*<asp:Label ID="lblContactName" runat="server" Text="Name: " AssociatedControlID="txtContactName" CssClass="contact-label"></asp:Label></p>
                     <asp:TextBox ID="txtContactName" runat="server" class="contact-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidFieldName" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtContactName" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
-                    <asp:Label ID="lblContactMail" runat="server" Text="E-mail: " AssociatedControlID="txtContactMail" CssClass="contact-label"></asp:Label>
+                    <p class="requiredField">*<asp:Label ID="lblContactMail" runat="server" Text="E-mail: " AssociatedControlID="txtContactMail" CssClass="contact-label"></asp:Label></p>
                     <asp:TextBox ID="txtContactMail" runat="server" class="contact-input"></asp:TextBox>
-                    <asp:RegularExpressionValidator runat="server" ID="ValidEmail" SetFocusOnError="true" Text="Please enter a valid email address. Example: username@samplemail.com"
+                    <asp:RequiredFieldValidator ID="ValidEmailField" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtContactMail" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator><asp:RegularExpressionValidator runat="server" ID="ValidEmail" SetFocusOnError="true" Text="Please enter a valid email address. Example: username@samplemail.com"
                         ControlToValidate="txtContactMail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
                         ValidationGroup="save" CssClass="lit-panel" />
-                    <asp:Label ID="lblSubject" runat="server" Text="Subject: " AssociatedControlID="ddSubject" CssClass="contact-label"></asp:Label>
+                    <p class="requiredField">*<asp:Label ID="lblSubject" runat="server" Text="Subject: " AssociatedControlID="ddSubject" CssClass="contact-label"></asp:Label></p>
                     <asp:DropDownList ID="ddSubject" runat="server" class="dropdown-input">
                         <asp:ListItem>--Please Select an option--</asp:ListItem>
                         <asp:ListItem>Ask a question</asp:ListItem>
@@ -32,13 +33,15 @@
                         <asp:ListItem>Others</asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="ValidDD" runat="server" ErrorMessage="Please select a subject!" InitialValue="--Please Select an option--" ControlToValidate="ddSubject" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
-                    <asp:Label ID="lblMessageBox" runat="server" Text="Message: " AssociatedControlID="txtMessageBox" CssClass="contact-label"></asp:Label>
+                    <p class="requiredField">*<asp:Label ID="lblMessageBox" runat="server" Text="Message: " AssociatedControlID="txtMessageBox" CssClass="contact-label"></asp:Label></p>
                     <asp:TextBox ID="txtMessageBox" runat="server" TextMode="MultiLine" class="message-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidMessage" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtMessageBox" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
-                    <asp:Button ID="btnSend" runat="server" Text="Submit" OnClick="btnSend_Click" ValidationGroup="save" Width="150px" />
-                    <asp:Literal ID="litSuccess" runat="server"></asp:Literal>
-                    <asp:Literal ID="litFailed" runat="server"></asp:Literal>
+                    <asp:Button ID="btnSend" runat="server" Text="Submit"  ValidationGroup="save" OnClick="btnSend_Click" Width="150px" />
+                    
+                    <span><asp:Literal ID="litSuccess" runat="server"></asp:Literal></span>
+                    
                 </div>
+
                 <div class="contact-details grid_5">
                     <h3 class="welcome-head-section">Contact Information</h3>
                     <h4>Telephone: </h4>
@@ -53,7 +56,7 @@
                     </address>
                 </div>
                 <div class="googlemapapi grid_12">
-                    <h3>Find Us Here! </h3>
+                    <h3 class="welcome-head-section">Find Us Here! </h3>
                     <div id="map">
                         <img src="Images/staticmap.jpg" alt="Map of Laksamana College of Business at Plaza Abdul Razak, Jalan Laksamana Abdul Razak, Bandar Seri Begawan" id="staticmap" width="1000" height="500" />
                     </div>
@@ -63,6 +66,7 @@
             </div>
         </section>
     </main>
+
 
 
 
