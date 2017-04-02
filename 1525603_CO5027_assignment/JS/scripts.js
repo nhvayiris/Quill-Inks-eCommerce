@@ -1,4 +1,10 @@
-﻿var map;
+﻿/* ======================================================================== 
+                              Google Map Javascript
+                             Referenced from Google Maps API
+                  This javascript is used for dynamic mapload!
+   ======================================================================== */
+
+var map;
 function initialize() {
     var latlng = new google.maps.LatLng(4.885724, 114.931686);
     var myOptions = {
@@ -24,3 +30,4 @@ function initialize() {
     });
 }
 window.onload = initialize;
+

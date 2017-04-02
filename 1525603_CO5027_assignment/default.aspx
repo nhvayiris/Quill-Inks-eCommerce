@@ -7,11 +7,12 @@
              <h2 class="welcome-head"> “Life is what happens to us while we are making other plans.” ― Allen Saunders </h2>
              <div id="slider-sale-banner" class="grid_12">
                 <ul class="bxslider">
-                    <li><img src="Images/salesbanner/Sale-Banner-A.jpg" alt="Special Offer Sale Banner Starts From 15th October" width="723" height="209" /><!-- reference --></li>
-                    <li> <img src="Images/salesbanner/Sale-Banner-B.jpg" alt="Fantastic Sale Banner Limited Time Only Enjoy up to 50% Discount on Selected Items" width="723" height="209" /><!-- reference --></li>
-                    <li><img src="Images/salesbanner/Sale-Banner-C.jpg" alt="Limited time only Stock Clearance Sale Enjoy up to 50% discount from 2pm to 6pm" width="723" height="209" /><!-- reference --></li>
+                    <li><img src="Images/salesbanner/Sale-Banner-A.jpg" alt="Special Offer Sale Banner Starts From 15th October" width="900" height="209" /><!-- reference --></li>
+                    <li> <img src="Images/salesbanner/Sale-Banner-B.jpg" alt="Fantastic Sale Banner Limited Time Only Enjoy up to 50% Discount on Selected Items" width="900" height="209" /><!-- reference --></li>
+                    <li><img src="Images/salesbanner/Sale-Banner-C.jpg" alt="Limited time only Stock Clearance Sale Enjoy up to 50% discount from 2pm to 6pm" width="900" height="209" /><!-- reference --></li>
                 </ul>
-            </div>
+            </div><!-- end silder-sale-banner -->
+
          </section>
          <section class="contents-showcase grid_12">
                 <h2 class="welcome-head-section">Top Trending</h2>
@@ -36,7 +37,7 @@
                  </asp:SqlDataSource>
           
                 
-         </section>
+         </section><!-- end section showcase -->
   
         </div>
 </asp:Content>

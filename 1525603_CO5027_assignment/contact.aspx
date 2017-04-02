@@ -11,7 +11,9 @@
     <main class="main-content">
         <section class="contact-panel">
             <h2 class="head-title welcome-head">We'd love to hear from you!</h2>
+            
             <div class="usercontactform grid_12">
+
                 <div class="userdetailform grid_6">
                     <h3 class="welcome-head-section">Contact Us</h3>
                     <p class="requiredField">* indicates a required field (cannot be empty!)</p>
@@ -37,10 +39,8 @@
                     <asp:TextBox ID="txtMessageBox" runat="server" TextMode="MultiLine" class="message-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidMessage" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtMessageBox" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
                     <asp:Button ID="btnSend" runat="server" Text="Submit"  ValidationGroup="save" OnClick="btnSend_Click" Width="150px" />
-                    
                     <span><asp:Literal ID="litSuccess" runat="server"></asp:Literal></span>
-                    
-                </div>
+                </div><!-- end userdetailform -->
 
                 <div class="contact-details grid_5">
                     <h3 class="welcome-head-section">Contact Information</h3>
@@ -54,18 +54,23 @@
                         <p>Jalan Laksamana Abdul Razak</p>
                         <p>Bandar Seri Begawan</p>
                     </address>
-                </div>
+                </div><!-- end contact-details-->
+
+
                 <div class="googlemapapi grid_12">
                     <h3 class="welcome-head-section">Find Us Here! </h3>
                     <div id="map">
                         <img src="Images/staticmap.jpg" alt="Map of Laksamana College of Business at Plaza Abdul Razak, Jalan Laksamana Abdul Razak, Bandar Seri Begawan" id="staticmap" width="1000" height="500" />
                     </div>
-                    <script type="text/javascript" src="JS/googlemaps.js"></script>
+                    <script type="text/javascript" src="JS/scripts.js"></script>
                     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDVhNKCZTY5wLai8clTTqj7c97DaNnR8Sk"></script>
-                </div>
-            </div>
-        </section>
-    </main>
+                </div><!-- end googlemapapi -->
+
+            </div><!-- end usercontactform-->
+
+        </section><!-- end section -->
+
+    </main><!-- end main -->
 
 
 

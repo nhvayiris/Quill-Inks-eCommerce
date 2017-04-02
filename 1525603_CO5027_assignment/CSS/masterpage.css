@@ -1,7 +1,35 @@
 ﻿@charset "UTF-8";
-body {
+
+/*
+Website : Quill & Inks
+Description: Ecommerce website selling personal planner products
+ 
+colors used (cross-check reference)
+
+#F5F5F1
+#ffffff
+#ff8000
+#ff9933
+#834200
+#ff8f20
+#aaa
+
+checking accessibility for color contrast A|AA|AAA using:
+http://webaim.org/resources/contrastchecker/
+*/
+
+
+/* ==================================== */
+/* ====== This is the stylesheet ====== */
+/* ==== for Quill&Inks masterpage ===== */
+/* ==================================== */
+
+Html, body {
+    height: 100%;
     background-color:#F5F5F1;
     font-family: 'Scope One', serif;
+    min-width: 100%;  
+    width: 100%;
 }
 
 #container{
@@ -21,10 +49,14 @@ body {
     text-align: center;
 }
 
-/* navigation */
+/* ======================================= */
+/* ====== Navigation (desktop view) ====== */
+/* ======================================= */
+
 nav {
-  background: #fff;
-  box-shadow: 0px 5px 0px #ff8000;
+    padding-top:15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 0px #ff8000;
 }
 
 nav ul {
@@ -40,7 +72,7 @@ nav ul li a {
   display: block;
   padding: 2px;
   text-decoration: none;
-  color: #ff8000;
+  color: #834200;
   font-weight: 900;
   text-transform: uppercase;
   margin: 0 5px;
@@ -51,8 +83,8 @@ nav ul li a:after,
 nav ul li a:before {
   transition: all .5s;
 }
-nav ul li a:hover {
-  color: #555;
+nav ul li a:hover, nav ul li a:active  {
+  color: #ff8f20;
 }
 
 #nav-stroke ul li a {
@@ -74,11 +106,21 @@ nav ul li a:hover {
   width: 100%;
 }
 
-em, .faicon {
-    margin-top: 10px;
+a.cart {
+    background-image:url(Images/cart.png);
+    width: 32px;
+    height:32px;
 }
 
-/* Footer */
+a.cart:hover {
+    background-image:url(Images/cart-orange.png);
+    width: 32px;
+    height:32px;
+}
+
+/* =================================== */
+/* ====== Footer (desktop view) ====== */
+/* =================================== */
 
 .footer-panel {
     background-color: #fff;
@@ -105,7 +147,6 @@ footer {
     background-color:#fff;
 }
 
-/* sitemap right footer style */
 .sitemap {
     background-color:#fff;
     float: right;
@@ -148,7 +189,7 @@ footer {
 p.info-footer {
     float:right;
     text-align: left;
-	font-size: small;
+    font-size: small;
     clear:both;
     padding-right: 40px;
 }
@@ -167,5 +208,3 @@ table, th, td {
     border-collapse: collapse;
     width: 100%;
 }
-
-

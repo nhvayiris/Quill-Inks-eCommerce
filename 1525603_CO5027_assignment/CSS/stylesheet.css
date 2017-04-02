@@ -5,7 +5,9 @@ body {
     font-family: 'Scope One', serif;
 }
 
+/* ================================= */
 /* ====== default page styles ====== */
+/* ================================= */
 
 #container_home {
     display: block;
@@ -18,12 +20,12 @@ body {
 }
 
 h2.welcome-head {
-    color: #ff8000;
+    color: #834200;
     text-align:center;
 }
 
 h2.welcome-head-section, h3.welcome-head-section {
-    color: #ff8000;
+    color: #834200;
     text-align:center;
     text-decoration:underline;
     font-weight: 900;
@@ -43,48 +45,67 @@ h2.welcome-head-section, h3.welcome-head-section {
 
 .contents-showcase {
 
-  overflow: hidden;
-  text-align: center;
+   overflow: hidden;
+   text-align: center;
 }
 
 .contents-showcase .planners {
-  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-  display: inline-block;
-  position: relative;
-  border-radius: 5px;
-  width: 300px;
-  height: 300px;
-  margin: 2%;
-  -webkit-transition: -webkit-filter 1s;
-  z-index: 2;
+   -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+   -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+   display: inline-block;
+   position: relative;
+   border-radius: 5px;
+   width: 300px;
+   height: 300px;
+   margin: 2%;
+   -webkit-transition: -webkit-filter 1s;
+   z-index: 2;
 }
 
-.contents-showcase .filo {
-  width: 100%;
-  height: 100%;
+#display-sales-banner{
+    width:723px;
+	height:209px;
+	display: block;
+	overflow:hidden;
+	margin: auto;
 }
 
-.hide {
+.imageinfo{
+    width: 100%;
+    height: 30px;
+    display: block;
+    background: #d5d4d3;
+    z-index: 99;
+}
+
+h3.imageinfo{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 15px 0 0 20px;
+}
+
+img.hide {
     display: none;
 }
 
 a.planners:hover img:first-child {
     display:none;
-    transition: 2s;
+    
 }
 
 a.planners:hover img:last-child {
     display:inline-block;
-    transition: 2s;
+    
 }
 
-.product-display {
+li.product-display {
     list-style-type: none;
     display: inline-block;
-  position: relative;
-  margin: 0.5%;
+    position: relative;
+    margin: 0.5%;
 }
 
 .link-prodpage {
@@ -102,8 +123,9 @@ a.planners:hover img:last-child {
     width: 100%;
 }
 
-
+/* ================================= */
 /* ====== product page styles ====== */
+/* ================================= */
 
 .content-change {
     padding-top: 15px;
@@ -157,7 +179,9 @@ a.planners:hover img:last-child {
     max-width: 400px;
 }
 
+/* ================================= */
 /* ====== contact page styles ====== */
+/* ================================= */
 
 .section-panel, .head-title {
     margin-left: 50px;
@@ -166,102 +190,108 @@ a.planners:hover img:last-child {
 }
 
 .userdetailform, .contact-details {
-  margin-left: 2%;
-  margin-right: 2%;
-  display: block;
+   margin-left: 2%;
+   margin-right: 2%;
+   display: block;
 }
 
 .usercontactform h3, .contact-details h3 {
-  text-align: center;
-  text-decoration: underline;
+   text-align: center;
+   text-decoration: underline;
 }
 
 .usercontactform {
-  float:left;
-  text-align: left;
+   float:left;
+   text-align: left;
 }  
 
 .userdetailform input {
-  margin-top: 4px;
-  margin-bottom: 16px;
-  font-size: 18px;
-  width: 100%;
-  background: #eeeeee;
+   margin-top: 4px;
+   margin-bottom: 16px;
+   font-size: 18px;
+   width: 100%;
+   background: #eeeeee;
 }
 
 .userdetailform .contact-input {
-  height: 35px;
+   height: 35px;
 }
 
 
 .contact-label {
-	font-family: sans-serif;
-	margin-bottom: 6px;
-    display:block;
-    font-size: 18px;
+   font-family: sans-serif;
+   margin-bottom: 6px;
+   display:block;
+   font-size: 18px;
 }
 
 .userdetailform .message-input {
-  height: 200px;
-  font-size: 18px;
-  background: #eeeeee;
-  width: 100%;
-  color: #ff6600;
-  font-family: sans-serif;
+   height: 200px;
+   font-size: 18px;
+   background: #eeeeee;
+   width: 100%;
+   color: #ff6600;
+   font-family: sans-serif;
 }
 
 
 
 .lit-panel, #litSuccess, #litfailed {
-    display: block;
-    margin-bottom: 10px;
-    font-family: sans-serif;
-    color: #ff0000;
+   display: block;
+   margin-bottom: 10px;
+   font-family: sans-serif;
+   color: #ff0000;
 }
 
 
 .contact-details {
-  float: right;
-  text-align: left;
+   float: right;
+   text-align: left;
 }
 
 .contact-details div {
-  color: black;
-  font-family: sans-serif; 
-  border-left: 2px solid #ff6600;
-  border-right: 2px solid #ff6600;
-  background-color: #ffd1b3
+   color: black;
+   font-family: sans-serif; 
+   border-left: 2px solid #ff6600;
+   border-right: 2px solid #ff6600;
+   background-color: #ffd1b3
   
 }
 
 .contact-details div p {
-  margin-left: 15%;
-  margin-right: 15%;
-  font-size: 18px;
-  text-align: center;
+   margin-left: 15%;
+   margin-right: 15%;
+   font-size: 18px;
+   text-align: center;
 }
 
 .googlemapapi {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    overflow: hidden;
+   margin-left: auto;
+   margin-right: auto;
+   width: 90%;
+   overflow: hidden;
 }
 
 #map {
-    float: left;
-    width: 100%;        
-    height: 500px;
+   float: left;
+   width: 100%;        
+   height: 500px;
 }
 
 #staticmap {
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+   height: auto;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
 }
 
 
 /* ====== login/register page styles ====== */
 
 /* ====== payment/order page styles ====== */
+
+
+/* ================================= */
+/* ========= Mobile styles ========= */
+/* ================================= */
+
