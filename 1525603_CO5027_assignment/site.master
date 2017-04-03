@@ -11,41 +11,21 @@
     <meta name="description" content="Quill & Inks | Personal Planners Online Shop" />
 
     <!-- stylesheets 960 grid layout, MQ & CSS Reset-->
-
-    <link href="CSS/global/960_12_col.css" rel="stylesheet" type="text/css" />
-    <!-- (Smith) -->
-    <link href="CSS/global/reset.css" rel="stylesheet" type="text/css" />
-    <!-- (Smith) -->
-    <link href="CSS/global/text.css" rel="stylesheet" type="text/css" />
-    <!-- (Smith) -->
+    <link href="CSS/global/960_12_col.css" rel="stylesheet" type="text/css" /><!-- (Smith) -->
+    <link href="CSS/global/reset.css" rel="stylesheet" type="text/css" /><!-- (Smith) -->
+    <link href="CSS/global/text.css" rel="stylesheet" type="text/css" /><!-- (Smith) -->
     <link href="CSS/stylesheet.css" rel="stylesheet" type="text/css" />
     <link href="CSS/masterpage.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/global/mediaqueries-responsive.css" rel="stylesheet" type="text/css" />
-    <!-- ("Build A Responsive Design Using 960 Grid — Sitepoint") -->
-    <link href="JS/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
-    <!-- bxSlider CSS file from http://bxslider.com/ -->
-
+    <link href="CSS/global/mediaqueries-responsive.css" rel="stylesheet" type="text/css" /><!-- ("Build A Responsive Design Using 960 Grid — Sitepoint") -->
 
     <!-- icon -->
-
-    <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" />
-    <!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
+    <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" /><!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
 
     <!-- font -->
-
-    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" />
-    <!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-    <!-- this is an external font from https://fonts.google.com/specimen/Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" /><!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" /><!-- this is an external font from https://fonts.google.com/specimen/Roboto -->
 
     <!-- scripts -->
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!-- jQuery library (served from Google) -->
-    <script src="JS/jquery.bxslider/jquery.bxslider.min.js"></script>
-    <!-- bxSlider jquery Javascript file from http://bxslider.com/ -->
-    <script src="JS/jquery.bxslider/bxSlider.js"></script>
-    <!-- bxSlider Javascript file from http://bxslider.com/ -->
     <link href="JS/scripts.js" rel="stylesheet" type="text/javascript" />
 
     <asp:ContentPlaceHolder ID="headContentPlaceholder" runat="server">
