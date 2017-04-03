@@ -32,15 +32,13 @@ h2.welcome-head-section, h3.welcome-head-section {
 }
 
 .contentpanel {
-    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
-    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 5px;
+    margin-bottom: 0px;
+  
 }
 
 .contents-showcase {
@@ -121,6 +119,55 @@ li.product-display {
     position: absolute;
     text-align: center;
     width: 100%;
+}
+
+/* code is referenced from https://csswizardry.com/2011/10/fully-fluid-responsive-css-carousel/ */
+
+.banner-slideshow{
+   width: 100%;
+   margin-top: 30px;
+   z-index: -2;
+   overflow: hidden;
+   margin-bottom: 10px;
+}
+
+.slidepane{
+   width: 450%;
+   list-style: none;
+   position: relative;
+   overflow-x: hidden;
+   transition: margin 5s;
+   height: auto;
+   /* animation */
+   -moz-animation: carousel 30s infinite;
+   -webkit-animation: carousel 30s infinite;
+   animation: carousel 30s infinite;
+   animation-play-state: running;
+}
+
+.slidepane > li {
+   position: relative;
+   float: left;
+}
+
+.slidepane li {
+    margin-left: 50px;
+}
+
+@keyframes carousel{                                    /* self note:- calculate carousel animation from one img to another --> 100 / 2(n-1) */
+    0%    { left:0; }
+    25% {left:-100%;}
+    50%   { left:-200%; }
+    75% { left:-100%;}
+    100%  { left:0; }
+  
+}
+
+.banner-slideshow img{
+  height: auto;
+  display: block;
+  max-height: 450px;
+  margin-left: -30px;
 }
 
 /* ================================= */
@@ -294,4 +341,5 @@ li.product-display {
 /* ================================= */
 /* ========= Mobile styles ========= */
 /* ================================= */
+
 
