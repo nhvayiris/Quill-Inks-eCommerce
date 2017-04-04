@@ -11,12 +11,12 @@
 
                 <ul class="slidepane">
                     <li>
-                        <img src="Images/salesbanner/Sale-Banner-A.jpg" alt="Special Offer Sale Banner Starts From 15th October" width="900" height="209" /><!-- reference --></li>
+                        <img src="Images/salesbanner/Sale-Banner-A.jpg" alt="Special Offer Sale Banner Starts From 15th October" width="900" height="209" /><!-- images taken from https://www.shutterstock.com/image-vector/sale-banners-design-252691153?src=i9Z633TFu0ogPQf5CQkd2A-1-65 --></li>
                     <li>
-                        <img src="Images/salesbanner/Sale-Banner-B.jpg" alt="Fantastic Sale Banner Limited Time Only Enjoy up to 50% Discount on Selected Items" width="900" height="209" /><!-- reference --></li>
+                        <img src="Images/salesbanner/Sale-Banner-B.jpg" alt="Fantastic Sale Banner Limited Time Only Enjoy up to 50% Discount on Selected Items" width="900" height="209" /><!-- images taken from https://www.shutterstock.com/image-vector/sale-banners-design-252691153?src=i9Z633TFu0ogPQf5CQkd2A-1-65 --></li>
 
                     <li>
-                        <img src="Images/salesbanner/Sale-Banner-C.jpg" alt="Limited time only Stock Clearance Sale Enjoy up to 50% discount from 2pm to 6pm" width="900" height="209" /><!-- reference --></li>
+                        <img src="Images/salesbanner/Sale-Banner-C.jpg" alt="Limited time only Stock Clearance Sale Enjoy up to 50% discount from 2pm to 6pm" width="900" height="209" /><!-- images taken from https://www.shutterstock.com/image-vector/sale-banners-design-252691153?src=i9Z633TFu0ogPQf5CQkd2A-1-65 --></li>
                 </ul>
 
             </div>

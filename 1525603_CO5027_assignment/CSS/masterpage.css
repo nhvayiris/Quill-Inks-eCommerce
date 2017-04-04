@@ -87,6 +87,8 @@ nav ul li a:hover, nav ul li a:active  {
   color: #ff8f20;
 }
 
+a:active {color:rosybrown;}
+
 #nav-stroke ul li a {
   position: relative;
 }
@@ -106,14 +108,8 @@ nav ul li a:hover, nav ul li a:active  {
   width: 100%;
 }
 
-a.cart {
-    background-image:url(Images/cart.png);
-    width: 32px;
-    height:32px;
-}
-
 a.cart:hover {
-    background-image:url(Images/cart-orange.png);
+    background-image:url(Images/cart.png);
     width: 32px;
     height:32px;
 }

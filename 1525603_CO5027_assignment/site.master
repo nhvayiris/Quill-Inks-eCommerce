@@ -11,19 +11,26 @@
     <meta name="description" content="Quill & Inks | Personal Planners Online Shop" />
 
     <!-- stylesheets 960 grid layout, MQ & CSS Reset-->
-    <link href="CSS/global/960_12_col.css" rel="stylesheet" type="text/css" /><!-- (Smith) -->
-    <link href="CSS/global/reset.css" rel="stylesheet" type="text/css" /><!-- (Smith) -->
-    <link href="CSS/global/text.css" rel="stylesheet" type="text/css" /><!-- (Smith) -->
+    <link href="CSS/global/960_12_col.css" rel="stylesheet" type="text/css" />
+    <!-- Smith (2008) -->
+    <link href="CSS/global/reset.css" rel="stylesheet" type="text/css" />
+    <!-- (Smith) -->
+    <link href="CSS/global/text.css" rel="stylesheet" type="text/css" />
+    <!-- (Smith) -->
     <link href="CSS/stylesheet.css" rel="stylesheet" type="text/css" />
     <link href="CSS/masterpage.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/global/mediaqueries-responsive.css" rel="stylesheet" type="text/css" /><!-- ("Build A Responsive Design Using 960 Grid — Sitepoint") -->
+    <link href="CSS/global/mediaqueries-responsive.css" rel="stylesheet" type="text/css" />
+    <!-- ("Build A Responsive Design Using 960 Grid — Sitepoint") -->
 
     <!-- icon -->
-    <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" /><!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
+    <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" />
+    <!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
 
     <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" /><!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" /><!-- this is an external font from https://fonts.google.com/specimen/Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" />
+    <!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <!-- this is an external font from https://fonts.google.com/specimen/Roboto -->
 
     <!-- scripts -->
     <link href="JS/scripts.js" rel="stylesheet" type="text/javascript" />
@@ -34,7 +41,12 @@
 <body>
     <form id="form1" runat="server">
         <div id="container" class="container_12">
-            <header id="nav-head" class="grid_12"></header>
+            <header id="nav-head" class="grid_12">
+                <div id="searchbar">
+                    <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                </div>
+            </header>
             <!--end header -->
             <div id="container-logo-menu" class="grid_12">
                 <div id="main-logo">
@@ -50,12 +62,20 @@
                     <li class="innernav"><a href="~/product.aspx" runat="server">Products</a></li>
                     <li class="innernav"><a href="~/contact.aspx" runat="server">Contacts</a></li>
                     <li class="innernav"><a href="#" runat="server">Log In</a></li>
-                    <li class="innernav"><a href="#" class="cart"><img src="Images/cart.png" alt="This is a link to shopping cart" width="32" height="32" /></a></li>
+                    <li class="innernav"><a href="#" class="cart">
+                        <img src="Images/cart-orange.png" alt="This is a link to shopping cart" width="32" height="32" /></a></li>
                 </ul>
             </nav>
             <!--end main nav -->
 
+
+
+
+            
+
             <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
+
+
             </asp:ContentPlaceHolder>
 
             <div class="footer-panel grid_12">
