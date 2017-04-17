@@ -10,7 +10,8 @@ namespace assignment_draft
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            litSuccess.Visible = false;
+
         }
 
         protected void SubmitEnquiry()
@@ -25,7 +26,7 @@ namespace assignment_draft
 
             smtpClient.Credentials = credentials;
 
-            MailMessage msg = new MailMessage("nha1525603@gmail.com", "recipient@domain.com");
+            MailMessage msg = new MailMessage(txtContactMail.Text, "nha1525603@gmail.com");
             msg.Subject = "A new email from the website - " + ddSubject.Text.ToString();
             msg.Body = "From: " + txtContactName.Text + "\n" +
                 "Email: " + txtContactMail.Text + "\n" +
@@ -45,11 +46,30 @@ namespace assignment_draft
                 txtContactMail.Text = "";
                 txtContactName.Text = "";
                 txtMessageBox.Text = "";
+                confirmationEnquiry();
             }
             catch (Exception)
             {
                 
             }
+        }
+
+        protected void confirmationEnquiry()
+        {
+            SmtpClient smtpClient = new SmtpClient();
+
+            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.Port = 587;
+            smtpClient.EnableSsl = true;
+
+            NetworkCredential credentials = new NetworkCredential("noreplynha@gmail.com", "P@55word");
+
+            smtpClient.Credentials = credentials;
+
+            MailMessage msg = new MailMessage("noreplynha@gmail.com", "nha1525603@gmail.com");
+            msg.Subject = "We have received your enquiry!";
+            msg.Body = "We have received your enquiry, please wait for 3 days for our representatives to respond, if waiting period exceeds 3 days, do not hesitate to call us by phone. Thank you!";
+            smtpClient.Send(msg);
         }
 
         

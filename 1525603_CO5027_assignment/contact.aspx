@@ -16,16 +16,16 @@
 
                 <div class="userdetailform grid_6">
                     <h3 class="welcome-head-section">Contact Us</h3>
-                    <p class="requiredField">* indicates a required field (cannot be empty!)</p>
-                    <p class="requiredField">*<asp:Label ID="lblContactName" runat="server" Text="Name: " AssociatedControlID="txtContactName" CssClass="contact-label"></asp:Label></p>
+                    <p class="lit-panel">* Indicates a REQUIRED field (cannot be empty!)</p>
+                    <asp:Label ID="lblContactName" runat="server" Text="Name *: " AssociatedControlID="txtContactName" CssClass="contact-label"></asp:Label>
                     <asp:TextBox ID="txtContactName" runat="server" class="contact-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidFieldName" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtContactName" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
-                    <p class="requiredField">*<asp:Label ID="lblContactMail" runat="server" Text="E-mail: " AssociatedControlID="txtContactMail" CssClass="contact-label"></asp:Label></p>
+                    <asp:Label ID="lblContactMail" runat="server" Text="E-mail *: " AssociatedControlID="txtContactMail" CssClass="contact-label"></asp:Label>
                     <asp:TextBox ID="txtContactMail" runat="server" class="contact-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidEmailField" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtContactMail" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator><asp:RegularExpressionValidator runat="server" ID="ValidEmail" SetFocusOnError="true" Text="Please enter a valid email address. Example: username@samplemail.com"
                         ControlToValidate="txtContactMail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
                         ValidationGroup="save" CssClass="lit-panel" />
-                    <p class="requiredField">*<asp:Label ID="lblSubject" runat="server" Text="Subject: " AssociatedControlID="ddSubject" CssClass="contact-label"></asp:Label></p>
+                    <asp:Label ID="lblSubject" runat="server" Text="Subject *: " AssociatedControlID="ddSubject" CssClass="contact-label"></asp:Label>
                     <asp:DropDownList ID="ddSubject" runat="server" class="dropdown-input">
                         <asp:ListItem>--Please Select an option--</asp:ListItem>
                         <asp:ListItem>Ask a question</asp:ListItem>
@@ -35,11 +35,11 @@
                         <asp:ListItem>Others</asp:ListItem>
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="ValidDD" runat="server" ErrorMessage="Please select a subject!" InitialValue="--Please Select an option--" ControlToValidate="ddSubject" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
-                    <p class="requiredField">*<asp:Label ID="lblMessageBox" runat="server" Text="Message: " AssociatedControlID="txtMessageBox" CssClass="contact-label"></asp:Label></p>
+                    <asp:Label ID="lblMessageBox" runat="server" Text="Message *: " AssociatedControlID="txtMessageBox" CssClass="contact-label"></asp:Label>
                     <asp:TextBox ID="txtMessageBox" runat="server" TextMode="MultiLine" class="message-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidMessage" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtMessageBox" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
                     <asp:Button ID="btnSend" runat="server" Text="Submit"  ValidationGroup="save" OnClick="btnSend_Click" Width="150px" />
-                    <span><asp:Literal ID="litSuccess" runat="server"></asp:Literal></span>
+                    <br /><span><asp:Literal ID="litSuccess" runat="server"></asp:Literal></span>
                 </div><!-- end userdetailform -->
 
                 <div class="contact-details grid_5">
