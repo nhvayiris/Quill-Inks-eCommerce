@@ -51,11 +51,51 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -76,10 +116,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\addproductcategory.aspx" />
-    <Content Include="Admin\addproducts.aspx" />
-    <Content Include="Admin\admin-defaultpage.aspx" />
-    <Content Include="Admin\uploadimage.aspx" />
+    <Content Include="Admin\admin-addcategory.aspx" />
+    <Content Include="Admin\admin-add.aspx" />
+    <Content Include="Admin\admin.aspx" />
     <Content Include="contact.aspx" />
     <Content Include="CSS\global\960_12_col.css" />
     <Content Include="CSS\masterpage.css" />
@@ -152,16 +191,6 @@
     <Content Include="Images\salesbanner\Sale-Banner-C.jpg" />
     <Content Include="Images\product-hover\13.jpg" />
     <Content Include="Images\product-display\silver-leather.jpg" />
-    <Content Include="App_Data\qiwebModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>qiwebModel.edmx</DependentUpon>
-      <LastGenOutput>qiwebModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="App_Data\qiwebModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>qiwebModel.edmx</DependentUpon>
-      <LastGenOutput>qiwebModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Images\staticmap.jpg" />
     <Content Include="Images\uploadedimages\10.jpg" />
     <Content Include="Images\uploadedimages\11.jpg" />
@@ -209,6 +238,8 @@
     <Content Include="Images\uploadedimages\9.jpg" />
     <Content Include="JS\dynamicmapload.js" />
     <Content Include="JS\scripts.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Members\Cart.aspx" />
     <Content Include="product-display.aspx" />
     <Content Include="qiwebmodel-1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -220,25 +251,8 @@
       <DependentUpon>qiwebmodel-1.edmx</DependentUpon>
       <LastGenOutput>qiwebmodel-1.cs</LastGenOutput>
     </Content>
-    <Content Include="JS\jquery.bxslider\bxSlider.js" />
-    <Content Include="JS\jquery.bxslider\images\bx_loader.gif" />
-    <Content Include="JS\jquery.bxslider\images\controls.png" />
-    <Content Include="JS\jquery.bxslider\jquery.bxslider.css" />
-    <Content Include="JS\jquery.bxslider\jquery.bxslider.js" />
-    <Content Include="JS\jquery.bxslider\jquery.bxslider.min.js" />
-    <Content Include="JS\jquery.bxslider\plugins\jquery.easing.1.3.js" />
-    <Content Include="JS\jquery.bxslider\plugins\jquery.fitvids.js" />
     <Content Include="packages.config" />
-    <Content Include="JS\jquery.bxslider\bower.json" />
-    <Content Include="JS\jquery.bxslider\readme.md" />
     <Content Include="product.aspx" />
-    <EntityDeploy Include="App_Data\qiwebModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>qiwebModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="App_Data\qiwebModel.edmx.diagram">
-      <DependentUpon>qiwebModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="qiwebmodel-1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>qiwebmodel-1.Designer.cs</LastGenOutput>
@@ -268,34 +282,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\addproductcategory.aspx.cs">
-      <DependentUpon>addproductcategory.aspx</DependentUpon>
+    <Compile Include="Admin\admin-addcategory.aspx.cs">
+      <DependentUpon>admin-addcategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\addproductcategory.aspx.designer.cs">
-      <DependentUpon>addproductcategory.aspx</DependentUpon>
+    <Compile Include="Admin\admin-addcategory.aspx.designer.cs">
+      <DependentUpon>admin-addcategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\addproducts.aspx.cs">
-      <DependentUpon>addproducts.aspx</DependentUpon>
+    <Compile Include="Admin\admin-add.aspx.cs">
+      <DependentUpon>admin-add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\addproducts.aspx.designer.cs">
-      <DependentUpon>addproducts.aspx</DependentUpon>
+    <Compile Include="Admin\admin-add.aspx.designer.cs">
+      <DependentUpon>admin-add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\admin-defaultpage.aspx.cs">
-      <DependentUpon>admin-defaultpage.aspx</DependentUpon>
+    <Compile Include="Admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\admin-defaultpage.aspx.designer.cs">
-      <DependentUpon>admin-defaultpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Product.cs" />
-    <Compile Include="Admin\uploadimage.aspx.cs">
-      <DependentUpon>uploadimage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\uploadimage.aspx.designer.cs">
-      <DependentUpon>uploadimage.aspx</DependentUpon>
+    <Compile Include="Admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="contact.aspx.cs">
       <DependentUpon>contact.aspx</DependentUpon>
@@ -314,6 +320,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="product-display.aspx.cs">
       <DependentUpon>product-display.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,21 +349,6 @@
       <DependentUpon>product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="App_Data\qiwebModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>qiwebModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\qiwebModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>qiwebModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\qiwebModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>qiwebModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="qiwebmodel-1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -366,15 +371,7 @@
     <Compile Include="site.master.designer.cs">
       <DependentUpon>site.master</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\tb_categories.cs">
-      <DependentUpon>qiwebModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\tb_images.cs">
-      <DependentUpon>qiwebModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="App_Data\tb_products.cs">
-      <DependentUpon>qiwebModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Startup.cs" />
     <Compile Include="tbl_products.cs">
       <DependentUpon>qiwebmodel-1.tt</DependentUpon>
     </Compile>
@@ -386,7 +383,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\products\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

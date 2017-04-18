@@ -233,7 +233,6 @@ li.product-display {
 .section-panel, .head-title {
     margin-left: 50px;
     margin-top: 300px;
-
 }
 
 .userdetailform, .contact-details {
@@ -264,7 +263,6 @@ li.product-display {
    height: 35px;
 }
 
-
 .contact-label {
    font-family: sans-serif;
    margin-bottom: 6px;
@@ -282,7 +280,6 @@ li.product-display {
 }
 
 
-
 .lit-panel, #litSuccess, #litfailed {
    display: block;
    margin-bottom: 10px;
@@ -290,7 +287,6 @@ li.product-display {
    color: #ff0000;
    font-weight:bold;
 }
-
 
 .contact-details {
    float: right;
@@ -303,7 +299,6 @@ li.product-display {
    border-left: 2px solid #ff6600;
    border-right: 2px solid #ff6600;
    background-color: #ffd1b3
-  
 }
 
 .contact-details div p {
@@ -333,10 +328,89 @@ li.product-display {
    margin-right: auto;
 }
 
+/* ================================= */
+/* ====== login pages styles ======= */
+/* ================================= */
 
-/* ====== login/register page styles ====== */
+.loginWrapper {
+    margin: 20px;
+}
+
+.login-head {
+    margin-top: 10px;
+}
 
 /* ====== payment/order page styles ====== */
+
+/* ================================= */
+/* ==== all admin pages styles ===== */
+/* ================================= */
+
+#admin-container {
+    margin-top: 50px;
+    
+}
+
+.adminadd {
+    margin-left: 250px;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.adminadd h3 {
+    margin-left: 50px;
+}
+
+div.addcomponent {
+    margin-bottom: 30px;
+}
+
+.admininput {
+    height: 30px;
+    font-size: 25px;
+    margin:5px;
+}
+
+
+.button {
+    font-size: 20px;
+    margin: 0 50px 50px 380px;
+    border-radius: 25px;
+    border-color: #ffd1b3;
+    background-color: #ff6a00;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.button:hover {
+    font-size: 20px;
+    margin: 0 50px 20px 380px;
+    border-radius: 25px;
+    border-color: #ff6a00;
+    background-color: #ffd1b3;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.gridtable {
+    margin-top: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.gridtable td{
+    padding: 20px;
+    border: solid 1px #834200;
+}
+
+.gridtable th{
+    padding: 10px;
+    border: solid 1px #834200;
+    text-decoration: none;
+    text-align: center;
+}
 
 
 /* ================================= */

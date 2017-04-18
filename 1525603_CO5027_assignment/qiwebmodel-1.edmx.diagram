@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ca6f1f42e55044ce9d2fce0c2725efd1" Name="Diagram1">
-        <EntityTypeShape EntityType="db_qiwebModel.tb_categories" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_qiwebModel.tb_images" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_qiwebModel.tbl_products" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_qiwebModel.tb_categories" Width="1.5" PointX="5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_qiwebModel.tb_images" Width="1.5" PointX="4.875" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_qiwebModel.tbl_products" Width="1.5" PointX="8" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="db_qiwebModel.FK_tbl_products_tb_categories" ManuallyRouted="false" />
         <AssociationConnector Association="db_qiwebModel.FK_tbl_products_tb_images" ManuallyRouted="false" />
       </Diagram>

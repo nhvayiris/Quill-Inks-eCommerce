@@ -1,6 +1,8 @@
-﻿using assignment_draft.App_Data;
+﻿
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,12 +10,11 @@ using System.Web.UI.WebControls;
 
 namespace assignment_draft.Admin
 {
-    public partial class uploadproduct : System.Web.UI.Page
+    public partial class addproducts : System.Web.UI.Page
     {
-      
-
         protected void Page_Load(object sender, EventArgs e)
         {
+
             db_qiwebentity db = new db_qiwebentity();
             //located the image (normally we would find a specific image)
             var imageData = db.tb_images.FirstOrDefault();
@@ -24,15 +25,30 @@ namespace assignment_draft.Admin
             CurrentImg.Width = (Unit)imageData.Width;
             CurrentImg.Height = (Unit)imageData.Height;
             CurrentImg.ImageUrl = "~/Images/uploadedimages/" + filename;
-
-            
-
         }
 
-        protected void btnUpload_Click(object sender, EventArgs e)
+
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            db_qiwebentity db = new db_qiwebentity();
+
+            //need a view table to combine both products and category table
+            //fix the codes
+            tbl_products product = new tbl_products();
+
+            product.ProductName = txtProductName.Text;
+            product.Price = Decimal.Parse(txtPrice.Text);
+            product.StockQty = int.Parse(txtStock.Text);
+            product.Condition = txtCondition.Text;
+            product.ProductDesc = txtDescription.Text;
+
+
+            tb_categories category = new tb_categories();
+            //product.categoryName = ddProductCategory.SelectedValue;
+
             //get the extension of our image file
-            string extension = (System.IO.Path.GetExtension(imageFileUpload.FileName).ToLower());
+            string extension = (Path.GetExtension(imageFileUpload.FileName).ToLower());
             //check the extension is valid
             if (extension == ".jpg" || extension == ".jpeg" || extension == ".png" || extension == ".gif")
             {
@@ -41,7 +57,7 @@ namespace assignment_draft.Admin
                 int width = img.Width;
                 int height = img.Height;
                 //save the image data
-                db_qiwebentity db = new db_qiwebentity();
+
                 tb_images imageData = new tb_images();
                 imageData.AltText = txtAltText.Text;
                 imageData.Width = width;
@@ -58,8 +74,17 @@ namespace assignment_draft.Admin
                 //inform the user
                 litResult.Text = "<p>Your file was uploaded as " + filename + " in the uploadedimages folder</p>";
 
-            }
+                // db.Products.Add(product);
+                db.SaveChanges();
 
+                txtProductName.Text = string.Empty;
+                txtPrice.Text = string.Empty;
+                txtDescription.Text = string.Empty;
+                txtCondition.Text = string.Empty;
+                txtStock.Text = string.Empty;
+
+
+            }
         }
     }
 }

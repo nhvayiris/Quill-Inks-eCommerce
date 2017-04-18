@@ -11,29 +11,29 @@
     <meta name="description" content="Quill & Inks | Personal Planners Online Shop" />
 
     <!-- stylesheets 960 grid layout, MQ & CSS Reset-->
-    <link href="CSS/global/960_12_col.css" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/global/960_12_col.css" runat="server" rel="stylesheet" type="text/css" />
     <!-- Smith (2008) -->
-    <link href="CSS/global/reset.css" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/global/reset.css" runat="server" rel="stylesheet" type="text/css" />
     <!-- (Smith) -->
-    <link href="CSS/global/text.css" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/global/text.css" runat="server" rel="stylesheet" type="text/css" />
     <!-- (Smith) -->
-    <link href="CSS/stylesheet.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/masterpage.css" rel="stylesheet" type="text/css" />
-    <link href="CSS/global/mediaqueries-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/stylesheet.css" runat="server" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/masterpage.css" runat="server" rel="stylesheet" type="text/css" />
+    <link href="~/CSS/global/mediaqueries-responsive.css" runat="server" rel="stylesheet" type="text/css" />
     <!-- ("Build A Responsive Design Using 960 Grid — Sitepoint") -->
 
     <!-- icon -->
-    <link href="/Images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="~/Images/favicon.ico" runat="server" rel="icon" type="image/x-icon" />
     <!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
 
     <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Scope+One" runat="server" rel="stylesheet" />
     <!-- this is an external font from https://fonts.google.com/specimen/Scope+One -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" runat="server" rel="stylesheet" />
     <!-- this is an external font from https://fonts.google.com/specimen/Roboto -->
 
     <!-- scripts -->
-    <link href="JS/scripts.js" rel="stylesheet" type="text/javascript" />
+    <link href="~/JS/scripts.js" runat="server" rel="stylesheet" type="text/javascript" />
 
     <asp:ContentPlaceHolder ID="headContentPlaceholder" runat="server">
     </asp:ContentPlaceHolder>
@@ -51,7 +51,7 @@
             <div id="container-logo-menu" class="grid_12">
                 <div id="main-logo">
                     <a href="~/default.aspx" runat="server">
-                        <img class="main-logo" src="/Images/500_Logo.png" alt="Clickable link to go back to home page." width="400" height="150" /></a>
+                        <img class="main-logo" runat="server" src="~/Images/500_Logo.png" alt="Clickable link to go back to home page." width="400" height="150" /></a>
                 </div>
                 <!-- end logo -->
             </div>
@@ -59,19 +59,14 @@
             <nav id="nav-stroke" class="grid_12 clearfix">
                 <ul>
                     <li class="innernav"><a href="~/default.aspx" runat="server">Home</a></li>
-                    <li class="innernav"><a href="~/product.aspx" runat="server">Products</a></li>
                     <li class="innernav"><a href="~/contact.aspx" runat="server">Contacts</a></li>
-                    <li class="innernav"><a href="#" runat="server">Log In</a></li>
-                    <li class="innernav"><a href="#" class="cart">
-                        <img src="Images/cart-orange.png" alt="This is a link to shopping cart" width="32" height="32" /></a></li>
+                    <li class="innernav"><a href="~/Login.aspx" runat="server" id="linkLogin">Log In</a><asp:HyperLink ID="litStatus" runat="server"></asp:HyperLink></li>
+                    <li class="innernav"><asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
+                    <li class="innernav"><a href="~/Members/Cart.aspx" runat="server" class="cart">
+                        <img src="~/Images/cart-orange.png" runat="server" alt="This is a link to shopping cart" width="32" height="32" /></a></li>
                 </ul>
             </nav>
             <!--end main nav -->
-
-
-
-
-            
 
             <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
 
@@ -82,7 +77,7 @@
                 <footer class="grid_12">
                     <div id="footer-logo" class="grid_3">
                         <p class="footer-logo-img">
-                            <img src="/Images/500_Logo.png" alt="This is the website logo for Quill & Inks." width="150" height="60" />
+                            <img src="~/Images/500_Logo.png" runat="server" alt="This is the website logo for Quill & Inks." width="150" height="60" />
                         </p>
                     </div>
                     <!-- end left footer logo-->
@@ -91,7 +86,7 @@
                         <div class="sitemap">
                             <ul>
                                 <li class="sitemap-head">Admin</li>
-                                <li class="sitemap-subhead"><a href="Admin/admin-defaultpage.aspx">Manage</a></li>
+                                <li class="sitemap-subhead"><a href="~/Admin/admin.aspx" runat="server">Manage</a></li>
 
                             </ul>
                         </div>
@@ -99,8 +94,8 @@
                         <div class="sitemap">
                             <ul>
                                 <li class="sitemap-head">Customer</li>
-                                <li class="sitemap-subhead"><a href="#">Login</a></li>
-                                <li class="sitemap-subhead"><a href="#">My Cart</a></li>
+                                <li class="sitemap-subhead"><a href="~/Login.aspx" runat="server">Login</a></li>
+                                <li class="sitemap-subhead"><a href="~/Members/Cart.aspx" runat="server">My Cart</a></li>
                             </ul>
                         </div>
 

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using Microsoft.AspNet.Identity;
 
 namespace assignment_draft
 {
@@ -14,6 +15,28 @@ namespace assignment_draft
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //view name of user when logged in
+
+            var user = Context.User.Identity;
+
+            if (user.IsAuthenticated)
+            {
+                litStatus.Text = Context.User.Identity.Name;
+
+                linkLogin.Visible = false;
+                linkLogout.Visible = true;
+                litStatus.Visible = true;
+            }
+
+            else
+            {
+                linkLogin.Visible = true;
+                linkLogout.Visible = false;
+                litStatus.Visible = false;
+            }
+
+
+
             if (!String.IsNullOrEmpty(Request.QueryString["search"]))
     {
                 //perform search and display results
@@ -25,6 +48,12 @@ namespace assignment_draft
         {
             var search = Server.UrlEncode(tbSearch.Text); // URL encode in case of special characters
             Response.Redirect("~/Default.aspx?search=" + search);
+        }
+
+        protected void linkLogout_Click(object sender, EventArgs e)
+        {
+            HttpContext.Current.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            Response.Redirect("~/default.aspx");
         }
     }
 }
