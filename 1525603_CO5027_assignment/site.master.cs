@@ -13,6 +13,9 @@ namespace assignment_draft
 {
     public partial class site : System.Web.UI.MasterPage
     {
+
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //view name of user when logged in
@@ -43,12 +46,6 @@ namespace assignment_draft
             }
         }
 
-
-        protected void btnSearch_Click(object sender, EventArgs e)
-        {
-            var search = Server.UrlEncode(tbSearch.Text); // URL encode in case of special characters
-            Response.Redirect("~/Default.aspx?search=" + search);
-        }
 
         protected void linkLogout_Click(object sender, EventArgs e)
         {

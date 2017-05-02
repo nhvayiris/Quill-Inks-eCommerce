@@ -28,5 +28,6 @@ namespace assignment_draft
         public virtual DbSet<tb_categories> tb_categories { get; set; }
         public virtual DbSet<tb_images> tb_images { get; set; }
         public virtual DbSet<tbl_products> tbl_products { get; set; }
+        public virtual DbSet<tb_Cart> tb_Cart { get; set; }
     }
 }

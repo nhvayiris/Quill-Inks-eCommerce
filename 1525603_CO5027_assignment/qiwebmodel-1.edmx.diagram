@@ -10,6 +10,8 @@
         <EntityTypeShape EntityType="db_qiwebModel.tbl_products" Width="1.5" PointX="8" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="db_qiwebModel.FK_tbl_products_tb_categories" ManuallyRouted="false" />
         <AssociationConnector Association="db_qiwebModel.FK_tbl_products_tb_images" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_qiwebModel.tb_Cart" Width="1.5" PointX="10.125" PointY="0.625" />
+        <AssociationConnector Association="db_qiwebModel.FK_tb_Cart_tbl_products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

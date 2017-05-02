@@ -27,55 +27,60 @@ namespace assignment_draft
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            var identityDbContext = new IdentityDbContext("qiwebcon");
-            var userStore = new UserStore<IdentityUser>(identityDbContext);
-            var userManager = new UserManager<IdentityUser>(userStore);
-            var user = userManager.Find(txtLoginUser.Text, txtLoginPassword.Text);
-            if (user != null)
+            if (Page.IsValid)
             {
-                //todo: loguser in/instruct user to log in
-                LogUserIn(userManager, user);
-                Response.Redirect("~/Default.aspx");
-                //serverside ------> method Server.Transfer("page.aspx", true);
+                var identityDbContext = new IdentityDbContext("qiwebcon");
+                var userStore = new UserStore<IdentityUser>(identityDbContext);
+                var userManager = new UserManager<IdentityUser>(userStore);
+                var user = userManager.Find(txtLoginUser.Text, txtLoginPassword.Text);
+                if (user != null)
+                {
+                    //todo: loguser in/instruct user to log in
+                    LogUserIn(userManager, user);
+                    Response.Redirect("~/Default.aspx");
+                    //serverside ------> method Server.Transfer("page.aspx", true);
+                }
+                else
+                {
+                    litLoginError.Text = "Please enter the correct username or password! ";
+                }
             }
-            else
-            {
-                litLoginError.Text = "Please enter the correct username or password! ";
-            }
-
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            //create a dbcontext that specified the connection string
-            var identityDbContext = new IdentityDbContext("qiwebcon");
-            //create user store and user manager
-            var userStore = new UserStore<IdentityUser>(identityDbContext);
-            var manager = new UserManager<IdentityUser>(userStore);
-
-            //authorization with role manager
-            var roleStore = new RoleStore<IdentityRole>(identityDbContext);
-            var roleManager = new RoleManager<IdentityRole>(roleStore);
-
-
-            //create users
-            var user = new IdentityUser() { UserName = tbRegusername.Text, Email = tbRegusername.Text };
-            manager.Create(user, tbRegPassword.Text);
-
-            IdentityRole endUserRole = new IdentityRole("customerUser");
-            roleManager.Create(endUserRole);
-            manager.AddToRole(user.Id, "customerUser");
-            IdentityResult result = manager.Update(user);
-
-
-            if (result.Succeeded)
+            if (Page.IsValid)
             {
+                //create a dbcontext that specified the connection string
+                var identityDbContext = new IdentityDbContext("qiwebcon");
+                //create user store and user manager
+                var userStore = new UserStore<IdentityUser>(identityDbContext);
+                var manager = new UserManager<IdentityUser>(userStore);
+
+                //authorization with role manager
+                var roleStore = new RoleStore<IdentityRole>(identityDbContext);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+
+                //create users
+                var user = new IdentityUser() { UserName = tbRegusername.Text, Email = tbRegusername.Text };
+                manager.Create(user, tbRegPassword.Text);
+
+                IdentityRole endUserRole = new IdentityRole("customerUser");
+                roleManager.Create(endUserRole);
+                manager.AddToRole(user.Id, "customerUser");
+                IdentityResult result = manager.Update(user);
+
+                if (result.Succeeded)
+                {
+                    litRegister.Text = "You have successfully registered! <\n> Please login your details at the login section!" + result.Errors.FirstOrDefault();
                 //todo: Either authenticate the user (log them in) or redirect them to the login page to log in for themselves
-                Response.Redirect("Login.aspx");
-            }
-            else
-            {
-                litRegister.Text = "An error has occurred: " + result.Errors.FirstOrDefault();
+                Response.Redirect("~/Login.aspx");
+                }
+                else
+                {
+                    litRegister.Text = "An error has occurred: " + result.Errors.FirstOrDefault();
+                }
             }
         }
     }

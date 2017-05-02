@@ -10,42 +10,33 @@
 namespace assignment_draft {
     
     
-    public partial class product_display {
+    public partial class testcart {
         
         /// <summary>
-        /// fView control.
+        /// btnAddShirt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView fView;
+        protected global::System.Web.UI.WebControls.LinkButton btnAddShirt;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// btnAddShorts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.LinkButton btnAddShorts;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// btnAddShoes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-        
-        /// <summary>
-        /// contentnotFound control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel contentnotFound;
+        protected global::System.Web.UI.WebControls.LinkButton btnAddShoes;
     }
 }

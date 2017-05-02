@@ -49,24 +49,6 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.TextBox txtLoginPassword;
         
         /// <summary>
-        /// lblConfirmPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblConfirmPassword;
-        
-        /// <summary>
-        /// txtConfirmPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
-        
-        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
@@ -103,6 +85,15 @@ namespace assignment_draft {
         protected global::System.Web.UI.WebControls.TextBox tbRegusername;
         
         /// <summary>
+        /// Reqfieldregvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Reqfieldregvalid;
+        
+        /// <summary>
         /// lblRegPassword control.
         /// </summary>
         /// <remarks>
@@ -119,6 +110,51 @@ namespace assignment_draft {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbRegPassword;
+        
+        /// <summary>
+        /// Reqfieldpassvalid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Reqfieldpassvalid;
+        
+        /// <summary>
+        /// lblconfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblconfirm;
+        
+        /// <summary>
+        /// tbconfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbconfirm;
+        
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        
+        /// <summary>
+        /// RegularExprPassValid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExprPassValid;
         
         /// <summary>
         /// btnRegister control.

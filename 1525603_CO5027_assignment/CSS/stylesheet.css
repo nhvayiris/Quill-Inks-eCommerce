@@ -5,6 +5,17 @@ body {
     font-family: 'Scope One', serif;
 }
 
+.error {
+    font-size: 150px;
+    text-align: center;
+    color: red;
+}
+
+.errorclass {
+    font-size: 20px;
+    margin-left: 20%;
+    font-weight: bold;
+}
 /* ================================= */
 /* ====== default page styles ====== */
 /* ================================= */
@@ -36,7 +47,7 @@ h2.welcome-head-section, h3.welcome-head-section {
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 0px;
   
 }
@@ -78,7 +89,6 @@ h2.welcome-head-section, h3.welcome-head-section {
 }
 
 h3.imageinfo{
-    font-family: sans-serif;
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -104,6 +114,7 @@ li.product-display {
     display: inline-block;
     position: relative;
     margin: 0.5%;
+
 }
 
 .link-prodpage {
@@ -119,6 +130,19 @@ li.product-display {
     position: absolute;
     text-align: center;
     width: 100%;
+}
+
+.sale-displayhead {
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sale-displaybody {
+    margin-top: -20px;
+    color: #834200;
+    font-size: 15px;
+    font-weight:900;
 }
 
 /* code is referenced from https://csswizardry.com/2011/10/fully-fluid-responsive-css-carousel/ */
@@ -145,6 +169,11 @@ li.product-display {
    animation-play-state: running;
 }
 
+.slidepane > img{
+    width: 900px;
+    height: 209px;
+}
+
 .slidepane > li {
    position: relative;
    float: left;
@@ -169,6 +198,57 @@ li.product-display {
   max-height: 450px;
   margin-left: -30px;
 }
+
+
+/* webdesign*/
+
+
+
+.box {
+    background-color: #ffd1b3;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    white-space: nowrap;
+    width: 400px;
+    padding: 10px;
+    margin-left: 20%;
+    margin-top: 5px;
+}
+
+.searchcont {
+    margin-top:280px;
+    width: 91.5%;
+    height: 50px;
+  border: none;
+  font-size: 10pt;
+  color: #262626;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.icon{
+  position: absolute;
+  margin-left: 46%;
+  margin-top: 1px;
+  z-index: 1;
+  color: black;
+  background-color:#d5d4d3;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  font-weight: 900;
+}
+
+.searchcont input#search:hover, .searchcont input#search:focus, .searchcont input#search:active{
+    outline:none;
+    background: #ffffff;
+  }
+
+
 
 /* ================================= */
 /* ====== product page styles ====== */
@@ -203,6 +283,7 @@ li.product-display {
     font-size: 26px;
     font-family: 'Roboto', sans-serif;
     padding: 5px;
+    margin-bottom: 50px;
 }
 
 .productImage {
@@ -251,7 +332,8 @@ li.product-display {
    text-align: left;
 }  
 
-.userdetailform input {
+.userdetailform .contact-input, .contact-input {
+   height: 35px;
    margin-top: 4px;
    margin-bottom: 16px;
    font-size: 18px;
@@ -259,15 +341,11 @@ li.product-display {
    background: #eeeeee;
 }
 
-.userdetailform .contact-input {
-   height: 35px;
-}
-
 .contact-label {
-   font-family: sans-serif;
    margin-bottom: 6px;
    display:block;
    font-size: 18px;
+   font-weight: 900;
 }
 
 .userdetailform .message-input {
@@ -275,15 +353,41 @@ li.product-display {
    font-size: 18px;
    background: #eeeeee;
    width: 100%;
-   color: #ff6600;
-   font-family: sans-serif;
 }
+
+.ddcategory {                                           /* css design for drop down list from https://wisdmlabs.com/blog/customize-drop-down-list-using-css/*/
+  font-size: 18px;
+  padding: 10px 8px 10px 14px;
+  background: #ffd1b3;
+  border: 3px solid rgba(0, 0, 0,0.5);
+  border-radius: 10px;
+  position: relative;
+}
+
+.ddcategory .choose {
+    width: 120%;
+    background:url('../Images/arrow.png') no-repeat;
+    background-position: 80% center;
+    overflow:hidden;
+}
+
+.ddcategory .choose select {
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 120%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+
 
 
 .lit-panel, #litSuccess, #litfailed {
    display: block;
    margin-bottom: 10px;
-   font-family: sans-serif;
    color: #ff0000;
    font-weight:bold;
 }
@@ -294,18 +398,16 @@ li.product-display {
 }
 
 .contact-details div {
-   color: black;
-   font-family: sans-serif; 
-   border-left: 2px solid #ff6600;
-   border-right: 2px solid #ff6600;
-   background-color: #ffd1b3
+    color: black;
+    border: 2px solid #ff6600;
 }
 
 .contact-details div p {
-   margin-left: 15%;
-   margin-right: 15%;
-   font-size: 18px;
-   text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .googlemapapi {
@@ -313,6 +415,18 @@ li.product-display {
    margin-right: auto;
    width: 90%;
    overflow: hidden;
+}
+
+.headspace{
+    margin-top: 20px;
+}
+
+.address {
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 #map {
@@ -340,7 +454,57 @@ li.product-display {
     margin-top: 10px;
 }
 
+.logininnerwrapper{
+   margin-left: 10px;
+}
+
+.buttonlogin {
+    margin-left: 35%;
+    margin-top: 10px;
+    font-size: 20px;
+    border-radius: 25px;
+    border-color: #ffd1b3;
+    background-color: #ff6a00;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.buttonlogin:hover {
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border-color: #ff6a00;
+    background-color: #ffd1b3;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.loginpanel {
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 16px;
+}
 /* ====== payment/order page styles ====== */
+
+.cartBtn {
+    
+    background: #ff6a00;
+    color: white;
+    font-size: 30px;
+    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 20px;
+    margin-right: 10px;
+    text-decoration:none;
+    margin-top: 30px;
+
+}
 
 /* ================================= */
 /* ==== all admin pages styles ===== */
@@ -351,8 +515,16 @@ li.product-display {
     
 }
 
+.adminborder {
+    border:solid 3px #ff6a00;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 .adminadd {
-    margin-left: 250px;
+    margin-left: 150px;
     font-size: 20px;
     padding-bottom: 10px;
 }
@@ -361,9 +533,7 @@ li.product-display {
     margin-left: 50px;
 }
 
-div.addcomponent {
-    margin-bottom: 30px;
-}
+
 
 .admininput {
     height: 30px;
@@ -374,7 +544,9 @@ div.addcomponent {
 
 .button {
     font-size: 20px;
-    margin: 0 50px 50px 380px;
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 25px;
     border-color: #ffd1b3;
     background-color: #ff6a00;
@@ -385,7 +557,28 @@ div.addcomponent {
 
 .button:hover {
     font-size: 20px;
-    margin: 0 50px 20px 380px;
+    margin-left: 40%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border-color: #ff6a00;
+    background-color: #ffd1b3;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+.buttoncancel {
+    font-size: 20px;
+    border-radius: 25px;
+    border-color: #ffd1b3;
+    background-color: #ff6a00;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.buttoncancel:hover {
+    font-size: 20px;
     border-radius: 25px;
     border-color: #ff6a00;
     background-color: #ffd1b3;
@@ -394,10 +587,43 @@ div.addcomponent {
     padding: 10px;
 }
 
+.buttoncontact {
+    font-size: 20px;
+    margin: 0 0 0 180px;
+    border-radius: 25px;
+    border-color: #ffd1b3;
+    background-color: #ff6a00;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.buttoncontact:hover {
+    font-size: 20px;
+    margin: 0 0 0 180px;
+    border-radius: 25px;
+    border-color: #ff6a00;
+    background-color: #ffd1b3;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.givespace {
+    margin-top: 25px;
+    color: red;
+    font-weight: bolder;
+    font-size: large;
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 25px;
+}
+
 .gridtable {
     margin-top: 30px;
     text-decoration: none;
     text-align: center;
+    
 }
 
 .gridtable td{
@@ -410,6 +636,8 @@ div.addcomponent {
     border: solid 1px #834200;
     text-decoration: none;
     text-align: center;
+    font-weight: 900 ;
+    color:  #834200;
 }
 
 

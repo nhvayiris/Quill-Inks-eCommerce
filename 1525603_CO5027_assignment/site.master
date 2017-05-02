@@ -25,6 +25,7 @@
     <!-- icon -->
     <link href="~/Images/favicon.ico" runat="server" rel="icon" type="image/x-icon" />
     <!--this is a favicon.ico icon for tab from http://www.favicon.cc/?action=icon&file_id=570359# -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Scope+One" runat="server" rel="stylesheet" />
@@ -36,18 +37,15 @@
     <link href="~/JS/scripts.js" runat="server" rel="stylesheet" type="text/javascript" />
 
     <asp:ContentPlaceHolder ID="headContentPlaceholder" runat="server">
+
+        
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="container" class="container_12">
-            <header id="nav-head" class="grid_12">
-                <div id="searchbar">
-                    <asp:TextBox ID="tbSearch" runat="server"></asp:TextBox>
-                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
-                </div>
-            </header>
-            <!--end header -->
+
             <div id="container-logo-menu" class="grid_12">
                 <div id="main-logo">
                     <a href="~/default.aspx" runat="server">
@@ -59,17 +57,23 @@
             <nav id="nav-stroke" class="grid_12 clearfix">
                 <ul>
                     <li class="innernav"><a href="~/default.aspx" runat="server">Home</a></li>
+                    <li class="innernav"><a href="default.aspx?Product=Planners">Product</a></li>
                     <li class="innernav"><a href="~/contact.aspx" runat="server">Contacts</a></li>
                     <li class="innernav"><a href="~/Login.aspx" runat="server" id="linkLogin">Log In</a><asp:HyperLink ID="litStatus" runat="server"></asp:HyperLink></li>
-                    <li class="innernav"><asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
+                    <li class="innernav">
+                        <asp:LinkButton ID="linkLogout" runat="server" OnClick="linkLogout_Click">Logout</asp:LinkButton></li>
                     <li class="innernav"><a href="~/Members/Cart.aspx" runat="server" class="cart">
                         <img src="~/Images/cart-orange.png" runat="server" alt="This is a link to shopping cart" width="32" height="32" /></a></li>
                 </ul>
             </nav>
             <!--end main nav -->
 
+             
+
+
             <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server">
 
+               
 
             </asp:ContentPlaceHolder>
 
@@ -108,7 +112,7 @@
                         <div class="sitemap">
                             <ul>
                                 <li class="sitemap-head"><a href="~/default.aspx" runat="server">Home</a></li>
-                                <li class="sitemap-head"><a href="~/product.aspx" runat="server">Products</a></li>
+                                <li class="sitemap-head"><a href="default.aspx?Product=Planners">Product</a></li>
                             </ul>
                         </div>
 

@@ -29,5 +29,5 @@ function initialize() {
         infowindow.open(map, marker);
     });
 }
-window.onload = initialize;
+
 

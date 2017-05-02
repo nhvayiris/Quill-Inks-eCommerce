@@ -13,40 +13,22 @@ namespace assignment_draft.Admin {
     public partial class admin_defaultpage {
         
         /// <summary>
-        /// btnAddProduct control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAddProduct;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// FormView1 control.
+        /// addformview control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
-        
-        /// <summary>
-        /// editds control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource editds;
-        
-        /// <summary>
-        /// gridviewProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridviewProduct;
+        protected global::System.Web.UI.WebControls.FormView addformview;
         
         /// <summary>
         /// adminsds control.
@@ -58,40 +40,22 @@ namespace assignment_draft.Admin {
         protected global::System.Web.UI.WebControls.SqlDataSource adminsds;
         
         /// <summary>
-        /// btnAddCategory control.
+        /// ddcategoryds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAddCategory;
+        protected global::System.Web.UI.WebControls.SqlDataSource ddcategoryds;
         
         /// <summary>
-        /// FormView2 control.
+        /// FormView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView2;
-        
-        /// <summary>
-        /// editcatds control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource editcatds;
-        
-        /// <summary>
-        /// gridviewCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridviewCategory;
+        protected global::System.Web.UI.WebControls.FormView FormView1;
         
         /// <summary>
         /// admincatsds control.
@@ -101,5 +65,41 @@ namespace assignment_draft.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource admincatsds;
+        
+        /// <summary>
+        /// GridView2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView2;
+        
+        /// <summary>
+        /// newimagefv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FormView newimagefv;
+        
+        /// <summary>
+        /// newimageds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource newimageds;
+        
+        /// <summary>
+        /// newimagegv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView newimagegv;
     }
 }

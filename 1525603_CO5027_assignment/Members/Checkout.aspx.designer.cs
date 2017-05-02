@@ -7,81 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace assignment_draft.Admin {
+namespace assignment_draft.Members {
     
     
-    public partial class addproductcategory {
+    public partial class Checkout {
         
         /// <summary>
-        /// lblCategory control.
+        /// rptrCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategory;
+        protected global::System.Web.UI.WebControls.Repeater rptrCart;
         
         /// <summary>
-        /// txtProductCategory control.
+        /// lblSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductCategory;
+        protected global::System.Web.UI.WebControls.Label lblSummary;
         
         /// <summary>
-        /// lblCategoryCode control.
+        /// lblSubtotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoryCode;
+        protected global::System.Web.UI.WebControls.Label lblSubtotal;
         
         /// <summary>
-        /// txtCategoryCode control.
+        /// lblShipping control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCategoryCode;
+        protected global::System.Web.UI.WebControls.Label lblShipping;
         
         /// <summary>
-        /// btnSubmit control.
+        /// lblGrandTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Label lblGrandTotal;
         
         /// <summary>
-        /// btnBack control.
+        /// btnPaypalCheckout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
-        
-        /// <summary>
-        /// litSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSubmit;
-        
-        /// <summary>
-        /// litResult control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litResult;
+        protected global::System.Web.UI.WebControls.Button btnPaypalCheckout;
     }
 }

@@ -14,6 +14,12 @@ namespace assignment_draft
     
     public partial class tbl_products
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tbl_products()
+        {
+            this.tb_Cart = new HashSet<tb_Cart>();
+        }
+    
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string ProductDesc { get; set; }
@@ -22,8 +28,12 @@ namespace assignment_draft
         public Nullable<int> ImageId { get; set; }
         public string CategoryId { get; set; }
         public string Condition { get; set; }
+        public Nullable<bool> IsOnSale { get; set; }
+        public Nullable<bool> StockCondition { get; set; }
     
         public virtual tb_categories tb_categories { get; set; }
         public virtual tb_images tb_images { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Cart> tb_Cart { get; set; }
     }
 }

@@ -19,7 +19,13 @@
                      </ItemTemplate>
                      <FooterTemplate></ul></FooterTemplate>
                  </asp:Repeater>
-        <asp:SqlDataSource ID="productsds" runat="server" ConnectionString="<%$ ConnectionStrings:qiwebcon %>" SelectCommand="SELECT tbl_products.*, tb_images.ImageId AS Expr1, tb_images.Extension, tb_images.AltText, tb_categories.CategoryName FROM tb_categories INNER JOIN tbl_products ON tb_categories.CategoryId = tbl_products.CategoryId INNER JOIN tb_images ON tbl_products.ImageId = tb_images.ImageId"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="productsds" runat="server" ConnectionString="<%$ ConnectionStrings:qiwebcon %>" SelectCommand="SELECT tbl_products.*, tb_images.ImageId, tb_images.Extension, tb_images.AltText, tb_categories.CategoryName 
+FROM tb_categories 
+INNER JOIN tbl_products 
+ON tb_categories.CategoryId = tbl_products.CategoryId 
+INNER JOIN tb_images 
+ON tbl_products.ImageId = tb_images.ImageId
+WHERE StockCondition = 1"></asp:SqlDataSource>
     </section>
         </div>
 </asp:Content>

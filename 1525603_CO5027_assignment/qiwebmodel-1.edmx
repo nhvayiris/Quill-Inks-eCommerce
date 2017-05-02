@@ -4,7 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="db_qiwebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="db_qiwebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DatePurchased" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+          <Property Name="IsInBasket" Type="bit" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="tb_categories">
           <Key>
             <PropertyRef Name="CategoryId" />
@@ -34,7 +45,21 @@
           <Property Name="ImageId" Type="int" />
           <Property Name="CategoryId" Type="nvarchar" MaxLength="10" />
           <Property Name="Condition" Type="text" />
+          <Property Name="IsOnSale" Type="bit" />
+          <Property Name="StockCondition" Type="bit" />
         </EntityType>
+        <Association Name="FK_tb_Cart_tbl_products">
+          <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="1" />
+          <End Role="tb_Cart" Type="Self.tb_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tb_Cart">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tbl_products_tb_categories">
           <End Role="tb_categories" Type="Self.tb_categories" Multiplicity="0..1" />
           <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="*" />
@@ -60,9 +85,14 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="db_qiwebModelStoreContainer">
+          <EntitySet Name="tb_Cart" EntityType="Self.tb_Cart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_categories" EntityType="Self.tb_categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_images" EntityType="Self.tb_images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_products" EntityType="Self.tbl_products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tb_Cart_tbl_products" Association="Self.FK_tb_Cart_tbl_products">
+            <End Role="tbl_products" EntitySet="tbl_products" />
+            <End Role="tb_Cart" EntitySet="tb_Cart" />
+          </AssociationSet>
           <AssociationSet Name="FK_tbl_products_tb_categories" Association="Self.FK_tbl_products_tb_categories">
             <End Role="tb_categories" EntitySet="tb_categories" />
             <End Role="tbl_products" EntitySet="tbl_products" />
@@ -72,8 +102,7 @@
             <End Role="tbl_products" EntitySet="tbl_products" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="db_qiwebModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -110,6 +139,9 @@
           <Property Name="Condition" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_categories" Relationship="Self.FK_tbl_products_tb_categories" FromRole="tbl_products" ToRole="tb_categories" />
           <NavigationProperty Name="tb_images" Relationship="Self.FK_tbl_products_tb_images" FromRole="tbl_products" ToRole="tb_images" />
+          <Property Name="IsOnSale" Type="Boolean" />
+          <Property Name="StockCondition" Type="Boolean" />
+          <NavigationProperty Name="tb_Cart" Relationship="db_qiwebModel.FK_tb_Cart_tbl_products" FromRole="tbl_products" ToRole="tb_Cart" />
         </EntityType>
         <Association Name="FK_tbl_products_tb_categories">
           <End Role="tb_categories" Type="Self.tb_categories" Multiplicity="0..1" />
@@ -147,7 +179,36 @@
             <End Role="tb_images" EntitySet="tb_images" />
             <End Role="tbl_products" EntitySet="tbl_products" />
           </AssociationSet>
+          <EntitySet Name="tb_Cart" EntityType="db_qiwebModel.tb_Cart" />
+          <AssociationSet Name="FK_tb_Cart_tbl_products" Association="db_qiwebModel.FK_tb_Cart_tbl_products">
+            <End Role="tbl_products" EntitySet="tbl_products" />
+            <End Role="tb_Cart" EntitySet="tb_Cart" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="tb_Cart">
+          <Key>
+            <PropertyRef Name="CartId" />
+          </Key>
+          <Property Name="CartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DatePurchased" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="IsInBasket" Type="Boolean" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tbl_products" Relationship="db_qiwebModel.FK_tb_Cart_tbl_products" FromRole="tb_Cart" ToRole="tbl_products" />
+        </EntityType>
+        <Association Name="FK_tb_Cart_tbl_products">
+          <End Type="db_qiwebModel.tbl_products" Role="tbl_products" Multiplicity="1" />
+          <End Type="db_qiwebModel.tb_Cart" Role="tb_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="tb_Cart">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -176,6 +237,8 @@
           <EntitySetMapping Name="tbl_products">
             <EntityTypeMapping TypeName="db_qiwebModel.tbl_products">
               <MappingFragment StoreEntitySet="tbl_products">
+                <ScalarProperty Name="StockCondition" ColumnName="StockCondition" />
+                <ScalarProperty Name="IsOnSale" ColumnName="IsOnSale" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="ProductDesc" ColumnName="ProductDesc" />
@@ -184,6 +247,18 @@
                 <ScalarProperty Name="ImageId" ColumnName="ImageId" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="Condition" ColumnName="Condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_Cart">
+            <EntityTypeMapping TypeName="db_qiwebModel.tb_Cart">
+              <MappingFragment StoreEntitySet="tb_Cart">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="IsInBasket" ColumnName="IsInBasket" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="CartId" ColumnName="CartId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

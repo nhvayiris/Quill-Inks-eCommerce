@@ -48,9 +48,10 @@ namespace assignment_draft
                 txtMessageBox.Text = "";
                 confirmationEnquiry();
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                
+                litSuccess.Text = "We apologize for the inconvenience but your message cannot be sent" + error;
+
             }
         }
 

@@ -5,49 +5,49 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContentPlaceHolder" runat="server">
 
     <main class="main-content">
-
-        <div class="loginWrapper grid_5">
+        <!-- start login -->
+        <div class="loginWrapper grid_5" id="LogMasuk">
             <h2 class="login-head welcome-head">Login</h2>
-            <div>
-                <asp:Label ID="lblUsername" runat="server" Text="Email"></asp:Label>
-                <asp:TextBox ID="txtLoginUser" runat="server"></asp:TextBox>
+            <div class="logininnerwrapper tabcontent">
+                <div>
+                    <asp:Label CssClass="contact-label" ID="lblUsername" runat="server" Text="Username:"></asp:Label>
+                    <asp:TextBox Class="contact-input" ID="txtLoginUser" runat="server"></asp:TextBox>
+                </div>
+
+                <div>
+                    <asp:Label CssClass="contact-label" ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+                    <asp:TextBox Class="contact-input" ID="txtLoginPassword" runat="server" TextMode="Password"></asp:TextBox>
+                </div>
+
+                <asp:Button CssClass="buttonlogin" ID="btnLogin" runat="server" Text="Log In" OnClick="btnLogin_Click" />
+                <div class="loginpanel">
+                    <asp:Literal ID="litLoginError" runat="server"></asp:Literal>
+                </div>
             </div>
-
-            <div>
-                <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-                <asp:TextBox ID="txtLoginPassword" runat="server" TextMode="Password"></asp:TextBox>
-            </div>
-
-            <div>
-                <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password"></asp:Label>
-                <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
-            </div>
-
-            <asp:Button ID="btnLogin" runat="server" Text="Log In" OnClick="btnLogin_Click" />
-            <asp:Literal ID="litLoginError" runat="server"></asp:Literal>
-
         </div>
 
-        <div class="loginWrapper grid_6">
+        <div class="loginWrapper grid_5" id="Register">
             <h2 class="login-head welcome-head">Register</h2>
-
-            <div>
-                <asp:Label ID="lblEmail" runat="server" Text="Username: "></asp:Label><asp:TextBox ID="tbRegusername" runat="server"></asp:TextBox>
-
+            <div class="logininnerwrapper">
+                <div>
+                    <asp:Label CssClass="contact-label" ID="lblEmail" runat="server" Text="Username: "></asp:Label><asp:TextBox Class="contact-input" ID="tbRegusername" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="Reqfieldregvalid" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="tbRegusername" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
+                </div>
+                <div>
+                    <asp:Label CssClass="contact-label" ID="lblRegPassword" runat="server" Text="Password: "></asp:Label><asp:TextBox Class="contact-input" ID="tbRegPassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="Reqfieldpassvalid" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="tbRegPassword" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
+                </div>
+                <div>
+                    <asp:Label CssClass="contact-label" ID="lblconfirm" runat="server" Text="Confirm Password:"></asp:Label>
+                    <asp:TextBox Class="contact-input" ID="tbconfirm" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password does not match!" ControlToValidate="tbRegPassword" ControlToCompare="tbconfirm" CssClass="lit-panel"></asp:CompareValidator>
+                    <asp:RegularExpressionValidator ID="RegularExprPassValid" Display="Dynamic" runat="server" ControlToValidate="tbRegPassword" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" CssClass="lit-panel" ErrorMessage="Incorrect password format. Passwords must be at least 8 characters in length, contain at least one uppercase character, at least one lower case character, atleast one special character and at least one number. E.g. P@55word"></asp:RegularExpressionValidator><!-- Srinivas, 2014 from http://stackoverflow.com/questions/19605150/regex-for-password-must-be-contain-at-least-8-characters-least-1-number-and-bot -->
+                </div>
+                <asp:Button CssClass="buttonlogin" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                <div class="loginpanel">
+                    <asp:Literal ID="litRegister" runat="server"></asp:Literal>
+                </div>
             </div>
-            <div>
-                <asp:Label ID="lblRegPassword" runat="server" Text="Password: "></asp:Label><asp:TextBox ID="tbRegPassword" runat="server" TextMode="Password"></asp:TextBox>
-
-            </div>
-
-            <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
-            <asp:Literal ID="litRegister" runat="server"></asp:Literal>
-
         </div>
-
     </main>
-
-
-
-
 </asp:Content>

@@ -26,7 +26,9 @@
                         ControlToValidate="txtContactMail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
                         ValidationGroup="save" CssClass="lit-panel" />
                     <asp:Label ID="lblSubject" runat="server" Text="Subject *: " AssociatedControlID="ddSubject" CssClass="contact-label"></asp:Label>
-                    <asp:DropDownList ID="ddSubject" runat="server" class="dropdown-input">
+                    <div class="ddcategory">
+                        <div class="choose">
+                            <asp:DropDownList ID="ddSubject" runat="server" class="dropdown-input">
                         <asp:ListItem>--Please Select an option--</asp:ListItem>
                         <asp:ListItem>Ask a question</asp:ListItem>
                         <asp:ListItem>Customer Support Ticket</asp:ListItem>
@@ -34,26 +36,35 @@
                         <asp:ListItem>Problems Logging In/Register</asp:ListItem>
                         <asp:ListItem>Others</asp:ListItem>
                     </asp:DropDownList>
+                        </div>
+                    </div>
                     <asp:RequiredFieldValidator ID="ValidDD" runat="server" ErrorMessage="Please select a subject!" InitialValue="--Please Select an option--" ControlToValidate="ddSubject" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblMessageBox" runat="server" Text="Message *: " AssociatedControlID="txtMessageBox" CssClass="contact-label"></asp:Label>
                     <asp:TextBox ID="txtMessageBox" runat="server" TextMode="MultiLine" class="message-input"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidMessage" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtMessageBox" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
-                    <asp:Button ID="btnSend" runat="server" Text="Submit"  ValidationGroup="save" OnClick="btnSend_Click" Width="150px" />
-                    <br /><span><asp:Literal ID="litSuccess" runat="server"></asp:Literal></span>
+                    <div>
+                        <asp:Button CssClass="buttoncontact" ID="btnSend" runat="server" Text="Submit"  ValidationGroup="save" OnClick="btnSend_Click" Width="150px" />
+                    </div>
+                    <div class="givespace">
+                        <asp:Literal ID="litSuccess" runat="server"></asp:Literal>
+                    </div>
                 </div><!-- end userdetailform -->
 
                 <div class="contact-details grid_5">
                     <h3 class="welcome-head-section">Contact Information</h3>
-                    <h4>Telephone: </h4>
+                    <h4 class="headspace">Call us: </h4>
                     <div>
-                        <p>01234 98765 </p>
+                        <p>Call <a href="+0123498765">3498765</a> for more information!</p>
                     </div>
-                    <h4>Address : </h4>
-                    <address>
-                        <p>Plaza Abdul Razak</p>
-                        <p>Jalan Laksamana Abdul Razak</p>
-                        <p>Bandar Seri Begawan</p>
+                    <h4 class="headspace">Visit us at : </h4>
+                    <div>
+                        <address class="address">
+                        Plaza Abdul Razak,
+                        Jalan Laksamana Abdul Razak,
+                        Bandar Seri Begawan
                     </address>
+                    </div>
+                    
                 </div><!-- end contact-details-->
 
 
