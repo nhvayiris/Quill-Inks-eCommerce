@@ -9,23 +9,9 @@
             <h2>Shopping Cart</h2>
 
             <asp:LinkButton ID="backbtn" runat="server" OnClick="backbtn_Click">&larr; Back to Product</asp:LinkButton>
-            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="CartId" DataSourceID="SqlDataSource1" EmptyDataText="No Item in Cart!" OnRowDataBound="gvCart_RowDataBound">
-                <Columns>
-                    <asp:CommandField ShowDeleteButton="True" />
-                    <asp:BoundField DataField="ProductName" HeaderText="Product " />
-                    <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" DataFormatString="{0:c}" HtmlEncode="false" />
-                    <asp:BoundField DataField="ProductId" HeaderText="ProductId" SortExpression="ProductId" />
-                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+           
 
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <img src="Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" width="500" height="500" alt="" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-
-            <asp:Repeater runat="server" ID="rptrCart" DataSourceID="SqlDataSource1" OnItemDataBound="rptrCart_ItemDataBound">
+            <asp:Repeater runat="server" ID="rptrCart" DataSourceID="SqlDataSource1" OnItemDataBound="rptrCart_ItemDataBound" >
                 <HeaderTemplate>
                     <div>
                 </HeaderTemplate>

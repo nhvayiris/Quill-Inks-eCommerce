@@ -18,7 +18,7 @@ namespace assignment_draft.Members
             grandTotal = 0;
         }
 
-        protected void gvCart_RowDataBound(object sender, GridViewRowEventArgs e)
+       /* protected void gvCart_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
@@ -28,7 +28,7 @@ namespace assignment_draft.Members
             Response.Cookies["Price"].Value = grandTotal.ToString();
             TextBox2.Text = grandTotal.ToString();
 
-        }
+        } */
 
         protected void gvCart_RowDeleted(object sender, GridViewDeletedEventArgs e)
         {
@@ -41,9 +41,36 @@ namespace assignment_draft.Members
             Response.Redirect("~/default.aspx");
         }
 
-        protected void rptrCart_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        protected void rptrCart_ItemDataBound(object sender, RepeaterItemEventArgs e)  
         {
-            Repeater rptr = sender as Repeater;
-        }
+            Repeater rptr = sender as Repeater; //get repeater control object 
+
+            //if no data in repeater (count < 1)
+            if (rptrCart != null && rptrCart.Items.Count < 1)
+            {
+                if (e.Item.ItemType == ListItemType.Footer) 
+                {
+                    //display no data message
+                    Label lblEmptyItem = e.Item.FindControl("lblEmptyItem") as Label;
+                    if (lblEmptyItem != null)
+                    {
+                        lblEmptyItem.Visible = true;
+                    }
+                }
+            } // referenced from (Mohit, 2012) http://stackoverflow.com/questions/9578285/how-to-show-a-message-inside-a-repeater-control-if-it-has-no-data-inside-it
+
+
+            if (e.Item.ItemType == ListItemType.Item)
+            {
+                decimal rowTotal = Convert.ToDecimal(DataBinder.Eval(e.Item.DataItem, "Price")) * Convert.ToDecimal(DataBinder.Eval(e.Item.DataItem, "Quantity"));
+                grandTotal = grandTotal + rowTotal;
+            }
+
+            Response.Cookies["Price"].Value = grandTotal.ToString();
+            TextBox2.Text = grandTotal.ToString();
+
+        }  
+
+
     }
 }
