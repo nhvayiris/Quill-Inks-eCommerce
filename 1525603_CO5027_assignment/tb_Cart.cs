@@ -16,11 +16,14 @@ namespace assignment_draft
     {
         public int CartId { get; set; }
         public string ClientId { get; set; }
-        public System.DateTime DatePurchased { get; set; }
-        public decimal Amount { get; set; }
-        public bool IsInBasket { get; set; }
+        public Nullable<bool> IsInBasket { get; set; }
         public int ProductId { get; set; }
+        public decimal Price { get; set; }
+        public int Quantity { get; set; }
+        public int ImageId { get; set; }
+        public string Extension { get; set; }
     
         public virtual tbl_products tbl_products { get; set; }
+        public virtual tb_images tb_images { get; set; }
     }
 }

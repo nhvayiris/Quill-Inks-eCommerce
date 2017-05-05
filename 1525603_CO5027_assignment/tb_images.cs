@@ -18,6 +18,7 @@ namespace assignment_draft
         public tb_images()
         {
             this.tbl_products = new HashSet<tbl_products>();
+            this.tb_Cart = new HashSet<tb_Cart>();
         }
     
         public int ImageId { get; set; }
@@ -28,5 +29,7 @@ namespace assignment_draft
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_products> tbl_products { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Cart> tb_Cart { get; set; }
     }
 }

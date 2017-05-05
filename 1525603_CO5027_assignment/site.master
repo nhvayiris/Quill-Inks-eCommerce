@@ -57,7 +57,7 @@
             <nav id="nav-stroke" class="grid_12 clearfix">
                 <ul>
                     <li class="innernav"><a href="~/default.aspx" runat="server">Home</a></li>
-                    <li class="innernav"><a href="default.aspx?Product=Planners">Product</a></li>
+                    <li class="innernav"><a href="../default.aspx?Product=Planners">Product</a></li>
                     <li class="innernav"><a href="~/contact.aspx" runat="server">Contacts</a></li>
                     <li class="innernav"><a href="~/Login.aspx" runat="server" id="linkLogin">Log In</a><asp:HyperLink ID="litStatus" runat="server"></asp:HyperLink></li>
                     <li class="innernav">

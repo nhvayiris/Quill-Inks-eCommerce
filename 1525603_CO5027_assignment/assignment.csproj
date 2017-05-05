@@ -278,8 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="testcart.aspx" />
-    <Content Include="ViewTestCart.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -309,11 +307,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logic\CartItem.cs" />
-    <Compile Include="Logic\CartModel.cs" />
-    <Compile Include="Logic\Product.cs" />
-    <Compile Include="Logic\ProductModel.cs" />
-    <Compile Include="Logic\ShoppingCart.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -384,20 +377,6 @@
     </Compile>
     <Compile Include="tb_images.cs">
       <DependentUpon>qiwebmodel-1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="testcart.aspx.cs">
-      <DependentUpon>testcart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="testcart.aspx.designer.cs">
-      <DependentUpon>testcart.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ViewTestCart.aspx.cs">
-      <DependentUpon>ViewTestCart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewTestCart.aspx.designer.cs">
-      <DependentUpon>ViewTestCart.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -11,10 +11,12 @@
           </Key>
           <Property Name="CartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClientId" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DatePurchased" Type="datetime" Nullable="false" />
-          <Property Name="Amount" Type="money" Nullable="false" />
-          <Property Name="IsInBasket" Type="bit" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="IsInBasket" Type="bit" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="ImageId" Type="int" Nullable="false" />
+          <Property Name="Extension" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_categories">
           <Key>
@@ -48,6 +50,18 @@
           <Property Name="IsOnSale" Type="bit" />
           <Property Name="StockCondition" Type="bit" />
         </EntityType>
+        <Association Name="FK_tb_Cart_tb_images">
+          <End Role="tb_images" Type="Self.tb_images" Multiplicity="1" />
+          <End Role="tb_Cart" Type="Self.tb_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_images">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="tb_Cart">
+              <PropertyRef Name="ImageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tb_Cart_tbl_products">
           <End Role="tbl_products" Type="Self.tbl_products" Multiplicity="1" />
           <End Role="tb_Cart" Type="Self.tb_Cart" Multiplicity="*" />
@@ -89,6 +103,10 @@
           <EntitySet Name="tb_categories" EntityType="Self.tb_categories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_images" EntityType="Self.tb_images" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_products" EntityType="Self.tbl_products" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tb_Cart_tb_images" Association="Self.FK_tb_Cart_tb_images">
+            <End Role="tb_images" EntitySet="tb_images" />
+            <End Role="tb_Cart" EntitySet="tb_Cart" />
+          </AssociationSet>
           <AssociationSet Name="FK_tb_Cart_tbl_products" Association="Self.FK_tb_Cart_tbl_products">
             <End Role="tbl_products" EntitySet="tbl_products" />
             <End Role="tb_Cart" EntitySet="tb_Cart" />
@@ -124,6 +142,7 @@
           <Property Name="Height" Type="Int32" Nullable="false" />
           <Property Name="AltText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tbl_products" Relationship="Self.FK_tbl_products_tb_images" FromRole="tb_images" ToRole="tbl_products" />
+          <NavigationProperty Name="tb_Cart" Relationship="db_qiwebModel.FK_tb_Cart_tb_images" FromRole="tb_images" ToRole="tb_Cart" />
         </EntityType>
         <EntityType Name="tbl_products">
           <Key>
@@ -184,6 +203,10 @@
             <End Role="tbl_products" EntitySet="tbl_products" />
             <End Role="tb_Cart" EntitySet="tb_Cart" />
           </AssociationSet>
+          <AssociationSet Name="FK_tb_Cart_tb_images" Association="db_qiwebModel.FK_tb_Cart_tb_images">
+            <End Role="tb_images" EntitySet="tb_images" />
+            <End Role="tb_Cart" EntitySet="tb_Cart" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="tb_Cart">
           <Key>
@@ -191,11 +214,14 @@
           </Key>
           <Property Name="CartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClientId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DatePurchased" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="IsInBasket" Type="Boolean" Nullable="false" />
+          <Property Name="IsInBasket" Type="Boolean" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tbl_products" Relationship="db_qiwebModel.FK_tb_Cart_tbl_products" FromRole="tb_Cart" ToRole="tbl_products" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="ImageId" Type="Int32" Nullable="false" />
+          <Property Name="Extension" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_images" Relationship="db_qiwebModel.FK_tb_Cart_tb_images" FromRole="tb_Cart" ToRole="tb_images" />
         </EntityType>
         <Association Name="FK_tb_Cart_tbl_products">
           <End Type="db_qiwebModel.tbl_products" Role="tbl_products" Multiplicity="1" />
@@ -206,6 +232,18 @@
             </Principal>
             <Dependent Role="tb_Cart">
               <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_Cart_tb_images">
+          <End Type="db_qiwebModel.tb_images" Role="tb_images" Multiplicity="1" />
+          <End Type="db_qiwebModel.tb_Cart" Role="tb_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_images">
+              <PropertyRef Name="ImageId" />
+            </Principal>
+            <Dependent Role="tb_Cart">
+              <PropertyRef Name="ImageId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -253,10 +291,12 @@
           <EntitySetMapping Name="tb_Cart">
             <EntityTypeMapping TypeName="db_qiwebModel.tb_Cart">
               <MappingFragment StoreEntitySet="tb_Cart">
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="IsInBasket" ColumnName="IsInBasket" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="DatePurchased" ColumnName="DatePurchased" />
                 <ScalarProperty Name="ClientId" ColumnName="ClientId" />
                 <ScalarProperty Name="CartId" ColumnName="CartId" />
               </MappingFragment>
