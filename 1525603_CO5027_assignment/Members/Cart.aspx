@@ -3,100 +3,78 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="headContentPlaceholder" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContentPlaceHolder" runat="server">
-
     <main>
         <section class="contentpanel">
-            <h2>Shopping Cart</h2>
+            <h2 class="welcome-head-cart">Shopping Cart</h2>
 
             <asp:LinkButton ID="backbtn" runat="server" OnClick="backbtn_Click">&larr; Back to Product</asp:LinkButton>
-           
 
-            <asp:Repeater runat="server" ID="rptrCart" DataSourceID="SqlDataSource1" OnItemDataBound="rptrCart_ItemDataBound" >
+            <asp:Repeater runat="server" ID="rptrCart" OnItemCommand="rptrCart_ItemCommand" OnItemDataBound="rptrCart_ItemDataBound">
                 <HeaderTemplate>
                     <div>
+                        <ul>
                 </HeaderTemplate>
                 <ItemTemplate>
-                    <div>
-                    <div class="left-cont grid_5">
+                    <li class="product-display grid_12">
+
+                        <div class="right-cont">
+                            <img src="../Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" id="ImageProduct" class="productImageCart" width="200" height="200" alt="" />
+                        </div>
+                        <div>
+                            <p class="productLbl">
+                                ID #
+                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("ProductId") %>'></asp:Label>
+                            </p>
+                        </div>
                         <div>
                             <asp:Label ID="lblProdName" CssClass="productLbl" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label>
                         </div>
                         <div>
-                            <p class="productLbl">BND&#36;
-                                <asp:Label ID="productLblPrice" runat="server" Text='<%#Eval("Price", "{0:##0.00}") %>'></asp:Label></p>
+                            <p class="productLbl">
+                                BND&#36;
+                                <asp:Label ID="productLblPrice" runat="server" Text=' <%#Eval("Price", "{0:##0.00}") %> '></asp:Label>
+                            </p>
                         </div>
                         <div>
-                        <p class="productLbl">Select Quantity: </p>
-                        <asp:DropDownList ID="ddStockQty" runat="server" CssClass="qty">
-                            <asp:ListItem>1</asp:ListItem>
-                            <asp:ListItem>2</asp:ListItem>
-                            <asp:ListItem>3</asp:ListItem>
-                            <asp:ListItem>4</asp:ListItem>
-                            <asp:ListItem>5</asp:ListItem>
-                            <asp:ListItem>6</asp:ListItem>
-                            <asp:ListItem>7</asp:ListItem>
-                            <asp:ListItem>8</asp:ListItem>
-                            <asp:ListItem>9</asp:ListItem>
-                            <asp:ListItem>10</asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
+                            <asp:Label ID="Label1" runat="server" CssClass="qty" Text=' <%#Eval("Quantity") %> '></asp:Label>
+                        </div>
+                        <div>
+                            <asp:LinkButton CommandName="Remove" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "ProductId") %>' ToolTip="Remove product from cart!" CssClass="productLbl" ID="lnkDelete" runat="server">Remove</asp:LinkButton>
+                        </div>
+                    </li>
 
-                    </div>
-                    <div class="right-cont grid_6">
-                        <img src="../Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" id="ImageProduct" class="productImageCart" width="200" height="200" alt="" />
-                    </div>
-                    
-                    </div>
                 </ItemTemplate>
-                <FooterTemplate></div>
-                    <asp:Label ID="lblEmptyItem" runat="server" Text="There are no items in cart!" Visible="false"></asp:Label>
+                <FooterTemplate>
+                    </ul>
+                    </div>
+                    <asp:Label CssClass="productLbl" ID="lblEmptyItem" runat="server" Text="There are no items in cart!" Visible="false"></asp:Label>
                 </FooterTemplate>
             </asp:Repeater>
 
-
-
-
-
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:qiwebcon %>" DeleteCommand="DELETE FROM [tb_Cart] WHERE [CartId] = @CartId" InsertCommand="INSERT INTO [tb_Cart] ([ClientId], [Price], [ProductId], [IsInBasket], [Quantity], [ImageId], [Extension]) VALUES (@ClientId, @Price, @ProductId, @IsInBasket, @Quantity, @ImageId, @Extension)" SelectCommand="SELECT tb_Cart.*, tbl_products.ProductName, tbl_products.Price, tbl_products.ImageId, tbl_products.CategoryId FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId" UpdateCommand="UPDATE [tb_Cart] SET [ClientId] = @ClientId, [Price] = @Price, [ProductId] = @ProductId, [IsInBasket] = @IsInBasket, [Quantity] = @Quantity, [ImageId] = @ImageId, [Extension] = @Extension WHERE [CartId] = @CartId">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:qiwebcon %>"
+                DeleteCommand="DELETE FROM [tb_Cart] WHERE [CartId] = @original_CartId AND [ClientId] = @original_ClientId AND [ProductId] = @original_ProductId AND [Quantity] = @original_Quantity AND [Extension] = @original_Extension">
                 <DeleteParameters>
-                    <asp:Parameter Name="CartId" Type="Int32" />
+                    <asp:Parameter Name="original_CartId" Type="Int32" />
+                    <asp:Parameter Name="original_ClientId" Type="String" />
+                    <asp:Parameter Name="original_ProductId" Type="Int32" />
+                    <asp:Parameter Name="original_Quantity" Type="Int32" />
+                    <asp:Parameter Name="original_Extension" Type="String" />
                 </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="ClientId" Type="String" />
-                    <asp:Parameter Name="Price" Type="Decimal" />
-                    <asp:Parameter Name="ProductId" Type="Int32" />
-                    <asp:Parameter Name="IsInBasket" Type="Boolean" />
-                    <asp:Parameter Name="Quantity" Type="Int32" />
-                    <asp:Parameter Name="ImageId" Type="Int32" />
-                    <asp:Parameter Name="Extension" Type="String" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="ClientId" Type="String" />
-                    <asp:Parameter Name="Price" Type="Decimal" />
-                    <asp:Parameter Name="ProductId" Type="Int32" />
-                    <asp:Parameter Name="IsInBasket" Type="Boolean" />
-                    <asp:Parameter Name="Quantity" Type="Int32" />
-                    <asp:Parameter Name="ImageId" Type="Int32" />
-                    <asp:Parameter Name="Extension" Type="String" />
-                    <asp:Parameter Name="CartId" Type="Int32" />
-                </UpdateParameters>
+                
             </asp:SqlDataSource>
 
-
-
-            <div id="price">Total Cost<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></div>
-
-
-
         </section>
-        <section class="contentpanel">
-            <div>
-                <asp:Button ID="btnShop" runat="server" Text="Continue Shopping" />
+        <asp:Panel runat="server" ID="totalPanel">
+            <div class="contentpanel">
+                <div>
+                    <asp:Button ID="btnShop" runat="server" OnClick="btnShop_Click" Text="Continue Shopping" />
+                </div>
+                <div>
+                    <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" OnClick="btnCheckOut_Click" />
+                </div>
             </div>
-            <div>
-                <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" />
-            </div>
-        </section>
+        </asp:Panel>
+
     </main>
 
 

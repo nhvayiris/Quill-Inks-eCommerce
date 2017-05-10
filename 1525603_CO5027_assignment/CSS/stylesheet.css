@@ -35,6 +35,12 @@ h2.welcome-head {
     text-align:center;
 }
 
+h2.welcome-head-cart {
+    color: #834200;
+    text-align:center;
+    margin-top:280px;
+}
+
 h2.welcome-head-section, h3.welcome-head-section {
     color: #834200;
     text-align:center;
@@ -116,6 +122,13 @@ li.product-display {
     margin: 0.5%;
 
 }
+
+li.product-display-cart {
+    list-style-type: none;
+    
+
+}
+
 
 .link-prodpage {
     background: #ccc none repeat scroll 0 0;
@@ -231,7 +244,7 @@ li.product-display {
 
 .icon{
   position: absolute;
-  margin-left: 46%;
+  margin-left: 610px;
   margin-top: 1px;
   z-index: 1;
   color: black;
@@ -280,6 +293,22 @@ li.product-display {
     margin-bottom: 10px;
     font-size: 26px;
     font-family: 'Roboto', sans-serif;
+}
+
+.productLbl-cart{
+    display: block;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px 0px 0px 60px;
+    text-decoration: underline;
+
+}
+
+.productLbl-cart-content{
+    display: block;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px 0px 0px 10px;
 }
 
 .product-description {
@@ -520,6 +549,27 @@ li.product-display {
     text-decoration:none;
     margin-top: 30px;
 
+}
+
+.orderTotalcart{
+    float:right;
+    background: #ccc;
+    position:absolute;
+    margin-right: 4%;
+    border: 3px solid black;
+
+    display: block;
+}
+
+.checkOut {
+    width: 500px;
+    background: #ccc;
+    padding: 20px;
+    display: block;
+    float: left;
+    border: 3px solid black;
+    margin-top: 10px;
+    margin-left: 4%;
 }
 
 /* ================================= */

@@ -50,8 +50,8 @@
                 </HeaderTemplate>
                 <ItemTemplate>
                     <li class="product-display">
-                        
-                        <a href="<%# string.Format("product-display.aspx?Id={0}", HttpUtility.UrlEncode(Eval ("ProductId").ToString()), HttpUtility.UrlEncode(Eval("ImageId").ToString()), HttpUtility.UrlEncode(Eval("Price", "{0:##0.00}").ToString())) %>" class="planners">
+
+                        <a href="<%# string.Format("product-display.aspx?Id={0}", HttpUtility.UrlEncode(Eval ("ProductId").ToString())) %>" class="planners">
                             <img src="Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="300" height="300" alt="This is an image of a <%#Eval("AltText") %>" />
                             <img src="Images/product-hover/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="hide" width="300" height="300" alt="This is the inside image of a <%#Eval("AltText") %>" />
                         </a>
@@ -98,7 +98,7 @@ WHERE IsOnSale = 1"></asp:SqlDataSource>
                         <ul>
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <li class="product-display">     
+                        <li class="product-display">
                             <a href="<%# string.Format("product-display.aspx?Id={0}", HttpUtility.UrlEncode(Eval ("ProductId").ToString()), HttpUtility.UrlEncode(Eval("ImageId").ToString())) %>" class="planners">
                                 <img src="Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="300" height="300" alt="This is an image of a <%#Eval("AltText") %>" />
                                 <img src="Images/product-hover/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="hide" width="300" height="300" alt="This is the inside image of a <%#Eval("AltText") %>" />
