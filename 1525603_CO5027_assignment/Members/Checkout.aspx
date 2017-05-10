@@ -7,26 +7,31 @@
         <div class="OrderSummary">
             <h2 class="welcome-head-cart ">Order Confirmation</h2>
             <asp:Literal ID="litError" runat="server"></asp:Literal>
-            
+
 
 
             <asp:Panel ID="pnlCheckout" runat="server">
                 <h2 class="welcome-head">Ordered Items for checkout!</h2>
                 <div class="checkOut">
-                    <asp:Repeater ID="rptrCart" runat="server" >
+                    <asp:Repeater ID="rptrCart" runat="server">
                         <HeaderTemplate>
                             <ul>
                         </HeaderTemplate>
                         <ItemTemplate>
                             <li class="product-display grid_10">
                                 <div>
-                                    <img src="../Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="300" height="300" alt="" />
+                                    <img src="../Images/uploadedimages/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="filo" width="180" height="180" alt="" />
                                 </div>
-                                <div>
-                                    <p><%# Eval("ProductName") %></p>
-                                    <asp:Label ID="lblPrice" runat="server" Text="BND&#36; "><%#Eval("Price", "{0:##0.00}") %></asp:Label>
-                                    <asp:Label ID="lblQuantity" runat="server" Text="Quantity Ordered: "><%#Eval("Quantity") %></asp:Label>
-                                    <p class="sale-displaybody">IN STOCK!</p>
+                                <div class="cart-item">
+                                    <div>
+                                        <p class="sale-displayhead"><%# Eval("ProductName") %></p>
+                                    </div>
+                                    <div>
+                                        <asp:Label ID="lblPrice" CssClass="sale-displayhead" runat="server" Text="GBP &pound; "><%#Eval("Price", "{0:##0.00}") %></asp:Label>
+                                    </div>
+                                    <div>
+                                        <asp:Label ID="lblQuantity" CssClass="sale-displayhead" runat="server" Text="Quantity Ordered: "><%#Eval("Quantity") %></asp:Label>
+                                    </div>
                                 </div>
                             </li>
                         </ItemTemplate>
@@ -39,24 +44,29 @@
                             <asp:Label ID="lblSummary" CssClass="productLbl-cart" runat="server" Text="Order Summary"></asp:Label>
                         </div>
                         <div>
-                            <p>
-                                <asp:Label ID="lblSubtotal" CssClass="productLbl-cart-content" runat="server" Text="Subtotal:"></asp:Label><asp:Label ID="lbtotal" runat="server"></asp:Label>
+                            <p class="productLbl-cart-content">
+                                Subtotal: GBP &pound;
+                                <asp:Label ID="lbtotal" CssClass="sale-displayhead" runat="server"></asp:Label>
+                            </p>
+                            <asp:Label ID="lblShipping" CssClass="productLbl-cart-content" runat="server" Text="Shipping cost: GBP &pound; 0.00"></asp:Label>
+                        </div>
+                        <div>
+                            <p class="productLbl-cart-content">
+                                Grand Total: GBP &pound;
+                                <asp:Label ID="lbGrandTotal" CssClass="sale-displayhead" runat="server"></asp:Label>
                             </p>
                         </div>
                         <div>
-                            <asp:Label ID="lblShipping" CssClass="productLbl-cart-content" runat="server" Text="Shipping cost: BND &#36; 0.00"></asp:Label>
+                            <p class="productLbl-cart-content">
+                                Total Items In Cart:
+                                <asp:Label ID="lblTotalQty" CssClass="sale-displayhead" runat="server"></asp:Label>
+                            </p>
                         </div>
                         <div>
-                            <asp:Label ID="lblGrandTotal" CssClass="productLbl-cart-content" runat="server" Text="Grand Total: "></asp:Label><asp:Label ID="lbGrandTotal" runat="server"></asp:Label>
-                        </div>
-                        <div>
-                            <asp:Label ID="lblQty" CssClass="productLbl-cart-content" runat="server" Text="Total Quantity: "></asp:Label><asp:Label ID="lblTotalQty" runat="server"></asp:Label>
-
-                        </div>
-                        <div>
-                            <asp:Button ID="btnPaypalCheckout" runat="server" Text="Proceed with Payment" OnClick="btnPaypalCheckout_Click" />
+                            <asp:Button ID="btnPaypalCheckout" CssClass="button-cart" runat="server" Text="Proceed with Payment" OnClick="btnPaypalCheckout_Click" />
                         </div>
                     </div>
+
                 </div>
             </asp:Panel>
         </div>

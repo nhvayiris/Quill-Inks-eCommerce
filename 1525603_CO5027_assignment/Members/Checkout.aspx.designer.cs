@@ -49,15 +49,6 @@ namespace assignment_draft.Members {
         protected global::System.Web.UI.WebControls.Label lblSummary;
         
         /// <summary>
-        /// lblSubtotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSubtotal;
-        
-        /// <summary>
         /// lbtotal control.
         /// </summary>
         /// <remarks>
@@ -76,15 +67,6 @@ namespace assignment_draft.Members {
         protected global::System.Web.UI.WebControls.Label lblShipping;
         
         /// <summary>
-        /// lblGrandTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGrandTotal;
-        
-        /// <summary>
         /// lbGrandTotal control.
         /// </summary>
         /// <remarks>
@@ -92,15 +74,6 @@ namespace assignment_draft.Members {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbGrandTotal;
-        
-        /// <summary>
-        /// lblQty control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQty;
         
         /// <summary>
         /// lblTotalQty control.

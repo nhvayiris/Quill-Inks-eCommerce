@@ -13,7 +13,7 @@
                         <asp:Label ID="lblProdName" CssClass="productLbl" runat="server" Text='<%# Eval("ProductName") %>'></asp:Label>
                     </div>
                     <div>
-                        <p class="productLbl">BND&#36; <asp:Label ID="productLblPrice" runat="server" Text='<%#Eval("Price", "{0:##0.00}") %>'></asp:Label></p>
+                        <p class="productLbl">GBP &pound; <asp:Label ID="productLblPrice" runat="server" Text='<%#Eval("Price", "{0:##0.00}") %>'></asp:Label></p>
                     </div>
                     
                     <div>

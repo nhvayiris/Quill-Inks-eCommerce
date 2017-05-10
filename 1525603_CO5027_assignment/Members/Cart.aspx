@@ -31,12 +31,12 @@
                         </div>
                         <div>
                             <p class="productLbl">
-                                BND&#36;
+                                GBP &pound;
                                 <asp:Label ID="productLblPrice" runat="server" Text=' <%#Eval("Price", "{0:##0.00}") %> '></asp:Label>
                             </p>
                         </div>
                         <div>
-                            <asp:Label ID="Label1" runat="server" CssClass="qty" Text=' <%#Eval("Quantity") %> '></asp:Label>
+                            <p class="productLbl">Quantity: <asp:Label ID="Label1" runat="server" Text=' <%#Eval("Quantity") %> '></asp:Label></p>
                         </div>
                         <div>
                             <asp:LinkButton CommandName="Remove" CommandArgument='<%#DataBinder.Eval(Container.DataItem, "ProductId") %>' ToolTip="Remove product from cart!" CssClass="productLbl" ID="lnkDelete" runat="server">Remove</asp:LinkButton>
@@ -67,10 +67,10 @@
         <asp:Panel runat="server" ID="totalPanel">
             <div class="contentpanel">
                 <div>
-                    <asp:Button ID="btnShop" runat="server" OnClick="btnShop_Click" Text="Continue Shopping" />
+                    <asp:Button ID="btnShop" CssClass="button" runat="server" OnClick="btnShop_Click" Text="Continue Shopping" />
                 </div>
                 <div>
-                    <asp:Button ID="btnCheckOut" runat="server" Text="Check Out" OnClick="btnCheckOut_Click" />
+                    <asp:Button ID="btnCheckOut" CssClass="button" runat="server" Text="Check Out" OnClick="btnCheckOut_Click" />
                 </div>
             </div>
         </asp:Panel>

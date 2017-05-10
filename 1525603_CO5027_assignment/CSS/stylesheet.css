@@ -309,6 +309,7 @@ li.product-display-cart {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
     padding: 0px 0px 0px 10px;
+    margin-bottom: 0px;
 }
 
 .product-description {
@@ -551,25 +552,33 @@ li.product-display-cart {
 
 }
 
+.cart-item{
+    float: left;
+    margin-top: -150px;
+    margin-left: 200px;
+    margin-bottom: 10px;
+}
+
 .orderTotalcart{
     float:right;
     background: #ccc;
-    position:absolute;
-    margin-right: 4%;
+    position:relative;
+    margin-right: 4px;
     border: 3px solid black;
-
+    margin-top: -10px;
     display: block;
 }
 
 .checkOut {
     width: 500px;
     background: #ccc;
-    padding: 20px;
+    padding: 10px;
+    padding-right: 100px;
     display: block;
     float: left;
     border: 3px solid black;
     margin-top: 10px;
-    margin-left: 4%;
+    
 }
 
 /* ================================= */
@@ -606,6 +615,33 @@ li.product-display-cart {
     font-size: 25px;
     margin:5px;
 }
+
+.button-cart {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border-color: #ffd1b3;
+    background-color: #ff6a00;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.button-cart:hover {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border-color: #ff6a00;
+    background-color: #ffd1b3;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
 
 
 .button {

@@ -56,7 +56,7 @@
                             <img src="Images/product-hover/<%#Eval ("ImageId") %><%#Eval ("Extension") %>" class="hide" width="300" height="300" alt="This is the inside image of a <%#Eval("AltText") %>" />
                         </a>
                         <p class="sale-displayhead"><%# Eval("ProductName") %></p>
-                        <p class="sale-displaybody">BND&#36; <%#Eval("Price", "{0:##0.00}") %></p>
+                        <p class="sale-displaybody">GBP &pound; <%#Eval("Price", "{0:##0.00}") %></p>
                     </li>
                 </ItemTemplate>
                 <FooterTemplate></ul></FooterTemplate>
