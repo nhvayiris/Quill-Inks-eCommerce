@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="assignment_draft.Members.Checkout" %>
+﻿<%@ Page Title="Checkout | Quill & Inks" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeBehind="Checkout.aspx.cs" Inherits="assignment_draft.Members.Checkout" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="headContentPlaceholder" runat="server">
 </asp:Content>
@@ -7,9 +7,6 @@
         <div class="OrderSummary">
             <h2 class="welcome-head-cart ">Order Confirmation</h2>
             <asp:Literal ID="litError" runat="server"></asp:Literal>
-
-
-
             <asp:Panel ID="pnlCheckout" runat="server">
                 <h2 class="welcome-head">Ordered Items for checkout!</h2>
                 <div class="checkOut">
@@ -66,7 +63,6 @@
                             <asp:Button ID="btnPaypalCheckout" CssClass="button-cart" runat="server" Text="Proceed with Payment" OnClick="btnPaypalCheckout_Click" />
                         </div>
                     </div>
-
                 </div>
             </asp:Panel>
         </div>

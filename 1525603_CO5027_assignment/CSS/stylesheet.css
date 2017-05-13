@@ -119,7 +119,7 @@ li.product-display {
     list-style-type: none;
     display: inline-block;
     position: relative;
-    margin: 0.5%;
+    margin: 0.37%;
 
 }
 
@@ -225,7 +225,7 @@ li.product-display-cart {
     white-space: nowrap;
     width: 400px;
     padding: 10px;
-    margin-left: 20%;
+    margin-left: 10px;
     margin-top: 5px;
 }
 
@@ -236,7 +236,7 @@ li.product-display-cart {
   border: none;
   font-size: 10pt;
   color: #262626;
-  padding-left: 45px;
+  padding-left: 200px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -244,7 +244,7 @@ li.product-display-cart {
 
 .icon{
   position: absolute;
-  margin-left: 610px;
+  margin-left: 500px;
   margin-top: 1px;
   z-index: 1;
   color: black;
@@ -394,6 +394,12 @@ li.product-display-cart {
    font-weight: 900;
 }
 
+.contact-label-search {
+
+   font-size: 18px;
+   font-weight: 900;
+}
+
 .userdetailform .message-input {
    height: 200px;
    font-size: 18px;
@@ -436,6 +442,14 @@ li.product-display-cart {
    margin-bottom: 10px;
    color: #ff0000;
    font-weight:bold;
+}
+
+.lit-panel-search {
+   display: block;
+   margin-top: -25px;
+   color: #ff0000;
+   font-weight:bold;
+   margin-left: 600px;
 }
 
 .contact-details {
@@ -581,6 +595,13 @@ li.product-display-cart {
     
 }
 
+.cancelcart{
+    text-align:center;
+    font-size: 20px;
+    color:#834200;
+    font-weight: bold;
+}
+
 /* ================================= */
 /* ==== all admin pages styles ===== */
 /* ================================= */
@@ -594,8 +615,7 @@ li.product-display-cart {
     border:solid 3px #ff6a00;
     margin-top: 50px;
     margin-bottom: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
+    width: 100%;
 }
 
 .adminadd {
@@ -608,7 +628,47 @@ li.product-display-cart {
     margin-left: 50px;
 }
 
+.admin-nav li a, div.admin-nav {
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+  text-decoration: none;
+  color: #834200;
+  background-color: navajowhite;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 10px;
+    
+}
 
+.adminvalid{
+    margin-left: 699px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+}
+
+
+
+.admin-nav li {
+    list-style: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+  text-decoration: none;
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.admin-nav li a:hover {
+    color: black;
+}
 
 .admininput {
     height: 30px;

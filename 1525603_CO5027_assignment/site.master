@@ -90,7 +90,7 @@
                         <div class="sitemap">
                             <ul>
                                 <li class="sitemap-head">Admin</li>
-                                <li class="sitemap-subhead"><a href="~/Admin/admin.aspx" runat="server">Manage</a></li>
+                                <li class="sitemap-subhead"><a href="~/Admin/admin.aspx?Manage=admin" runat="server">Manage</a></li>
 
                             </ul>
                         </div>

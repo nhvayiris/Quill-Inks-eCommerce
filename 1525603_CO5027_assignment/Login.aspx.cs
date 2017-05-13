@@ -33,7 +33,7 @@ namespace assignment_draft
                 var userStore = new UserStore<IdentityUser>(identityDbContext);
                 var userManager = new UserManager<IdentityUser>(userStore);
                 var user = userManager.Find(txtLoginUser.Text, txtLoginPassword.Text);
-                if (user != null)
+                if (user != null )
                 {
                     //todo: loguser in/instruct user to log in
                     LogUserIn(userManager, user);

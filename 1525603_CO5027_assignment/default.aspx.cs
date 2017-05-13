@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace assignment_draft
@@ -18,28 +15,23 @@ namespace assignment_draft
             if (Request.QueryString["Product"] != null)
             {
                 productLiteral.Text = "<h2 class='welcome-head'>" + product + "</h2>";
-
+                
                 rptrDisplay.Visible = false;
-            } else
-
-            {
+            }
+            else{
                 rptrDisplay.Visible = true;
                 Repeater1.Visible = false;
             }
-           
 
             if (!IsPostBack)
             {
                 string[] filePaths = Directory.GetFiles(Server.MapPath("Images/uploadedimages"));
-
-
             }
-
-       
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            /*Based on tutorial by (Way, 2008) from https://code.tutsplus.com/articles/how-to-search-a-website-using-aspnet-35-screencast--net-996 */
 
             if (tbSearch.Text != null || tbSearch.Text != "")
                 {
@@ -60,11 +52,13 @@ namespace assignment_draft
 
                 lv.DataSource = q.ToList();
                 lv.DataBind();
+
+                tbSearch.Text = "";
             }
             else
             {
-                rptrDisplay.Visible = true;
-                statPnl.Visible = true;
+                rptrDisplay.Visible = false;
+                tbSearch.Text = "";
             }
         }
 

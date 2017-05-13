@@ -243,8 +243,10 @@
     <Content Include="JS\dynamicmapload.js" />
     <Content Include="JS\scripts.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Members\Cancel.aspx" />
     <Content Include="Members\Cart.aspx" />
     <Content Include="Members\Checkout.aspx" />
+    <Content Include="Members\Complete.aspx" />
     <Content Include="product-display.aspx" />
     <Content Include="qiwebmodel-1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -257,7 +259,6 @@
       <LastGenOutput>qiwebmodel-1.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
-    <Content Include="product.aspx" />
     <EntityDeploy Include="qiwebmodel-1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>qiwebmodel-1.Designer.cs</LastGenOutput>
@@ -318,6 +319,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Members\Cancel.aspx.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\Cancel.aspx.designer.cs">
+      <DependentUpon>Cancel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Members\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,19 +340,19 @@
     <Compile Include="Members\Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Members\Complete.aspx.cs">
+      <DependentUpon>Complete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\Complete.aspx.designer.cs">
+      <DependentUpon>Complete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="product-display.aspx.cs">
       <DependentUpon>product-display.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="product-display.aspx.designer.cs">
       <DependentUpon>product-display.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="product.aspx.cs">
-      <DependentUpon>product.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="product.aspx.designer.cs">
-      <DependentUpon>product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="qiwebmodel-1.Context.cs">

@@ -7,27 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace assignment_draft {
+namespace assignment_draft.Members {
     
     
-    public partial class product {
+    public partial class Complete {
         
         /// <summary>
-        /// rptrDisplay control.
+        /// pnlHead control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptrDisplay;
+        protected global::System.Web.UI.WebControls.Panel pnlHead;
         
         /// <summary>
-        /// productsds control.
+        /// btnComplete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource productsds;
+        protected global::System.Web.UI.WebControls.Button btnComplete;
+        
+        /// <summary>
+        /// pnlCompleteShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCompleteShow;
     }
 }
