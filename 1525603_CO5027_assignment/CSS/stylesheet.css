@@ -644,6 +644,37 @@ li.product-display-cart {
     
 }
 
+.admin-nav-sub , .admin-nav-sub a{
+
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+  text-decoration: none;
+  color: #834200;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.admin-nav-sub a:hover, .admin-nav-sub-1 a:hover{
+    background-color: navajowhite;
+        padding: 10px;
+}
+
+.admin-nav-sub-1, .admin-nav-sub-1 a {
+
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+  text-decoration: none;
+  color: #834200;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .adminvalid{
     margin-left: 699px;
     margin-top: -30px;

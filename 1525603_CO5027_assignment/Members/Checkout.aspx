@@ -6,6 +6,30 @@
     <main>
         <div class="OrderSummary">
             <h2 class="welcome-head-cart ">Order Confirmation</h2>
+            <div class="hide">
+
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="upload" value="1" />
+                        <input type="hidden" name="business" value="<%=System.Web.Configuration.WebConfigurationManager.AppSettings["Quill.Inks_1525603@gmail.com"] %>" />
+
+
+                <asp:repeater id="rptrHide" runat="server">
+                        <itemtemplate>
+                            <input type="hidden" name="item_name_<%# Eval("itemCount") %>" value="<%# Eval("itemValue") %>" />
+                            <input type="hidden" name="quantity_<%# Eval("itemCount") %>" value="<%# Eval("quantityValue") %>" />
+                            <input type="hidden" name="amount_<%# Eval("itemCount") %>" value="<%# Eval("amountValue") %>" />
+                        </itemtemplate>
+                        </asp:repeater>
+                        <input type="hidden" name="shipping_1" value="0" />
+                        <input type="hidden" name="handling_1" value="0" />
+                        <input type="hidden" name="tax_1" value="0" /> 
+                        <input type="hidden" name="currency_code" value="GBP" />
+                        <input type="hidden" name="return" value="<%=System.Web.Configuration.WebConfigurationManager.AppSettings[" successurl="] %>" />
+                        <input type="hidden" name="cancel_return" value="<%=System.Web.Configuration.WebConfigurationManager.AppSettings[" failedurl="] %>" />
+                        <input type="hidden" name="lc" value="test lc country" />
+                        &nbsp;</div>
+            
+
             <asp:Literal ID="litError" runat="server"></asp:Literal>
             <asp:Panel ID="pnlCheckout" runat="server">
                 <h2 class="welcome-head">Ordered Items for checkout!</h2>
@@ -60,11 +84,15 @@
                             </p>
                         </div>
                         <div>
-                            <asp:Button ID="btnPaypalCheckout" CssClass="button-cart" runat="server" Text="Proceed with Payment" OnClick="btnPaypalCheckout_Click" />
+                            <asp:Button ID="btnPaypalCheckout" CssClass="button-cart" runat="server" Text="Pay With PayPal" OnClick="btnPaypalCheckout_Click" />
                         </div>
                     </div>
+
+                    
                 </div>
             </asp:Panel>
+
+            
         </div>
     </main>
 </asp:Content>

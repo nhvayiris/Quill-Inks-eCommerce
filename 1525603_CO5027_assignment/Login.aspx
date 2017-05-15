@@ -41,9 +41,9 @@
                     <asp:Label CssClass="contact-label" ID="lblconfirm" runat="server" Text="Confirm Password:"></asp:Label>
                     <asp:TextBox CssClass="contact-input" ID="tbconfirm" runat="server" TextMode="Password"></asp:TextBox>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password does not match!" ControlToValidate="tbRegPassword" ControlToCompare="tbconfirm" CssClass="lit-panel"></asp:CompareValidator>
-                    <asp:RegularExpressionValidator ID="RegularExprPassValid" Display="Dynamic" runat="server" ControlToValidate="tbRegPassword" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" CssClass="lit-panel" ErrorMessage="Incorrect password format. Passwords must be at least 8 characters in length, contain at least one uppercase character, at least one lower case character, atleast one special character and at least one number. E.g. P@55word"></asp:RegularExpressionValidator><!-- Srinivas, 2014 from http://stackoverflow.com/questions/19605150/regex-for-password-must-be-contain-at-least-8-characters-least-1-number-and-bot -->
+                    <asp:RegularExpressionValidator ValidationGroup="save" ID="RegularExprPassValid" Display="Dynamic" runat="server" ControlToValidate="tbRegPassword" ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}" CssClass="lit-panel" ErrorMessage="Incorrect password format. Passwords must be at least 8 characters in length, contain at least one uppercase character, at least one lower case character, atleast one special character and at least one number. E.g. P@55word"></asp:RegularExpressionValidator><!-- Srinivas, 2014 from http://stackoverflow.com/questions/19605150/regex-for-password-must-be-contain-at-least-8-characters-least-1-number-and-bot -->
                 </div>
-                <asp:Button CssClass="buttonlogin" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+                <asp:Button ValidationGroup="save" CssClass="buttonlogin" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
                 <div class="loginpanel">
                     <asp:Literal ID="litRegister" runat="server"></asp:Literal>
                 </div>

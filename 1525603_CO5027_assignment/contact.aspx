@@ -11,10 +11,10 @@
                     <h3 class="welcome-head-section">Contact Us</h3>
                     <p class="lit-panel">* Indicates a REQUIRED field (cannot be empty!)</p>
                     <asp:Label ID="lblContactName" runat="server" Text="Name *: " AssociatedControlID="txtContactName" CssClass="contact-label"></asp:Label>
-                    <asp:TextBox ID="txtContactName" runat="server" CssClass="contact-input"></asp:TextBox>
+                    <asp:TextBox ID="txtContactName" runat="server" CssClass="contact-input" placeholder="Your Name..." ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidFieldName" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtContactName" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblContactMail" runat="server" Text="E-mail *: " AssociatedControlID="txtContactMail" CssClass="contact-label"></asp:Label>
-                    <asp:TextBox ID="txtContactMail" runat="server" CssClass="contact-input"></asp:TextBox>
+                    <asp:TextBox ID="txtContactMail" runat="server" CssClass="contact-input" placeholder="Your Email Address..."></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidEmailField" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtContactMail" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator><asp:RegularExpressionValidator runat="server" ID="ValidEmail" SetFocusOnError="true" Text="Please enter a valid email address. Example: username@samplemail.com"
                         ControlToValidate="txtContactMail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
                         ValidationGroup="save" CssClass="lit-panel" /><!-- (aelor, 2014) from http://stackoverflow.com/questions/22475946/how-to-validate-email-address-using-regularexpression-validator -->
@@ -33,7 +33,7 @@
                     </div>
                     <asp:RequiredFieldValidator ID="ValidDD" runat="server" ErrorMessage="Please select a subject!" InitialValue="--Please Select an option--" ControlToValidate="ddSubject" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
                     <asp:Label ID="lblMessageBox" runat="server" Text="Message *: " AssociatedControlID="txtMessageBox" CssClass="contact-label"></asp:Label>
-                    <asp:TextBox ID="txtMessageBox" runat="server" TextMode="MultiLine" CssClass="message-input"></asp:TextBox>
+                    <asp:TextBox ID="txtMessageBox" runat="server" TextMode="MultiLine" CssClass="message-input" placeholder="Your Message..."></asp:TextBox>
                     <asp:RequiredFieldValidator ID="ValidMessage" runat="server" ErrorMessage="This field cannot be empty!" ControlToValidate="txtMessageBox" ValidationGroup="save" CssClass="lit-panel"></asp:RequiredFieldValidator>
                     <div>
                         <asp:Button CssClass="buttoncontact" ID="btnSend" runat="server" Text="Submit" ValidationGroup="save" OnClick="btnSend_Click" Width="150px" />

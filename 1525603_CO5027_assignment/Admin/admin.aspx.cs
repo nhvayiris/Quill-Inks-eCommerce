@@ -1,10 +1,4 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿using System;
 using System.Web.UI.WebControls;
 
 namespace assignment_draft.Admin
@@ -14,7 +8,7 @@ namespace assignment_draft.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             string manage = Request.QueryString["Manage"];
-
+             
             if (manage == "admin")
             {
                 rptrShowAllRecord.Visible = false;
@@ -56,6 +50,7 @@ namespace assignment_draft.Admin
                 AdminImagePanel.Visible = false;
             }
 
+          
 
         }
 
@@ -97,41 +92,50 @@ namespace assignment_draft.Admin
 
         protected void addformview_ModeChanging(object sender, FormViewModeEventArgs e)
         {
-            
-            addformview.ChangeMode(FormViewMode.Edit);
+            if (addformview.CurrentMode == FormViewMode.Insert)
+            {
+                addformview.ChangeMode(FormViewMode.Edit);
+            } else
+            {
+                if (addformview.CurrentMode == FormViewMode.Edit)
+                {
+                    addformview.ChangeMode(FormViewMode.Insert);
+                }
+            }
+                
         }
 
         protected void InsertButton_Click(object sender, EventArgs e)
         {
-            /*LinkButton lBtnEdit = (LinkButton)addformview.FindControl("InsertButton");
-            if (sender == lBtnEdit)
-            {
-                addformview.DataBind();
-                addformview.ChangeMode(DetailsViewMode.Edit);
-            }*/
+            
+
         }
 
-        protected void addformview_ItemCommand(object sender, FormViewCommandEventArgs e)
-        {
-            
-        }
+       
+       
 
         protected void addformview_ItemUpdated(object sender, FormViewUpdatedEventArgs e)
         {
-            editGV.DataBind();
+            addformview.DataBind();
         }
-
+        
+     
         protected void lbEdit_Click(object sender, EventArgs e)
         {
-            
+            Button lblEdit = (Button)addformview.FindControl("btnEdit");
+
+
+
+            if (sender == lblEdit)
+            {
+                addformview.DataBind();
+                addformview.ChangeMode(FormViewMode.Edit);
+            }
         }
+    
+       
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-
-        }
-
-        /* protected void addformview_Init(object sender, EventArgs e)
+        protected void addformview_Init(object sender, EventArgs e)
          {
              addformview.InsertItemTemplate = addformview.EditItemTemplate;
          }
@@ -147,6 +151,6 @@ namespace assignment_draft.Admin
                  UpdateButton.Visible = true;
              }
 
-         } */
+         } 
     }
 }

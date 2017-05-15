@@ -12,9 +12,10 @@ namespace assignment_draft.Members
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString);
+
             string ss = HttpContext.Current.User.Identity.Name; //taking the current logged in user as ss
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString);
             con.Open();
 
             SqlCommand cmd = new SqlCommand("SELECT ClientId , Sum(tbl_products.Price*tb_Cart.Quantity) As subTotal, SUM(tb_Cart.Quantity) As totalQty FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId WHERE ClientId = '" + ss + "'" + " group by tb_Cart.ClientId", con);
@@ -23,7 +24,7 @@ namespace assignment_draft.Members
             while (sdr.Read())
             {
                 decimal subb = decimal.Parse(sdr["subTotal"].ToString());
-                lbtotal.Text = subb.ToString("0.00") ;
+                lbtotal.Text = subb.ToString("0.00");
                 lblTotalQty.Text = sdr["totalQty"].ToString();
                 lbGrandTotal.Text = subb.ToString("0.00");
             } //read data from database and insert them into labels
@@ -42,8 +43,6 @@ namespace assignment_draft.Members
             rptrCart.DataSource = dt;
             rptrCart.DataBind();
             cmd1.Dispose();
-
-
         }
 
         protected void btnPaypalCheckout_Click(object sender, EventArgs e) //checkout method here
@@ -53,7 +52,7 @@ namespace assignment_draft.Members
                 using (SqlConnection sc = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString))
                 {
 
-                    using (SqlCommand comm = new SqlCommand("SELECT tbl_products.ProductId As id ,tb_Cart.Quantity As Qty, tbl_products.Price As cost, tbl_products.ProductName As Names FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId ", sc))
+                    using (SqlCommand comm = new SqlCommand("SELECT Sum(tbl_products.Price*tb_Cart.Quantity) As subTotal FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId GROUP BY tb_Cart.ClientId", sc))
 
                     {
                         sc.Open();
@@ -64,31 +63,22 @@ namespace assignment_draft.Members
                         var config = ConfigManager.Instance.GetProperties();
                         var accessToken = new OAuthTokenCredential(config).GetAccessToken();
                         var apiContext = new APIContext(accessToken);
-
+                        List<Item> pOrders = new List<Item>();
                         var planner = new Item();
 
                         //SqlDataReader starts here
                         using (SqlDataReader sdr = comm.ExecuteReader())
                         {
-                            List<Item> pOrders = new List<Item>();
-                            while (sdr.Read()) { //get value from db and store into objects
+                            sdr.Read();
 
-                                string names = sdr["Names"].ToString();
-                                string prices = sdr["cost"].ToString();
-                                string skuV = sdr["id"].ToString();
-                                string qty = sdr["Qty"].ToString();
-
-                                planner.name = names;
+                                planner.name = "Your total order from Quill and Inks";
                                 planner.currency = "GBP";
-                                planner.price = prices;
-                                planner.sku = skuV;
-                                planner.quantity = qty;
-                                subb = Convert.ToDecimal(prices) * Convert.ToDecimal(qty);
+                                planner.price = sdr["subTotal"].ToString();
+                                planner.sku = "QIPP2017";
+                                planner.quantity = "1";
 
-                                pOrders.Add(planner);
-
-                            } //while loop ends here
-
+                            pOrders.Add(planner);
+                            subb = Convert.ToDecimal(planner.price) * Convert.ToDecimal(planner.quantity);
 
                             var transactionDetails = new Details(); //gets details for refund transactions
                             transactionDetails.tax = "0";
@@ -102,12 +92,12 @@ namespace assignment_draft.Members
 
                             var transaction = new Transaction(); //shows contract of payment, who pays it and what is it paid for
                             transaction.description = "Your order of Quill and Inks Personal Planner";
-                            transaction.invoice_number = Guid.NewGuid().ToString(); 
+                            transaction.invoice_number = Guid.NewGuid().ToString();
                             transaction.amount = transactionAmount;
-                            transaction.item_list = new ItemList //display list of items purchased
+                            transaction.item_list = new ItemList
                             {
-                                items = new List<Item> { planner } //item details
 
+                                items = pOrders
                             };
 
                             var payer = new Payer(); //who funds the payment
@@ -138,9 +128,8 @@ namespace assignment_draft.Members
                                 }
                             }
 
-
-                        } //while loop ends here
-                    } //data reader ends here
+                        } //reader ends here
+                    } //sql command ends here
 
                     sc.Close();
                 }

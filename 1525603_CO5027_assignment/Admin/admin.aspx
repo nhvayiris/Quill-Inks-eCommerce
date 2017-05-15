@@ -49,7 +49,7 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
             <div>
                 <h2 class="login-head welcome-head">Add New Product</h2>
 
-                <asp:FormView ID="addformview" OnItemCommand="addformview_ItemCommand" runat="server" DataKeyNames="ProductId" DataSourceID="adminsds" DefaultMode="Insert" RenderOuterTable="False" OnItemUpdated="addformview_ItemUpdated">
+                <asp:FormView ID="addformview" DefaultMode="insert" OnDataBound="addformview_DataBound" runat="server" DataKeyNames="ProductId" DataSourceID="adminsds" RenderOuterTable="False" OnItemUpdated="addformview_ItemUpdated">
 
                     <InsertItemTemplate>
                         <div>
@@ -83,6 +83,12 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
                             <asp:Label CssClass="adminadd" ToolTip="Condition of the item e.g Brand New, Limited, Used etc" ID="lblCondition" runat="server" Text="Condition: " AssociatedControlID="ConditionTextBox"></asp:Label>
                             <asp:TextBox CssClass="admininput" ToolTip="Condition of the item e.g Brand New, Limited, Used etc" ID="ConditionTextBox" runat="server" Text='<%# Bind("Condition") %>' />
                             <asp:RequiredFieldValidator ID="reqCondVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="ConditionTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
+                        </div>
+                        <div>
+                            <asp:Label CssClass="adminadd" ToolTip="Image Id is the same as the product Id" ID="lbImage" runat="server" Text="Image: " AssociatedControlID="tbImage"></asp:Label>
+                            <asp:TextBox CssClass="admininput" ToolTip="Image Id is the same as the product Id" ID="tbImage" runat="server" Text='<%# Bind("ImageId") %>' />
+                            <asp:RequiredFieldValidator ID="reqImageVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="tbImage" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="regImageVal" runat="server" CssClass="lit-panel adminvalid" ControlToValidate="tbImage" ValidationExpression="^[0-9]*$" ErrorMessage="Please enter the correct format, only NUMBERS are allowed!"></asp:RegularExpressionValidator>
                         </div>
                         <div>
                             <asp:Literal ID="litAddProduct" runat="server"></asp:Literal>
@@ -178,7 +184,6 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
                     </ItemTemplate>
 
                 </asp:FormView>
-
                 <asp:SqlDataSource ID="adminsds" runat="server" ConnectionString="<%$ ConnectionStrings:qiwebcon %>"
                     SelectCommand="SELECT * FROM [tbl_products]" DeleteCommand="DELETE FROM [tbl_products] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO [tbl_products] ([ProductName], [ProductDesc], [StockQty], [Price], [ImageId], [CategoryId], [Condition], [IsOnSale], [StockCondition]) VALUES (@ProductName, @ProductDesc, @StockQty, @Price, @ImageId, @CategoryId, @Condition, @IsOnSale, @StockCondition)" UpdateCommand="UPDATE [tbl_products] SET [ProductName] = @ProductName, [ProductDesc] = @ProductDesc, [StockQty] = @StockQty, [Price] = @Price, [ImageId] = @ImageId, [CategoryId] = @CategoryId, [Condition] = @Condition, [IsOnSale] = @IsOnSale, [StockCondition] = @StockCondition WHERE [ProductId] = @ProductId">
                     <DeleteParameters>
@@ -195,7 +200,6 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
                         <asp:Parameter Name="IsOnSale" Type="Boolean" />
                         <asp:Parameter Name="StockCondition" Type="Boolean" />
                     </InsertParameters>
-
                     <UpdateParameters>
                         <asp:Parameter Name="ProductName" Type="String" />
                         <asp:Parameter Name="ProductDesc" Type="String" />
@@ -209,152 +213,29 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
                         <asp:Parameter Name="ProductId" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-
                 <asp:SqlDataSource ID="ddcategoryds" runat="server" ConnectionString="<%$ ConnectionStrings:qiwebcon %>" SelectCommand="SELECT * FROM [tb_categories]"></asp:SqlDataSource>
-
             </div>
         </div>
-        <div class="adminborder grid_12">
-
+        <div class="grid_12">
             <div>
                 <h2 class="login-head welcome-head">Manage Products</h2>
-                <asp:GridView OnRowDataBound="GridView1_RowDataBound" OnRowCommand="GridView1_RowCommand" CssClass="gridtable" ID="GridView1" runat="server" DataKeyNames="ProductId" DataSourceID="adminsds" CellSpacing="-1" GridLines="None" AutoGenerateColumns="False">
+                <asp:GridView OnRowDataBound="GridView1_RowDataBound" CssClass="gridtable" ID="GridView1" runat="server" DataKeyNames="ProductId" DataSourceID="adminsds" CellSpacing="-1" GridLines="None" AutoGenerateColumns="False">
                     <Columns>
 
                         <asp:BoundField DataField="ProductDesc" HeaderText="Description" />
                         <asp:BoundField DataField="ProductName" HeaderText="Product Name" />
                         <asp:BoundField DataField="Price" DataFormatString="£{0:###,###,###.00}" HeaderText="Price" />
                         <asp:BoundField DataField="Condition" HeaderText="Condition" />
-                        <asp:BoundField DataField="StockQty" HeaderText="In Stock" />
-                        <asp:BoundField DataField="ProductId" HeaderText="Image Id" />
+                        <asp:BoundField DataField="StockQty" HeaderText="Quantity Available" />
+                        <asp:BoundField DataField="ImageId" HeaderText="Image Id" />
                         <asp:BoundField DataField="CategoryId" HeaderText="Category Id" />
                         <asp:BoundField DataField="StockCondition" HeaderText="In Stock" />
-                        <asp:CommandField ShowDeleteButton="true" />
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                                <asp:LinkButton ID="lbEdit"  CommandName="Select" runat="server">Edit</asp:LinkButton>
 
-                            </ItemTemplate>
-                        </asp:TemplateField>
+                        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                     </Columns>
                 </asp:GridView>
             </div>
         </div>
-
-        <div class="adminborder grid_12">
-            <asp:FormView ID="editFV" runat="server" DataKeyNames="ProductId" DataSourceID="adminsds" DefaultMode="Edit" RenderOuterTable="False">
-
-
-
-                <EditItemTemplate>
-                    <div>
-                        <asp:Label CssClass="adminadd" ToolTip="Product name" ID="lblProductName" runat="server" Text="Product Name: " AssociatedControlID="ProductNameTextBox"></asp:Label>
-                        <asp:TextBox CssClass="admininput" ID="ProductNameTextBox" runat="server" Text='<%# Bind("ProductName") %>' />
-                        <asp:RequiredFieldValidator ID="reqProdVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="ProductNameTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
-                    </div>
-
-                    <div>
-                        <asp:Label CssClass="adminadd" ToolTip="Description of product" ID="lblProductDesc" runat="server" Text="Product Description: " AssociatedControlID="ProductDescTextBox"></asp:Label>
-                        <asp:TextBox CssClass="admininput" ID="ProductDescTextBox" TextMode="MultiLine" runat="server" Text='<%# Bind("ProductDesc") %>' />
-                        <asp:RequiredFieldValidator ID="reqProdDescVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="ProductDescTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
-                    </div>
-                    <div>
-                        <asp:Label CssClass="adminadd" ToolTip="Number of stock available" ID="lblStockQty" runat="server" Text="Quantity in Stock: " AssociatedControlID="StockQtyTextBox"></asp:Label>
-                        <asp:TextBox CssClass="admininput" ID="StockQtyTextBox" runat="server" Text='<%# Bind("StockQty") %>' />
-                        <asp:RequiredFieldValidator ID="reqStockQty" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="StockQtyTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
-                    </div>
-                    <div>
-                        <asp:Label CssClass="adminadd" ToolTip="Price per item" ID="lblPrice" runat="server" Text="Price: GBP &pound; " AssociatedControlID="PriceTextBox"></asp:Label>
-                        <asp:TextBox CssClass="admininput" ID="PriceTextBox" runat="server" Text='<%# Bind("Price" ,"{0:##0.00}") %>' />
-                        <asp:RequiredFieldValidator ID="reqPriceVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="PriceTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="regWidthValid" runat="server" CssClass="lit-panel adminvalid" ControlToValidate="PriceTextBox" ValidationExpression="^[0-9]\d{0,9}(\.\d{1,3})?%?$" ErrorMessage="Please enter the correct format, number followed by 2 decimal place i.e. 30.99"></asp:RegularExpressionValidator>
-                    </div>
-                    <div>
-                        <asp:Label CssClass="adminadd" ToolTip="Select a category" ID="lblCategory" runat="server" Text="Category: " AssociatedControlID="ddProductCategory"></asp:Label>
-                        <asp:DropDownList SelectedValue='<%# Bind("CategoryId") %>' CssClass="admininput" ID="ddProductCategory" runat="server" DataSourceID="ddcategoryds" DataTextField="CategoryName" DataValueField="CategoryId"></asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="reqCateVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="ddProductCategory" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
-                    </div>
-                    <div>
-                        <asp:Label CssClass="adminadd" ToolTip="Condition of the item e.g Brand New, Limited, Used etc" ID="lblCondition" runat="server" Text="Condition: " AssociatedControlID="ConditionTextBox"></asp:Label>
-                        <asp:TextBox CssClass="admininput" ToolTip="Condition of the item e.g Brand New, Limited, Used etc" ID="ConditionTextBox" runat="server" Text='<%# Bind("Condition") %>' />
-                        <asp:RequiredFieldValidator ID="reqCondVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="ConditionTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
-                    </div>
-                    <div>
-                        <asp:Literal ID="litAddProduct" runat="server"></asp:Literal>
-                    </div>
-                    <div>
-                        <asp:Button ID="UpdateButton" CssClass="button" runat="server" CausesValidation="True" ValidationGroup="save" CommandName="Update" Text="Update" />
-                        <asp:Button ID="UpdateCancelButton" CssClass="buttoncancel" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
-                    </div>
-                </EditItemTemplate>
-
-                <ItemTemplate>
-
-                    <div>
-                        <asp:Label ID="lblProductName" runat="server" Text="Product Name: " AssociatedControlID="ProductNameTextBox"></asp:Label>
-                        <asp:TextBox ID="ProductNameTextBox" runat="server" Text='<%# Bind("ProductName") %>' />
-                    </div>
-                    <div>
-                        <asp:Label ID="lblProductDesc" runat="server" Text="Product Description: " AssociatedControlID="ProductDescTextBox"></asp:Label>
-                        <asp:TextBox ID="ProductDescTextBox" runat="server" Text='<%# Bind("ProductDesc") %>' />
-
-                    </div>
-                    <div>
-                        <asp:Label ID="lblStockQty" runat="server" Text="In Stock: " AssociatedControlID="StockQtyTextBox"></asp:Label>
-                        <asp:TextBox ID="StockQtyTextBox" runat="server" Text='<%# Bind("StockQty") %>' />
-                    </div>
-                    <div>
-                        <asp:Label ID="lblPrice" runat="server" Text="Price: BND$ " AssociatedControlID="PriceTextBox"></asp:Label>
-                        <asp:TextBox ID="PriceTextBox" runat="server" Text='<%# Bind("Price") %>' />
-                    </div>
-
-                    <div>
-                        <asp:Label ID="lblImage" runat="server" Text="Image: " AssociatedControlID="ImageIdTextBox"></asp:Label>
-                        <asp:TextBox ID="ImageIdTextBox" runat="server" Text='<%# Bind("ImageId") %>' />
-                    </div>
-
-                    <div>
-                        <asp:Label ID="lblCategory" runat="server" Text="Category: " AssociatedControlID="ddProductCategory"></asp:Label>
-                        <asp:DropDownList SelectedValue='<%# Bind("CategoryId") %>' CssClass="admininput" ID="ddProductCategory" runat="server" DataSourceID="ddcategoryds" DataTextField="CategoryName" DataValueField="CategoryId"></asp:DropDownList>
-                    </div>
-
-                    <div>
-                        <asp:Label ID="lblCondition" runat="server" Text="Condition: " AssociatedControlID="ConditionTextBox"></asp:Label>
-                        <asp:TextBox ID="ConditionTextBox" runat="server" Text='<%# Bind("Condition") %>' />
-                    </div>
-
-                    <div>
-                        <asp:Button ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
-                        <asp:Button ID="DeleteButton" runat="server" CausesValidation="False" CommandName="Delete" Text="Delete" />
-                        <asp:Button ID="NewButton" runat="server" CausesValidation="False" CommandName="New" Text="New" />
-                    </div>
-                </ItemTemplate>
-
-            </asp:FormView>
-        </div>
-        <div class="adminborder grid_12">
-            <asp:GridView CssClass="gridtable" ID="editGV" runat="server" DataKeyNames="ProductId" DataSourceID="adminsds" CellSpacing="-1" GridLines="None" AutoGenerateColumns="False">
-                <Columns>
-
-                    <asp:CommandField ShowSelectButton="True" />
-
-                    <asp:BoundField DataField="ProductDesc" HeaderText="Description" />
-                    <asp:BoundField DataField="ProductName" HeaderText="Product Name" />
-                    <asp:BoundField DataField="Price" DataFormatString="£{0:###,###,###.00}" HeaderText="Price" />
-                    <asp:BoundField DataField="Condition" HeaderText="Condition" />
-                    <asp:BoundField DataField="StockQty" HeaderText="In Stock" />
-                    <asp:BoundField DataField="ProductId" HeaderText="Image Id" />
-                    <asp:BoundField DataField="CategoryId" HeaderText="Category Id" />
-                    <asp:BoundField DataField="StockCondition" HeaderText="In Stock" />
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lbEdit" CommandName="Edit" runat="server">Edit</asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
-            </asp:GridView>
-        </div>
-
 
     </asp:Panel>
     <!-- product panel -->
@@ -513,9 +394,9 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
                             <asp:RegularExpressionValidator ID="regHeightValid" runat="server" CssClass="lit-panel adminvalid" ControlToValidate="HeightTextBox" ValidationExpression="^\d+$" ErrorMessage="Only numbers are allowed!"></asp:RegularExpressionValidator>
                         </div>
                         <div>
-                        <asp:Label ID="lblAlt" CssClass="adminadd" ToolTip="Alternative text for screen readers to aid people with visual disabilities" runat="server" Text="Description: " AssociatedControlID="AltTextTextBox"></asp:Label>
-                        <asp:TextBox ID="AltTextTextBox" runat="server" ToolTip="Alternative text for screen readers to aid people with visual disabilities" CssClass="admininput" Text='<%# Bind("AltText") %>' />
-                        <asp:RequiredFieldValidator ID="reqAltTextVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="AltTextTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
+                            <asp:Label ID="lblAlt" CssClass="adminadd" ToolTip="Alternative text for screen readers to aid people with visual disabilities" runat="server" Text="Description: " AssociatedControlID="AltTextTextBox"></asp:Label>
+                            <asp:TextBox ID="AltTextTextBox" runat="server" ToolTip="Alternative text for screen readers to aid people with visual disabilities" CssClass="admininput" Text='<%# Bind("AltText") %>' />
+                            <asp:RequiredFieldValidator ID="reqAltTextVal" CssClass="lit-panel adminvalid" ValidationGroup="save" ControlToValidate="AltTextTextBox" runat="server" ErrorMessage="This field is cannot be empty!"></asp:RequiredFieldValidator>
                         </div>
 
                         <asp:Button CssClass="button" ID="InsertButton" runat="server" ValidationGroup="save" CausesValidation="True" CommandName="Insert" Text="Insert" />
@@ -547,9 +428,15 @@ ON tbl_products.CategoryId = tb_categories.CategoryId "></asp:SqlDataSource>
         </div>
         <div class="adminborder grid_12">
             <div>
-                <asp:GridView OnRowDataBound="newimagegv_RowDataBound" CssClass="gridtable" ID="newimagegv" runat="server" DataSourceID="newimageds" CellSpacing="-1" GridLines="None">
+                <asp:GridView OnRowDataBound="newimagegv_RowDataBound" CssClass="gridtable" ID="newimagegv" runat="server" DataSourceID="newimageds" CellSpacing="-1" GridLines="None" AutoGenerateColumns="False">
                     <Columns>
+                        <asp:BoundField DataField="AltText" HeaderText="Image Alternative Text" />
+                        <asp:BoundField DataField="ImageId" HeaderText="Image Id" />
+                        <asp:BoundField DataField="Extension" HeaderText="Image Extension" />
+                        <asp:BoundField DataField="Width" HeaderText="Image Width" />
+                        <asp:BoundField DataField="Height" HeaderText="Image Height" />
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+
                     </Columns>
                 </asp:GridView>
             </div>
