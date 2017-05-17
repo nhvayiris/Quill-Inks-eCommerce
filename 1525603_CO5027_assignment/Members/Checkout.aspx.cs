@@ -54,7 +54,7 @@ namespace assignment_draft.Members
                 using (SqlConnection sc = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString))
                 {
                     
-                    using (SqlCommand comm = new SqlCommand("SELECT Sum(tbl_products.Price*tb_Cart.Quantity) As subTotal FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId WHERE ClientId = '" + ss + "'" + " group by tb_Cart.ClientId", sc))
+                    using (SqlCommand comm = new SqlCommand("SELECT ClientId , Sum(tbl_products.Price*tb_Cart.Quantity) As subTotal FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId WHERE ClientId = '" + ss + "'" + " group by tb_Cart.ClientId", sc))
 
                     {
                         sc.Open();
@@ -106,10 +106,10 @@ namespace assignment_draft.Members
                             payer.payment_method = "paypal";
 
                             var redirectUrls = new RedirectUrls(); //set of url on paypal page
-                            string strPathQuery = HttpContext.Current.Request.Url.PathAndQuery;
-                            string strUrl = HttpContext.Current.Request.Url.AbsoluteUri.Replace(strPathQuery, "/");
-                            redirectUrls.cancel_url = strUrl + "Members/Cancel.aspx"; //if payment is cancelled
-                            redirectUrls.return_url = strUrl + "Members/Complete.aspx"; //if payment is executed
+                            //string strPathQuery = HttpContext.Current.Request.Url.AbsolutePath;
+                            //string strUrl = HttpContext.Current.Request.Url.AbsoluteUri.Replace(strPathQuery, "/");
+                            redirectUrls.cancel_url = "http://1525603.studentwebserver.co.uk/CO5027/Cancel.aspx"; //if payment is cancelled
+                            redirectUrls.return_url = "http://1525603.studentwebserver.co.uk/CO5027/Complete.aspx"; //if payment is executed
 
                             var payment = Payment.Create(apiContext, new Payment
                             {

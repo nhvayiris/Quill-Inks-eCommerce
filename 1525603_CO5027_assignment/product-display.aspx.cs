@@ -12,7 +12,7 @@ namespace assignment_draft
         db_qiwebentity db = new db_qiwebentity();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            loginPnl.Visible = false;
             if (!Page.IsPostBack)
             {
                 string userId = User.Identity.GetUserId();
@@ -36,21 +36,33 @@ namespace assignment_draft
 
             //get all fields
             string cn = HttpContext.Current.User.Identity.Name; //success
-            string productId = Request.QueryString["Id"]; //success
-            int q = int.Parse(ddStockQty.Text); //success
 
-            string imgExt = ".jpg";
+            if (cn != "")
+            {
+                
 
-            //insert all fields into db 
-            SqlConnection sc = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString);
-            sc.Open();
+                string productId = Request.QueryString["Id"]; //success
+                int q = int.Parse(ddStockQty.Text); //success
+
+                string imgExt = ".jpg";
+
+                //insert all fields into db 
+                SqlConnection sc = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString);
+                sc.Open();
+
+                string addtocart = "INSERT INTO tb_Cart(ClientId, Quantity, ProductId, Extension) VALUES ('" + cn + "','" + q + "','" + productId + "','" + imgExt + "') ";
+                SqlCommand command = new SqlCommand(addtocart, sc);
+                command.ExecuteNonQuery();
+                sc.Close();
+
+                Response.Redirect("Members/Cart.aspx");
+            }
+            else
+            {
+                loginPnl.Visible = true;
+            }
+
             
-            string addtocart = "INSERT INTO tb_Cart(ClientId, Quantity, ProductId, Extension) VALUES ('" + cn + "','" + q + "','" + productId + "','" + imgExt + "') ";
-            SqlCommand command = new SqlCommand(addtocart, sc);
-            command.ExecuteNonQuery();
-            sc.Close();
-
-            Response.Redirect("Members/Cart.aspx");
         }
     }
 }

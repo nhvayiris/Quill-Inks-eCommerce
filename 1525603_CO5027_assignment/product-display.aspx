@@ -5,6 +5,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="mainContentPlaceHolder" runat="server">
     <main class="content-change">
 
+         <asp:Panel runat="server" ID="loginPnl">
+            <div>
+                <h1>Please Log In</h1>
+            </div>
+        </asp:Panel>
+
         <asp:Repeater ID="rptProductDisplay" runat="server" DataSourceID="SqlDataSource1"  >
             <HeaderTemplate><div></HeaderTemplate>
             <ItemTemplate>

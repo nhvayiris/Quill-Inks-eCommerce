@@ -243,10 +243,10 @@
     <Content Include="JS\dynamicmapload.js" />
     <Content Include="JS\scripts.js" />
     <Content Include="Login.aspx" />
-    <Content Include="Members\Cancel.aspx" />
+    <Content Include="Cancel.aspx" />
     <Content Include="Members\Cart.aspx" />
     <Content Include="Members\Checkout.aspx" />
-    <Content Include="Members\Complete.aspx" />
+    <Content Include="Complete.aspx" />
     <Content Include="product-display.aspx" />
     <Content Include="qiwebmodel-1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -319,11 +319,11 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Members\Cancel.aspx.cs">
+    <Compile Include="Cancel.aspx.cs">
       <DependentUpon>Cancel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Members\Cancel.aspx.designer.cs">
+    <Compile Include="Cancel.aspx.designer.cs">
       <DependentUpon>Cancel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Members\Cart.aspx.cs">
@@ -340,11 +340,11 @@
     <Compile Include="Members\Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Members\Complete.aspx.cs">
+    <Compile Include="Complete.aspx.cs">
       <DependentUpon>Complete.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Members\Complete.aspx.designer.cs">
+    <Compile Include="Complete.aspx.designer.cs">
       <DependentUpon>Complete.aspx</DependentUpon>
     </Compile>
     <Compile Include="product-display.aspx.cs">
