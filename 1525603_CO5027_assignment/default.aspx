@@ -7,8 +7,8 @@
     <div class="searchbox">
         <div class="searchcont">
             <asp:Button CssClass="icon" runat="server" ID="btnSearch" Text="Search" OnClick="btnSearch_Click" ValidationGroup="save" />
-            <asp:Label CssClass="contact-label-search" ID="lblsearch" runat="server" AssociatedControlID="tbSearch" Text="Search"></asp:Label>
-            <asp:TextBox ID="tbSearch" CssClass="box" runat="server"></asp:TextBox>
+            <asp:Label CssClass="contact-label-search" ToolTip="Search for items e.g Leather or Diary" ID="lblsearch" runat="server" AssociatedControlID="tbSearch" Text="Search"></asp:Label>
+            <asp:TextBox ID="tbSearch" CssClass="box" runat="server" ToolTip="Search for items e.g Leather or Diary" placeholder="Search for item..."></asp:TextBox>
             <asp:RequiredFieldValidator ID="searchVal" runat="server" ErrorMessage="Cannot search for empty keyword" ControlToValidate="tbSearch" CssClass="lit-panel-search" ValidationGroup="save"></asp:RequiredFieldValidator>
         </div>
     </div>

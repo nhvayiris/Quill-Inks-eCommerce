@@ -47,12 +47,14 @@ namespace assignment_draft.Members
 
         protected void btnPaypalCheckout_Click(object sender, EventArgs e) //checkout method here
         {
+
+            string ss = HttpContext.Current.User.Identity.Name; //taking the current logged in user as ss
             try
             {
                 using (SqlConnection sc = new SqlConnection(ConfigurationManager.ConnectionStrings["qiwebcon"].ConnectionString))
                 {
-
-                    using (SqlCommand comm = new SqlCommand("SELECT Sum(tbl_products.Price*tb_Cart.Quantity) As subTotal FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId GROUP BY tb_Cart.ClientId", sc))
+                    
+                    using (SqlCommand comm = new SqlCommand("SELECT Sum(tbl_products.Price*tb_Cart.Quantity) As subTotal FROM [tb_Cart] INNER JOIN tbl_products ON tbl_products.ProductId = tb_Cart.ProductId WHERE ClientId = '" + ss + "'" + " group by tb_Cart.ClientId", sc))
 
                     {
                         sc.Open();
