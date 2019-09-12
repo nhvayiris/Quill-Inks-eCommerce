@@ -1,6 +1,6 @@
-#CO5027 Website Production and Development
-1525603
-Assignment Repository
+# CO5027 Website Production and Development
+**Student ID: 1525603**
+> Assignment Repository
 
 This is an ecommerce web application developed using ASP.Net and C# technology for a school assignment. Front end development was done in HTML, CSS and Javascript while the back end was done using SQL, C# and ASP.Net framework. 
 
